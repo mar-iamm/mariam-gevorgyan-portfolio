@@ -1,1 +1,0 @@
-# mariam-gevorgyan-portfolio

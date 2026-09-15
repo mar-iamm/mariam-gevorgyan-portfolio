@@ -66,6 +66,16 @@ Dans la deuxième version, j’ai amélioré la hiérarchie visuelle, les espace
 
 Le résultat est plus cohérent, plus lisible et surtout plus personnel. Il représente mieux mon univers graphique et mon style. Malheureusement je n'ai plus accès au prompt qui m'a aidé à générer la première version.
 
+# Design desktop
+
+[PORTFOLIO WEB.pdf](https://github.com/user-attachments/files/32218185/PORTFOLIO.WEB.pdf)
+
+# Design mobile
+
+[PORTFOLIO MOBILE.pdf](https://github.com/user-attachments/files/32218200/PORTFOLIO.MOBILE.pdf)
+
+
+
 
 
 

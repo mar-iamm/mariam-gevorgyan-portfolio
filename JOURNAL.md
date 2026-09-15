@@ -39,8 +39,10 @@ En résumé : je veux donner l’image d’une personne créative, audacieuse, p
 
 ### Page 1
 <img width="1872" height="930" alt="image" src="https://github.com/user-attachments/assets/1cc6adb1-b357-44bd-9083-8968074b7b56" />
+
 ### Page 2
 <img width="1868" height="924" alt="image" src="https://github.com/user-attachments/assets/f4f2325a-ab86-486f-8797-e6064f496785" />
+
 ### Page 3
 <img width="1868" height="925" alt="image" src="https://github.com/user-attachments/assets/6377a7fb-aaff-46ac-a462-b497f2d96cb0" />
 

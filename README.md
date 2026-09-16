@@ -14,6 +14,8 @@ Ce portfolio présente mes compétences, les logiciels que j’utilise ainsi que
 
 Le design est inspiré d’un style rétro, coloré et moderne, avec des éléments interactifs et quelques animations.
 
+(lien figma)
+
 ## Auteur
 
 Mariam Gevorgyan

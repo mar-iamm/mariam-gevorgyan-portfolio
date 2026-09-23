@@ -1,9 +1,8 @@
-/* Version desktop. Les adaptations mobiles seront ajoutées ensuite. */
 .entete,
 main,
 .pied-page {
     width: 100%;
-    max-width: var(--largeur-page);
+    max-width: none;
     margin-inline: auto;
 }
 

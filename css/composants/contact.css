@@ -4,7 +4,9 @@
     color: var(--blanc);
     background-color: var(--fond-contact);
     background-image: url("../../assets/images/background_contact.png");
-    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
 }
 
 .contact__titre {

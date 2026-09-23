@@ -1,10 +1,9 @@
-/* Le même motif couvre l'en-tête et l'accueil. */
 .entete,
 .accueil {
     background-color: var(--fond-clair);
     background-image: url("../../assets/images/background_accueil.png");
     background-repeat: no-repeat;
-    background-size: 100% 71.25rem;
+    background-size: cover;
 }
 
 .entete {

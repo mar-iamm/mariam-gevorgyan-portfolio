@@ -3,7 +3,9 @@
     padding: 12rem 5.2% 12rem;
     background-color: var(--fond-clair);
     background-image: url("../../assets/images/background_projet.png");
-    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
     text-align: center;
 }
 

@@ -6,8 +6,9 @@
     color: var(--blanc);
     background-color: var(--fond-contact);
     background-image: url("../../assets/images/background_logiciels.png");
-    background-repeat: repeat-x;
-    background-size: auto 100%;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
 }
 
 /* Une seule piste, prête pour le futur carrousel. Aucun défilement automatique. */

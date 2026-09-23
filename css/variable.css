@@ -1,0 +1,20 @@
+/* Couleurs fournies pour la maquette. */
+:root {
+    --bleu: #4346E6;
+    --vert: #8AE819;
+    --rose: #FF428E;
+    --jaune: #FFDD00;
+    --fond-clair: #F7F6F2;
+    --fond-contact: #121212;
+    --noir: #000000;
+    --blanc: #FFFFFF;
+    --gris-texte: #777777;
+
+    --police-texte: "Poppins", Arial, sans-serif;
+    --police-condensee: "Roboto Condensed", Arial, sans-serif;
+    --police-projet: "Roboto Mono", monospace;
+
+    --largeur-page: 120rem; /* 1920 px lorsque 1 rem = 16 px. */
+    --bordure: 0.25rem solid var(--noir);
+    --ombre: 0.4rem 0.4rem 0 var(--noir);
+}

@@ -1,0 +1,144 @@
+.projets {
+    min-height: 93rem;
+    padding: 12rem 5.2% 12rem;
+    background-color: var(--fond-clair);
+    background-image: url("../../assets/images/background_projet.png");
+    background-size: 100% 100%;
+    text-align: center;
+}
+
+.projets__etiquette {
+    display: inline-block;
+    padding: 0.3rem 1.3rem;
+    border: 0.1rem solid var(--rose);
+    border-radius: 2rem;
+    color: var(--rose);
+    background-color: var(--fond-clair);
+    font-family: var(--police-projet);
+    font-size: 0.85rem;
+    font-weight: 700;
+    letter-spacing: 0.1rem;
+    text-transform: uppercase;
+}
+
+.projets__titre {
+    width: fit-content;
+    margin: 0.7rem auto 0;
+    padding: 0 3rem 0.5rem;
+    border-bottom: 0.25rem solid var(--noir);
+}
+
+.projets__grille {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 4.2rem;
+    margin-top: 8.4rem;
+    text-align: left;
+}
+
+.projet {
+    position: relative;
+    min-width: 0;
+    min-height: 40rem;
+    padding: 1.9rem 1.9rem 2rem;
+    border: var(--bordure);
+    border-radius: 0 2rem 2rem 2rem;
+    color: var(--blanc);
+    background-color: var(--couleur-projet);
+    box-shadow: var(--ombre);
+}
+
+/* L'onglet est une forme de mise en page ; ce n'est pas un logo. */
+.projet::before {
+    content: "";
+    position: absolute;
+    top: -2.6rem;
+    left: 1.3rem;
+    width: 42%;
+    height: 2.6rem;
+    border: var(--bordure);
+    border-bottom: 0;
+    border-radius: 1rem 1rem 0 0;
+    background-color: var(--couleur-projet);
+}
+
+.projet--bleu { --couleur-projet: var(--bleu); }
+.projet--vert { --couleur-projet: var(--vert); color: var(--noir); }
+.projet--rose { --couleur-projet: var(--rose); }
+.projet--jaune { --couleur-projet: var(--jaune); color: var(--noir); }
+
+/* Emplacement noir présent dans le PDF, à remplacer par une vraie miniature. */
+.projet__apercu {
+    aspect-ratio: 207 / 146;
+    border: 0.9rem solid rgba(255, 255, 255, 0.16);
+    border-radius: 0.7rem;
+    background-color: var(--noir);
+    background-clip: padding-box;
+}
+
+.projet--vert .projet__apercu,
+.projet--jaune .projet__apercu {
+    border-color: rgba(0, 0, 0, 0.15);
+}
+
+.projet__categorie {
+    display: flex;
+    align-items: center;
+    gap: 0.35rem;
+    margin-top: 1.6rem;
+    font-family: var(--police-projet);
+    font-size: 1.2rem;
+    text-transform: uppercase;
+}
+
+.projet__categorie::before {
+    content: "";
+    width: 0.55rem;
+    height: 0.55rem;
+    border-radius: 50%;
+    background-color: var(--jaune);
+}
+
+.projet--vert .projet__categorie::before { background-color: var(--noir); }
+.projet--jaune .projet__categorie::before { background-color: var(--rose); }
+
+.projet__titre {
+    margin-top: 0.6rem;
+    font-family: var(--police-projet);
+    font-size: 2.25rem;
+    font-weight: 700;
+    line-height: 1.25;
+    text-transform: uppercase;
+}
+
+.projet__description {
+    margin-top: 0.8rem;
+    font-size: 1.05rem;
+    line-height: 1.5;
+}
+
+.projet__action {
+    margin-top: 1.4rem;
+    padding-top: 1.6rem;
+    border-top: 0.1rem solid currentColor;
+    text-align: center;
+}
+
+.projet__bouton {
+    min-height: 3.2rem;
+    padding: 0.55rem 1.5rem;
+    border: 0.12rem solid var(--noir);
+    border-radius: 3rem;
+    color: var(--couleur-projet);
+    background-color: var(--blanc);
+    font-family: var(--police-condensee);
+    font-size: 1.2rem;
+    font-weight: 700;
+    text-transform: uppercase;
+}
+
+.projet--vert .projet__bouton,
+.projet--jaune .projet__bouton {
+    color: var(--blanc);
+    background-color: var(--noir);
+}

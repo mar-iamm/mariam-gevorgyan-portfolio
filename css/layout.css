@@ -1,0 +1,55 @@
+/* Version desktop. Les adaptations mobiles seront ajoutées ensuite. */
+.entete,
+main,
+.pied-page {
+    width: 100%;
+    max-width: var(--largeur-page);
+    margin-inline: auto;
+}
+
+.titre-section {
+    font-size: 9rem;
+    font-weight: 800;
+    line-height: 1.15;
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: 0.075rem;
+}
+
+.bouton {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1.4rem;
+    min-height: 4.5rem;
+    padding: 0.6rem 2rem;
+    border: var(--bordure);
+    border-radius: 5rem;
+    box-shadow: var(--ombre);
+    color: var(--noir);
+    font-size: 1.6rem;
+    font-weight: 700;
+    line-height: 1;
+    text-transform: uppercase;
+    white-space: nowrap;
+}
+
+.bouton span {
+    font-family: Arial, sans-serif;
+    font-size: 2rem;
+}
+
+.bouton--jaune {
+    background-color: var(--jaune);
+}
+
+.bouton--vert {
+    background-color: var(--vert);
+}
+
+.bouton--rose {
+    color: var(--blanc);
+    background-color: var(--rose);
+    border-color: var(--blanc);
+    box-shadow: 0.3rem 0.3rem 0 var(--blanc);
+}

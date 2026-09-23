@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Portfolio de Mariam Gevorgyan : conception web, développement, animation et création multimédia.">
+    <title>Mariam Gevorgyan — Portfolio</title>
+
+    <!-- Ordre des styles : variables, base, mise en page, composants. -->
+    <link rel="stylesheet" href="css/variable.css">
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/layout.css">
+    <link rel="stylesheet" href="css/composants/accueil.css">
+    <link rel="stylesheet" href="css/composants/competences.css">
+    <link rel="stylesheet" href="css/composants/contact.css">
+    <link rel="stylesheet" href="css/composants/logiciels.css">
+    <link rel="stylesheet" href="css/composants/projets.css">
+</head>
+<body>
+    <a class="lien-evitement" href="#contenu">Aller au contenu</a>
+
+    <header class="entete" id="accueil">
+        <a class="entete__marque" href="#accueil" aria-label="Mariam Gevorgyan — accueil">
+            <img class="entete__logo" src="assets/images/black_logo.png" alt="">
+        </a>
+
+        <nav class="entete__navigation" aria-label="Navigation principale">
+            <ul class="entete__liens">
+                <li><a href="#accueil">Accueil</a></li>
+                <li><a href="#projets">Projets</a></li>
+                <li><a href="#contact">Contact</a></li>
+                <li><a href="#a-propos">À propos</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main id="contenu">
+        <section class="accueil" aria-labelledby="titre-accueil">
+            <div class="accueil__presentation" id="a-propos">
+                <!-- Un seul titre lisible, même si le prénom utilise six images. -->
+                <h1 class="accueil__titre" id="titre-accueil">
+                    <span class="texte-accessible">Mariam Gevorgyan — Portfolio</span>
+                    <span class="accueil__lettres" aria-hidden="true">
+                        <img class="accueil__lettre accueil__lettre--m" src="assets/images/M.png" alt="">
+                        <img class="accueil__lettre accueil__lettre--a" src="assets/images/A.png" alt="">
+                        <img class="accueil__lettre accueil__lettre--r" src="assets/images/R.png" alt="">
+                        <img class="accueil__lettre accueil__lettre--i" src="assets/images/I.png" alt="">
+                        <img class="accueil__lettre accueil__lettre--a-fin" src="assets/images/A_end.png" alt="">
+                        <img class="accueil__lettre accueil__lettre--m-fin" src="assets/images/M_end.png" alt="">
+                    </span>
+                </h1>
+
+                <p class="accueil__texte">Je m’appelle Mariam Gevorgyan, diplômée en Techniques d’intégration multimédia. Ce qui m’anime au quotidien est de concevoir des univers captivants au croisement du web design, du développement de jeux vidéo et de l’animation. Je façonne des expériences interactives vivantes, ludiques et mémorables.</p>
+
+                <div class="accueil__actions">
+                    <a class="bouton bouton--jaune" href="#projets">Voir mes projets <span aria-hidden="true">⌄</span></a>
+                    <a class="bouton bouton--vert" href="#contact">Contact <span aria-hidden="true">↗</span></a>
+                </div>
+            </div>
+
+            <!-- Le cordon et le porte-carte font déjà partie de cette image. -->
+            <img class="accueil__carte" src="assets/images/id_card.png" alt="Carte étudiante de Mariam Gevorgyan, 2026">
+        </section>
+
+        <section class="competences" aria-labelledby="titre-competences">
+            <h2 class="titre-section competences__titre" id="titre-competences">Compétence &amp; outils</h2>
+
+            <div class="competences__grille">
+                <article class="competence">
+                    <img class="competence__icone" src="assets/images/conception_web_logo.png" alt="" loading="lazy">
+                    <h3 class="competence__titre">Conception web</h3>
+                    <p class="competence__texte">Conception d’interfaces ergonomiques, maquettes fonctionnelles et systèmes de design percutants.</p>
+                </article>
+
+                <article class="competence">
+                    <img class="competence__icone" src="assets/images/montage_video_logo.png" alt="" loading="lazy">
+                    <h3 class="competence__titre">Montage vidéo &amp; sonore</h3>
+                    <p class="competence__texte">Montage rythmé, mixage audio, création sonore immersive et habillage visuel dynamique.</p>
+                </article>
+
+                <article class="competence">
+                    <img class="competence__icone" src="assets/images/code_front_end_logo.png" alt="" loading="lazy">
+                    <h3 class="competence__titre">Code front-end</h3>
+                    <p class="competence__texte">Développement réactif, moderne et accessible en HTML5/CSS et JavaScript interactif.</p>
+                </article>
+
+                <article class="competence">
+                    <img class="competence__icone" src="assets/images/code_jeu_video_logo.png" alt="" loading="lazy">
+                    <h3 class="competence__titre">Code jeu vidéo</h3>
+                    <p class="competence__texte">Game design, gameplay interactif, modélisation temps réel et univers ludiques immersifs.</p>
+                </article>
+
+                <article class="competence">
+                    <img class="competence__icone" src="assets/images/animation_2d_logo.png" alt="" loading="lazy">
+                    <h3 class="competence__titre">Animation 2D</h3>
+                    <p class="competence__texte">Micro-interactions, cinématiques fluides, animations vectorielles et animation graphique.</p>
+                </article>
+
+                <article class="competence">
+                    <img class="competence__icone" src="assets/images/vectoriel_logo.png" alt="" loading="lazy">
+                    <h3 class="competence__titre">Illustration vectorielle</h3>
+                    <p class="competence__texte">Création graphique sur-mesure, icônes expressives, courbes &amp; typographies.</p>
+                </article>
+            </div>
+        </section>
+
+        <!-- Bande statique : la piste dépasse, mais aucune animation n'est appliquée. -->
+        <section class="logiciels" aria-labelledby="titre-logiciels">
+            <h2 class="texte-accessible" id="titre-logiciels">Mes logiciels</h2>
+            <ul class="logiciels__piste">
+                <li class="logiciel">
+                    <img class="logiciel__icone" src="assets/images/illustrator_logo.png" alt="" loading="lazy">
+                    <div>
+                        <h3 class="logiciel__nom">Illustrator</h3>
+                        <p class="logiciel__usage">Vectoriel &amp; Typo</p>
+                    </div>
+                    <span class="logiciel__etoile" aria-hidden="true">★</span>
+                </li>
+                <li class="logiciel">
+                    <img class="logiciel__icone" src="assets/images/maya_logo.png" alt="" loading="lazy">
+                    <div>
+                        <h3 class="logiciel__nom">Maya</h3>
+                        <p class="logiciel__usage">Modélisation &amp; 3D</p>
+                    </div>
+                    <span class="logiciel__etoile" aria-hidden="true">★</span>
+                </li>
+                <li class="logiciel">
+                    <img class="logiciel__icone" src="assets/images/unity_logo.png" alt="" loading="lazy">
+                    <div>
+                        <h3 class="logiciel__nom">Unity</h3>
+                        <p class="logiciel__usage">Jeu vidéo &amp; interactif</p>
+                    </div>
+                    <span class="logiciel__etoile" aria-hidden="true">★</span>
+                </li>
+                <li class="logiciel">
+                    <img class="logiciel__icone" src="assets/images/after_effects_logo.png" alt="" loading="lazy">
+                    <div>
+                        <h3 class="logiciel__nom">After Effects</h3>
+                        <p class="logiciel__usage">Montage &amp; VFX</p>
+                    </div>
+                    <span class="logiciel__etoile" aria-hidden="true">★</span>
+                </li>
+                <li class="logiciel">
+                    <img class="logiciel__icone" src="assets/images/photoshop_logo.png" alt="" loading="lazy">
+                    <div>
+                        <h3 class="logiciel__nom">Photoshop</h3>
+                        <p class="logiciel__usage">Retouche &amp; Texture</p>
+                    </div>
+                    <span class="logiciel__etoile" aria-hidden="true">★</span>
+                </li>
+                <li class="logiciel">
+                    <img class="logiciel__icone" src="assets/images/vscode_logo.png" alt="" loading="lazy">
+                    <div>
+                        <h3 class="logiciel__nom">VSCode</h3>
+                        <p class="logiciel__usage">Code &amp; Développement front-end</p>
+                    </div>
+                </li>
+            </ul>
+        </section>
+
+        <section class="projets" id="projets" aria-labelledby="titre-projets">
+            <p class="projets__etiquette">Sélection de projets 2024 - 2026</p>
+            <h2 class="titre-section projets__titre" id="titre-projets">Projets</h2>
+
+            <!-- Les contenus temporaires reprennent ceux de la maquette. -->
+            <div class="projets__grille">
+                <article class="projet projet--bleu">
+                    <div class="projet__apercu" aria-hidden="true"></div>
+                    <p class="projet__categorie">Mini titre</p>
+                    <h3 class="projet__titre">Titre du<br>projet</h3>
+                    <p class="projet__description">Description du projet un peu plus en détail.</p>
+                    <div class="projet__action">
+                        <!-- À relier à projet.html quand les projets seront renseignés. -->
+                        <button class="projet__bouton" type="button">Voir le projet</button>
+                    </div>
+                </article>
+
+                <article class="projet projet--vert">
+                    <div class="projet__apercu" aria-hidden="true"></div>
+                    <p class="projet__categorie">Mini titre</p>
+                    <h3 class="projet__titre">Titre du<br>projet</h3>
+                    <p class="projet__description">Description du projet un peu plus en détail.</p>
+                    <div class="projet__action">
+                        <button class="projet__bouton" type="button">Voir le projet</button>
+                    </div>
+                </article>
+
+                <article class="projet projet--rose">
+                    <div class="projet__apercu" aria-hidden="true"></div>
+                    <p class="projet__categorie">Mini titre</p>
+                    <h3 class="projet__titre">Titre du<br>projet</h3>
+                    <p class="projet__description">Description du projet un peu plus en détail.</p>
+                    <div class="projet__action">
+                        <button class="projet__bouton" type="button">Voir le projet</button>
+                    </div>
+                </article>
+
+                <article class="projet projet--jaune">
+                    <div class="projet__apercu" aria-hidden="true"></div>
+                    <p class="projet__categorie">Mini titre</p>
+                    <h3 class="projet__titre">Titre du<br>projet</h3>
+                    <p class="projet__description">Description du projet un peu plus en détail.</p>
+                    <div class="projet__action">
+                        <button class="projet__bouton" type="button">Voir le projet</button>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <section class="contact" id="contact" aria-labelledby="titre-contact">
+            <h2 class="titre-section contact__titre" id="titre-contact">Travaillons<br>ensemble !</h2>
+            <p class="contact__introduction">Stage, projet d’études ambitieux ou une collaboration créative ?<br>Envoyez-moi un message !</p>
+
+            <!-- Présentation du formulaire seulement. L'envoi sera ajouté plus tard. -->
+            <form class="contact__formulaire">
+                <div class="contact__champs">
+                    <div class="champ">
+                        <label class="champ__etiquette" for="nom">Votre nom ou entreprise <span aria-hidden="true">*</span></label>
+                        <input class="champ__saisie" id="nom" name="nom" type="text" autocomplete="name" placeholder="John Doe" required>
+                    </div>
+                    <div class="champ">
+                        <label class="champ__etiquette" for="courriel">Votre email <span aria-hidden="true">*</span></label>
+                        <input class="champ__saisie" id="courriel" name="courriel" type="email" autocomplete="email" placeholder="johndoe@agence.com" required>
+                    </div>
+                    <div class="champ">
+                        <label class="champ__etiquette" for="telephone">Numéro de téléphone <span aria-hidden="true">*</span></label>
+                        <input class="champ__saisie" id="telephone" name="telephone" type="tel" autocomplete="tel" placeholder="514 - 123 - 4567" required>
+                    </div>
+                    <div class="champ">
+                        <label class="champ__etiquette" for="opportunite">Type d’opportunité <span aria-hidden="true">*</span></label>
+                        <input class="champ__saisie" id="opportunite" name="opportunite" type="text" placeholder="Stage Fin d’Études" required>
+                    </div>
+                    <div class="champ champ--large">
+                        <label class="champ__etiquette" for="message">Votre message <span aria-hidden="true">*</span></label>
+                        <textarea class="champ__saisie champ__saisie--message" id="message" name="message" rows="2" placeholder="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua." required></textarea>
+                    </div>
+                </div>
+                <button class="bouton bouton--rose contact__bouton" type="button">Envoyer le message <span aria-hidden="true">↗</span></button>
+            </form>
+        </section>
+    </main>
+
+    <footer class="pied-page">
+        <a class="pied-page__marque" href="#accueil">
+            <img class="pied-page__logo" src="assets/images/white_logo.png" alt="" loading="lazy">
+            <span>Mariam Gevorgyan</span>
+        </a>
+        <a class="pied-page__retour" href="#accueil" aria-label="Retour en haut de la page">↑</a>
+        <p class="pied-page__copyright">© 2026 Mariam Gevorgyan</p>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,50 @@
+.competences {
+    min-height: 93.75rem;
+    padding: 10rem 3.8% 12rem;
+    border: var(--bordure);
+    background-color: var(--blanc);
+}
+
+.competences__titre {
+    padding-bottom: 1.3rem;
+    border-bottom: 0.25rem solid var(--noir);
+    white-space: nowrap;
+}
+
+.competences__grille {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 3.25rem 3rem;
+    margin-top: 6.5rem;
+}
+
+.competence {
+    min-height: 21.6rem;
+    padding: 2.4rem 2rem;
+    border: var(--bordure);
+    border-radius: 2.3rem;
+    background-color: var(--fond-clair);
+    box-shadow: var(--ombre);
+}
+
+.competence__icone {
+    width: 6rem;
+    height: 6rem;
+    object-fit: contain;
+}
+
+.competence__titre {
+    margin-top: 0.3rem;
+    font-family: var(--police-condensee);
+    font-size: 2.15rem;
+    font-weight: 700;
+    line-height: 1.2;
+    text-transform: uppercase;
+}
+
+.competence__texte {
+    margin-top: 2.8rem;
+    color: var(--gris-texte);
+    font-size: 1.08rem;
+    line-height: 1.5;
+}

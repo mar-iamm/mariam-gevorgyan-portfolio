@@ -1,0 +1,100 @@
+/* Le même motif couvre l'en-tête et l'accueil. */
+.entete,
+.accueil {
+    background-color: var(--fond-clair);
+    background-image: url("../../assets/images/background_accueil.png");
+    background-repeat: no-repeat;
+    background-size: 100% 71.25rem;
+}
+
+.entete {
+    position: relative;
+    display: flex;
+    align-items: center;
+    height: 7rem;
+    padding-inline: 0.4rem;
+    background-position: center top;
+}
+
+.entete__logo {
+    width: 6rem;
+}
+
+.entete__navigation {
+    position: absolute;
+    left: 24%;
+    width: 48%;
+}
+
+.entete__liens {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 2rem;
+    font-family: var(--police-condensee);
+    font-size: 1.25rem;
+    font-weight: 700;
+    text-transform: uppercase;
+}
+
+.accueil {
+    position: relative;
+    min-height: 64.25rem;
+    padding: 9.5rem 5.8% 8rem;
+    background-position: center bottom;
+}
+
+.accueil__presentation {
+    width: 54%;
+}
+
+.accueil__lettres {
+    display: flex;
+    align-items: center;
+    width: 55.8rem;
+    height: 12.2rem;
+    margin-left: -0.6rem;
+}
+
+.accueil__lettre {
+    flex-shrink: 0;
+    max-width: none;
+    object-fit: contain;
+}
+
+/* Les inclinaisons sont déjà dans les PNG : aucun logo n'est redessiné. */
+.accueil__lettre--m { width: 15.4rem; }
+.accueil__lettre--a { width: 11rem; margin-left: -2.85rem; }
+.accueil__lettre--r { width: 11.3rem; margin-left: -3.3rem; margin-top: -0.6rem; }
+.accueil__lettre--i { width: 6.1rem; margin-left: -2.85rem; }
+.accueil__lettre--a-fin { width: 11.4rem; margin-left: -2.6rem; margin-top: 0.4rem; }
+.accueil__lettre--m-fin { width: 15.3rem; margin-left: -2.9rem; margin-top: 0.9rem; }
+
+.accueil__texte {
+    max-width: 48rem;
+    margin-top: 3.5rem;
+    font-size: 1.375rem;
+    line-height: 1.35;
+}
+
+.accueil__actions {
+    display: flex;
+    gap: 1.6rem;
+    margin-top: 3.4rem;
+    margin-left: 0.4rem;
+}
+
+.accueil__actions .bouton--jaune {
+    min-width: 24rem;
+}
+
+.accueil__actions .bouton--vert {
+    min-width: 16rem;
+}
+
+.accueil__carte {
+    position: absolute;
+    top: -7.25rem;
+    right: 8.5%;
+    width: 20.2%;
+}

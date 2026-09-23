@@ -1,0 +1,123 @@
+.contact {
+    min-height: 115rem;
+    padding: 14.6rem 5% 12rem;
+    color: var(--blanc);
+    background-color: var(--fond-contact);
+    background-image: url("../../assets/images/background_contact.png");
+    background-size: 100% 100%;
+}
+
+.contact__titre {
+    line-height: 1.25;
+    letter-spacing: -0.2rem;
+}
+
+.contact__introduction {
+    margin-top: 2.5rem;
+    color: var(--gris-texte);
+    font-size: 1.45rem;
+    line-height: 1.5;
+    text-align: center;
+}
+
+.contact__formulaire {
+    width: 68%;
+    margin: 7rem auto 0;
+}
+
+.contact__champs {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 3rem 4.5rem;
+}
+
+.champ--large {
+    grid-column: 1 / -1;
+}
+
+.champ__etiquette {
+    display: block;
+    margin-bottom: 1.1rem;
+    font-family: var(--police-condensee);
+    font-size: 1.25rem;
+    font-weight: 700;
+    text-transform: uppercase;
+}
+
+.champ__saisie {
+    display: block;
+    width: 100%;
+    padding: 0.4rem 0 1rem;
+    border: 0;
+    border-bottom: 0.1rem solid #666666;
+    border-radius: 0;
+    color: var(--blanc);
+    background-color: transparent;
+    font-size: 1.5rem;
+    font-weight: 600;
+    line-height: 1.5;
+}
+
+.champ__saisie::placeholder {
+    color: var(--gris-texte);
+    opacity: 1;
+}
+
+.champ__saisie--message {
+    min-height: 7rem;
+    margin-top: 2rem;
+    resize: vertical;
+}
+
+.contact__bouton {
+    display: flex;
+    width: 33.5rem;
+    min-height: 7.4rem;
+    margin: 9rem auto 0;
+    font-size: 2rem;
+}
+
+.contact :focus-visible,
+.pied-page :focus-visible {
+    outline-color: var(--jaune);
+}
+
+.pied-page {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    min-height: 19.2rem;
+    padding: 3rem 5% 5rem 2%;
+    color: var(--blanc);
+    background-color: var(--noir);
+}
+
+.pied-page__marque {
+    display: flex;
+    align-items: center;
+    gap: 2.5rem;
+    font-size: 2rem;
+    font-weight: 700;
+    text-transform: uppercase;
+}
+
+.pied-page__logo {
+    width: 7.5rem;
+}
+
+.pied-page__retour {
+    font-family: Arial, sans-serif;
+    font-size: 8rem;
+    line-height: 1;
+}
+
+.pied-page__copyright {
+    position: absolute;
+    right: 0;
+    bottom: 1.7rem;
+    left: 0;
+    color: var(--gris-texte);
+    font-size: 1.2rem;
+    text-align: center;
+}

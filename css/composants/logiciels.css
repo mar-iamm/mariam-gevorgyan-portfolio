@@ -1,0 +1,54 @@
+.logiciels {
+    display: flex;
+    align-items: center;
+    height: 22rem;
+    overflow: hidden;
+    color: var(--blanc);
+    background-color: var(--fond-contact);
+    background-image: url("../../assets/images/background_logiciels.png");
+    background-repeat: repeat-x;
+    background-size: auto 100%;
+}
+
+/* Une seule piste, prête pour le futur carrousel. Aucun défilement automatique. */
+.logiciels__piste {
+    display: flex;
+    align-items: center;
+    width: max-content;
+    flex-shrink: 0;
+    padding-inline: 3.5rem;
+}
+
+.logiciel {
+    display: flex;
+    align-items: center;
+    flex-shrink: 0;
+    gap: 1.8rem;
+}
+
+.logiciel__icone {
+    width: 8.9rem;
+    height: 8.9rem;
+}
+
+.logiciel__nom {
+    font-family: var(--police-condensee);
+    font-size: 2.3rem;
+    font-weight: 700;
+    line-height: 1.2;
+    text-transform: uppercase;
+}
+
+.logiciel__usage {
+    margin-top: 0.25rem;
+    color: var(--gris-texte);
+    font-size: 1.05rem;
+    white-space: nowrap;
+}
+
+.logiciel__etoile {
+    margin-inline: 3.4rem 2rem;
+    color: var(--jaune);
+    font-size: 3.5rem;
+    line-height: 1;
+}

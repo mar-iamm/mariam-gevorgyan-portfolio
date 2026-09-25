@@ -16,7 +16,7 @@
     border-radius: 2rem;
     color: var(--rose);
     background-color: var(--fond-clair);
-    font-family: var(--police-projet);
+    font-family: var(--police-mono);
     font-size: 0.85rem;
     font-weight: 700;
     letter-spacing: 0.1rem;
@@ -88,7 +88,7 @@
     align-items: center;
     gap: 0.35rem;
     margin-top: 1.6rem;
-    font-family: var(--police-projet);
+    font-family: var(--police-mono);
     font-size: 1.2rem;
     text-transform: uppercase;
 }
@@ -106,7 +106,7 @@
 
 .projet__titre {
     margin-top: 0.6rem;
-    font-family: var(--police-projet);
+    font-family: var(--police-titre);
     font-size: 2.25rem;
     font-weight: 700;
     line-height: 1.25;
@@ -133,7 +133,7 @@
     border-radius: 3rem;
     color: var(--couleur-projet);
     background-color: var(--blanc);
-    font-family: var(--police-condensee);
+    font-family: var(--police-interface);
     font-size: 1.2rem;
     font-weight: 700;
     text-transform: uppercase;

@@ -1,0 +1,379 @@
+/* Une page, quatre articles visibles à la suite et quatre carrousels indépendants. */
+.fiche-projet {
+    --couleur-projet: var(--bleu);
+    --texte-role: var(--blanc);
+    scroll-margin-top: 0;
+}
+
+.fiche-projet--bleu {
+    --couleur-projet: var(--bleu);
+    --texte-role: var(--blanc);
+}
+
+.fiche-projet--rose {
+    --couleur-projet: var(--rose);
+    --texte-role: var(--noir);
+}
+
+.fiche-projet--vert {
+    --couleur-projet: var(--vert);
+    --texte-role: var(--noir);
+}
+
+/* Le trait coloré sépare clairement les projets dans la page longue. */
+.fiche-projet + .fiche-projet {
+    border-top: 0.5rem solid var(--couleur-projet);
+}
+
+/* L'en-tête se superpose au fond de la première section. */
+.page-projet .entete {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 2;
+    color: var(--blanc);
+    background: transparent;
+}
+
+.page-projet .entete :focus-visible {
+    outline-color: var(--jaune);
+}
+
+/* Présentation du projet et grand visuel. */
+.projet-presentation {
+    padding: 7rem 6.3% 6rem;
+    color: var(--blanc);
+    background-color: var(--fond-contact);
+    background-image: url("../../assets/images/background_contact.png");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+
+/* Le premier projet laisse la place au menu commun en haut de page. */
+.fiche-projet:first-of-type .projet-presentation {
+    padding-top: 15.5rem;
+}
+
+.projet-presentation__titre {
+    font-family: var(--police-titre);
+    font-size: 9rem;
+    font-weight: 800;
+    line-height: 1.2;
+    text-transform: uppercase;
+}
+
+.projet-presentation__accent {
+    display: block;
+    color: var(--couleur-projet);
+}
+
+.projet-presentation__description {
+    max-width: 105rem;
+    margin-top: 2.75rem;
+    color: #b8b8b8;
+    font-size: 1.5rem;
+    line-height: 1.5;
+}
+
+/* Carrousel manuel : les boutons radio mémorisent l'image choisie. */
+.galerie {
+    position: relative;
+    margin-top: 4.5rem;
+}
+
+.galerie__fenetre {
+    position: relative;
+    width: 90%;
+    margin-inline: auto;
+    overflow: hidden;
+    border: 0.25rem solid var(--noir);
+    border-radius: 1rem;
+    color: var(--noir);
+    background-color: var(--blanc);
+    box-shadow: 0.8rem 0.8rem 0 var(--blanc);
+}
+
+.galerie__barre {
+    display: flex;
+    align-items: center;
+    min-height: 3.7rem;
+    padding: 0.65rem 1rem;
+    background-color: var(--noir);
+}
+
+/* Petits témoins décoratifs du cadre de navigateur ; ce ne sont pas des logos. */
+.galerie__temoins {
+    display: flex;
+    gap: 0.55rem;
+}
+
+.galerie__temoin {
+    width: 0.8rem;
+    height: 0.8rem;
+    border-radius: 50%;
+    background-color: var(--rose);
+}
+
+.galerie__temoin--jaune { background-color: var(--jaune); }
+.galerie__temoin--vert { background-color: var(--vert); }
+
+.galerie__adresse {
+    width: 44%;
+    margin-inline: auto;
+    padding: 0.1rem 1rem;
+    border: 1px solid #555555;
+    border-radius: 0.2rem;
+    color: var(--blanc);
+    font-family: var(--police-mono);
+    font-size: 0.85rem;
+    text-align: center;
+}
+
+.galerie__diapositive {
+    position: relative;
+    display: none;
+    margin: 0;
+}
+
+.galerie__image,
+.galerie__emplacement {
+    width: 100%;
+    height: 36.5rem;
+}
+
+.galerie__image {
+    object-fit: contain;
+}
+
+/* Emplacements provisoires : remplacer leur contenu par les vrais visuels. */
+.galerie__emplacement {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #666666;
+    font-family: var(--police-mono);
+    font-size: 1.3rem;
+}
+
+.galerie__compteur {
+    position: absolute;
+    bottom: 1.6rem;
+    left: 2rem;
+    padding: 0.3rem 0.7rem;
+    border-radius: 0.4rem;
+    color: var(--noir);
+    background-color: var(--blanc);
+    font-family: var(--police-mono);
+    font-size: 1rem;
+}
+
+.galerie__visiter {
+    position: absolute;
+    right: 2.5rem;
+    bottom: 1.5rem;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1.5rem;
+    min-width: 12rem;
+    min-height: 3.5rem;
+    padding: 0.5rem 1.5rem;
+    border: 0.2rem solid var(--noir);
+    border-radius: 3rem;
+    box-shadow: 0.25rem 0.25rem 0 var(--noir);
+    color: var(--noir);
+    background-color: var(--vert);
+    font-family: var(--police-interface);
+    font-size: 1.25rem;
+    font-weight: 700;
+    text-transform: uppercase;
+}
+
+.galerie__visiter:disabled {
+    cursor: default;
+    opacity: 1;
+}
+
+.galerie__navigation {
+    position: absolute;
+    inset: 0;
+    display: none;
+    pointer-events: none;
+}
+
+.galerie__fleche {
+    position: absolute;
+    top: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 5rem;
+    height: 9rem;
+    margin-top: -4.5rem;
+    color: var(--blanc);
+    font-family: Arial, sans-serif;
+    font-size: 9rem;
+    line-height: 1;
+    cursor: pointer;
+    pointer-events: auto;
+    user-select: none;
+}
+
+.galerie__fleche--precedente { left: -3.5%; }
+.galerie__fleche--suivante { right: -3.5%; }
+
+/* Une seule image et sa paire de flèches sont affichées à la fois. */
+.galerie__choix--1:checked ~ .galerie__fenetre .galerie__diapositive--1,
+.galerie__choix--2:checked ~ .galerie__fenetre .galerie__diapositive--2,
+.galerie__choix--3:checked ~ .galerie__fenetre .galerie__diapositive--3,
+.galerie__choix--1:checked ~ .galerie__navigation--1,
+.galerie__choix--2:checked ~ .galerie__navigation--2,
+.galerie__choix--3:checked ~ .galerie__navigation--3 {
+    display: block;
+}
+
+/* Au clavier, Tab atteint le groupe ; les flèches changent le bouton radio. */
+.galerie__choix:focus-visible ~ .galerie__fenetre {
+    outline: 0.25rem solid var(--jaune);
+    outline-offset: 1.2rem;
+}
+
+/* Le rôle et la démarche se lisent côte à côte. */
+.analyse-projet {
+    display: grid;
+    grid-template-columns: 23% minmax(0, 1fr);
+    align-items: start;
+    gap: 6.5%;
+    padding: 7rem 5.5%;
+    background-color: var(--fond-clair);
+}
+
+.role-projet {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    min-height: 26rem;
+    margin-top: 2.5rem;
+    padding: 1.5rem 2.2rem;
+    border: var(--bordure);
+    border-radius: 0 1.8rem 1.8rem 1.8rem;
+    box-shadow: 0.4rem 0.6rem 0 var(--noir);
+    color: var(--texte-role);
+    background-color: var(--couleur-projet);
+}
+
+.role-projet__titre {
+    position: absolute;
+    bottom: 100%;
+    left: 5%;
+    width: 72%;
+    margin-bottom: -0.25rem;
+    padding: 0.55rem 0.6rem;
+    border: var(--bordure);
+    border-bottom: 0;
+    border-radius: 0.9rem 0.9rem 0 0;
+    background-color: var(--couleur-projet);
+    font-family: var(--police-secondaire);
+    font-size: 1.4rem;
+    font-weight: 700;
+    line-height: 1.5;
+    text-align: center;
+    text-transform: uppercase;
+}
+
+.role-projet__liste {
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+}
+
+.role-projet__element {
+    display: flex;
+    flex: 1;
+    align-items: center;
+    padding-block: 2rem;
+    border-bottom: 1px solid currentColor;
+    font-family: var(--police-secondaire);
+    font-size: 2rem;
+    font-weight: 700;
+    text-transform: uppercase;
+}
+
+.role-projet__element:last-child { border-bottom: 0; }
+
+.demarche-projet__titre {
+    padding-bottom: 0.6rem;
+    border-bottom: 0.25rem solid var(--noir);
+    font-family: var(--police-titre);
+    font-size: 5.5rem;
+    font-weight: 800;
+    line-height: 1.15;
+    letter-spacing: -0.1rem;
+    text-transform: uppercase;
+}
+
+.demarche-projet__texte {
+    max-width: 72rem;
+    margin-top: 3rem;
+    font-size: 1.45rem;
+    line-height: 1.5;
+}
+
+.demarche-projet__accent {
+    padding-inline: 0.2rem;
+    color: var(--noir);
+    background-color: var(--vert);
+}
+
+/* Les six images de logiciels sont celles déjà présentes dans le projet. */
+.outils-projet {
+    padding: 6rem 9.5%;
+    border: var(--bordure);
+    background-color: var(--blanc);
+}
+
+.outils-projet__titre {
+    font-family: var(--police-titre);
+    font-size: 5.5rem;
+    font-weight: 800;
+    line-height: 1.2;
+    letter-spacing: -0.08rem;
+    text-align: center;
+    text-transform: uppercase;
+}
+
+.outils-projet__liste {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 4rem;
+    margin-top: 4.5rem;
+}
+
+.outil-projet {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+}
+
+.outil-projet__icone {
+    flex-shrink: 0;
+    width: 8rem;
+    height: 8rem;
+    object-fit: contain;
+}
+
+.outil-projet__nom {
+    margin: 0;
+    font-family: var(--police-secondaire);
+    font-size: 1.8rem;
+    font-weight: 700;
+    text-transform: uppercase;
+}
+
+.outil-projet__usage {
+    margin-top: 0.25rem;
+    color: #6b6b6b;
+    font-size: 1rem;
+    line-height: 1.5;
+}

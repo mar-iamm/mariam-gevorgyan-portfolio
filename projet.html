@@ -1,0 +1,578 @@
+<!DOCTYPE html>
+<html lang="fr">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="description" content="Découvrez les quatre projets de Mariam Gevorgyan : images, rôles, démarches de création et logiciels utilisés.">
+        <title>Projets — Mariam Gevorgyan</title>
+        <link rel="stylesheet" href="css/variable.css">
+        <link rel="stylesheet" href="css/base.css">
+        <link rel="stylesheet" href="css/layout.css">
+        <link rel="stylesheet" href="css/composants/accueil.css">
+        <link rel="stylesheet" href="css/composants/contact.css">
+        <link rel="stylesheet" href="css/composants/projet-detail.css">
+    </head>
+    <body class="page-projet" id="haut">
+        <a class="lien-evitement" href="#contenu">Aller au contenu</a>
+        <header class="entete">
+            <a class="entete__marque" href="index.html#accueil" aria-label="Mariam Gevorgyan — accueil">
+                <img class="entete__logo" src="assets/images/white_logo.png" alt="">
+            </a>
+            <nav class="entete__navigation" aria-label="Navigation principale">
+                <ul class="entete__liens">
+                    <li>
+                        <a href="index.html#accueil">Accueil</a>
+                    </li>
+                    <li>
+                        <a href="#contenu" aria-current="page">Projets</a>
+                    </li>
+                    <li>
+                        <a href="index.html#contact">Contact</a>
+                    </li>
+                    <li>
+                        <a href="index.html#a-propos">À propos</a>
+                    </li>
+                </ul>
+            </nav>
+        </header>
+        <main id="contenu" tabindex="-1">
+            <h1 class="texte-accessible">Mes projets</h1>
+            <!-- PROJET 1 — BLEU : tous les projets restent visibles à la suite. -->
+            <article class="fiche-projet fiche-projet--bleu" id="projet-1" aria-labelledby="titre-projet-1">
+                <section class="projet-presentation" aria-labelledby="titre-projet-1">
+                    <h2 class="projet-presentation__titre" id="titre-projet-1">
+                        <span>Titre du <span class="projet-presentation__accent">projet 1</span>
+                        </span>
+                    </h2>
+                    <p class="projet-presentation__description">Présente ici le projet 1, son contexte et son objectif. Explique en quelques phrases à qui il s’adresse, ce qu’il propose et le résultat que tu souhaitais obtenir.</p>
+                    <div class="galerie" role="region" aria-label="Images du projet 1">
+                        <!-- Carrousel 1 : ce groupe radio est indépendant des trois autres. -->
+                        <p class="texte-accessible" id="aide-galerie-1">Au clavier, utilisez les flèches gauche et droite pour changer d’image après avoir atteint ce groupe avec la touche Tab.</p>
+                        <input class="galerie__choix galerie__choix--1 texte-accessible" type="radio" name="image-projet-1" id="projet-1-image-1" aria-label="Afficher l’image 1 sur 3" aria-describedby="aide-galerie-1" checked>
+                        <input class="galerie__choix galerie__choix--2 texte-accessible" type="radio" name="image-projet-1" id="projet-1-image-2" aria-label="Afficher l’image 2 sur 3" aria-describedby="aide-galerie-1">
+                        <input class="galerie__choix galerie__choix--3 texte-accessible" type="radio" name="image-projet-1" id="projet-1-image-3" aria-label="Afficher l’image 3 sur 3" aria-describedby="aide-galerie-1">
+                        <div class="galerie__fenetre">
+                            <div class="galerie__barre" aria-hidden="true">
+                                <div class="galerie__temoins">
+                                    <span class="galerie__temoin"></span>
+                                    <span class="galerie__temoin galerie__temoin--jaune"></span>
+                                    <span class="galerie__temoin galerie__temoin--vert"></span>
+                                </div>
+                                <span class="galerie__adresse">Lien du projet 1</span>
+                            </div>
+                            <figure class="galerie__diapositive galerie__diapositive--1">
+                                <div class="galerie__emplacement">Visuel 1 du projet 1</div>
+                                <figcaption class="galerie__compteur">1 / 3</figcaption>
+                            </figure>
+                            <figure class="galerie__diapositive galerie__diapositive--2">
+                                <div class="galerie__emplacement">Visuel 2 du projet 1</div>
+                                <figcaption class="galerie__compteur">2 / 3</figcaption>
+                            </figure>
+                            <figure class="galerie__diapositive galerie__diapositive--3">
+                                <div class="galerie__emplacement">Visuel 3 du projet 1</div>
+                                <figcaption class="galerie__compteur">3 / 3</figcaption>
+                            </figure>
+                            <button class="galerie__visiter" type="button" disabled>Visiter <span aria-hidden="true">↗</span>
+                            </button>
+                        </div>
+                        <div class="galerie__navigation galerie__navigation--1">
+                            <label class="galerie__fleche galerie__fleche--precedente" for="projet-1-image-3">
+                                <span aria-hidden="true">‹</span>
+                                <span class="texte-accessible">Image précédente : 3 sur 3</span>
+                            </label>
+                            <label class="galerie__fleche galerie__fleche--suivante" for="projet-1-image-2">
+                                <span aria-hidden="true">›</span>
+                                <span class="texte-accessible">Image suivante : 2 sur 3</span>
+                            </label>
+                        </div>
+                        <div class="galerie__navigation galerie__navigation--2">
+                            <label class="galerie__fleche galerie__fleche--precedente" for="projet-1-image-1">
+                                <span aria-hidden="true">‹</span>
+                                <span class="texte-accessible">Image précédente : 1 sur 3</span>
+                            </label>
+                            <label class="galerie__fleche galerie__fleche--suivante" for="projet-1-image-3">
+                                <span aria-hidden="true">›</span>
+                                <span class="texte-accessible">Image suivante : 3 sur 3</span>
+                            </label>
+                        </div>
+                        <div class="galerie__navigation galerie__navigation--3">
+                            <label class="galerie__fleche galerie__fleche--precedente" for="projet-1-image-2">
+                                <span aria-hidden="true">‹</span>
+                                <span class="texte-accessible">Image précédente : 2 sur 3</span>
+                            </label>
+                            <label class="galerie__fleche galerie__fleche--suivante" for="projet-1-image-1">
+                                <span aria-hidden="true">›</span>
+                                <span class="texte-accessible">Image suivante : 1 sur 3</span>
+                            </label>
+                        </div>
+                    </div>
+                </section>
+                <section class="analyse-projet" aria-labelledby="titre-demarche-1">
+                    <aside class="role-projet" aria-labelledby="titre-role-1">
+                        <h3 class="role-projet__titre" id="titre-role-1">Mon rôle</h3>
+                        <ul class="role-projet__liste">
+                            <li class="role-projet__element">Rôle nº 1</li>
+                            <li class="role-projet__element">Rôle nº 2</li>
+                            <li class="role-projet__element">Rôle nº 3</li>
+                        </ul>
+                    </aside>
+                    <div class="demarche-projet">
+                        <h3 class="demarche-projet__titre" id="titre-demarche-1">Démarche du projet</h3>
+                        <p class="demarche-projet__texte">Présente ici le point de départ du projet 1 et les objectifs à atteindre. Explique ensuite <mark class="demarche-projet__accent">tes choix de création</mark> : tes recherches, tes décisions visuelles ou techniques, puis les étapes principales de la réalisation. Mets en évidence un défi rencontré, la solution retenue et ce que cette expérience t’a permis d’apprendre.</p>
+                    </div>
+                </section>
+                <section class="outils-projet" aria-labelledby="titre-outils-1">
+                    <h3 class="outils-projet__titre" id="titre-outils-1">Logiciels &amp; technologies</h3>
+                    <ul class="outils-projet__liste">
+                        <li class="outil-projet">
+                            <img class="outil-projet__icone" src="assets/images/illustrator_logo.png" alt="" loading="lazy">
+                            <div>
+                                <h4 class="outil-projet__nom">Illustrator</h4>
+                                <p class="outil-projet__usage">Vectoriel &amp; typo</p>
+                            </div>
+                        </li>
+                        <li class="outil-projet">
+                            <img class="outil-projet__icone" src="assets/images/maya_logo.png" alt="" loading="lazy">
+                            <div>
+                                <h4 class="outil-projet__nom">Maya</h4>
+                                <p class="outil-projet__usage">Modélisation &amp; 3D</p>
+                            </div>
+                        </li>
+                        <li class="outil-projet">
+                            <img class="outil-projet__icone" src="assets/images/unity_logo.png" alt="" loading="lazy">
+                            <div>
+                                <h4 class="outil-projet__nom">Unity</h4>
+                                <p class="outil-projet__usage">Jeu vidéo &amp; interactif</p>
+                            </div>
+                        </li>
+                        <li class="outil-projet">
+                            <img class="outil-projet__icone" src="assets/images/after_effects_logo.png" alt="" loading="lazy">
+                            <div>
+                                <h4 class="outil-projet__nom">After Effects</h4>
+                                <p class="outil-projet__usage">Montage &amp; VFX</p>
+                            </div>
+                        </li>
+                        <li class="outil-projet">
+                            <img class="outil-projet__icone" src="assets/images/photoshop_logo.png" alt="" loading="lazy">
+                            <div>
+                                <h4 class="outil-projet__nom">Photoshop</h4>
+                                <p class="outil-projet__usage">Retouche &amp; texture</p>
+                            </div>
+                        </li>
+                        <li class="outil-projet">
+                            <img class="outil-projet__icone" src="assets/images/vscode_logo.png" alt="" loading="lazy">
+                            <div>
+                                <h4 class="outil-projet__nom">VS Code</h4>
+                                <p class="outil-projet__usage">Code &amp; développement front-end</p>
+                            </div>
+                        </li>
+                    </ul>
+                </section>
+            </article>
+            <!-- PROJET 2 — ROSE : tous les projets restent visibles à la suite. -->
+            <article class="fiche-projet fiche-projet--rose" id="projet-2" aria-labelledby="titre-projet-2">
+                <section class="projet-presentation" aria-labelledby="titre-projet-2">
+                    <h2 class="projet-presentation__titre" id="titre-projet-2">
+                        <span>Titre du <span class="projet-presentation__accent">projet 2</span>
+                        </span>
+                    </h2>
+                    <p class="projet-presentation__description">Présente ici le projet 2, son contexte et son objectif. Explique en quelques phrases à qui il s’adresse, ce qu’il propose et le résultat que tu souhaitais obtenir.</p>
+                    <div class="galerie" role="region" aria-label="Images du projet 2">
+                        <!-- Carrousel 2 : ce groupe radio est indépendant des trois autres. -->
+                        <p class="texte-accessible" id="aide-galerie-2">Au clavier, utilisez les flèches gauche et droite pour changer d’image après avoir atteint ce groupe avec la touche Tab.</p>
+                        <input class="galerie__choix galerie__choix--1 texte-accessible" type="radio" name="image-projet-2" id="projet-2-image-1" aria-label="Afficher l’image 1 sur 3" aria-describedby="aide-galerie-2" checked>
+                        <input class="galerie__choix galerie__choix--2 texte-accessible" type="radio" name="image-projet-2" id="projet-2-image-2" aria-label="Afficher l’image 2 sur 3" aria-describedby="aide-galerie-2">
+                        <input class="galerie__choix galerie__choix--3 texte-accessible" type="radio" name="image-projet-2" id="projet-2-image-3" aria-label="Afficher l’image 3 sur 3" aria-describedby="aide-galerie-2">
+                        <div class="galerie__fenetre">
+                            <div class="galerie__barre" aria-hidden="true">
+                                <div class="galerie__temoins">
+                                    <span class="galerie__temoin"></span>
+                                    <span class="galerie__temoin galerie__temoin--jaune"></span>
+                                    <span class="galerie__temoin galerie__temoin--vert"></span>
+                                </div>
+                                <span class="galerie__adresse">Lien du projet 2</span>
+                            </div>
+                            <figure class="galerie__diapositive galerie__diapositive--1">
+                                <div class="galerie__emplacement">Visuel 1 du projet 2</div>
+                                <figcaption class="galerie__compteur">1 / 3</figcaption>
+                            </figure>
+                            <figure class="galerie__diapositive galerie__diapositive--2">
+                                <div class="galerie__emplacement">Visuel 2 du projet 2</div>
+                                <figcaption class="galerie__compteur">2 / 3</figcaption>
+                            </figure>
+                            <figure class="galerie__diapositive galerie__diapositive--3">
+                                <div class="galerie__emplacement">Visuel 3 du projet 2</div>
+                                <figcaption class="galerie__compteur">3 / 3</figcaption>
+                            </figure>
+                            <button class="galerie__visiter" type="button" disabled>Visiter <span aria-hidden="true">↗</span>
+                            </button>
+                        </div>
+                        <div class="galerie__navigation galerie__navigation--1">
+                            <label class="galerie__fleche galerie__fleche--precedente" for="projet-2-image-3">
+                                <span aria-hidden="true">‹</span>
+                                <span class="texte-accessible">Image précédente : 3 sur 3</span>
+                            </label>
+                            <label class="galerie__fleche galerie__fleche--suivante" for="projet-2-image-2">
+                                <span aria-hidden="true">›</span>
+                                <span class="texte-accessible">Image suivante : 2 sur 3</span>
+                            </label>
+                        </div>
+                        <div class="galerie__navigation galerie__navigation--2">
+                            <label class="galerie__fleche galerie__fleche--precedente" for="projet-2-image-1">
+                                <span aria-hidden="true">‹</span>
+                                <span class="texte-accessible">Image précédente : 1 sur 3</span>
+                            </label>
+                            <label class="galerie__fleche galerie__fleche--suivante" for="projet-2-image-3">
+                                <span aria-hidden="true">›</span>
+                                <span class="texte-accessible">Image suivante : 3 sur 3</span>
+                            </label>
+                        </div>
+                        <div class="galerie__navigation galerie__navigation--3">
+                            <label class="galerie__fleche galerie__fleche--precedente" for="projet-2-image-2">
+                                <span aria-hidden="true">‹</span>
+                                <span class="texte-accessible">Image précédente : 2 sur 3</span>
+                            </label>
+                            <label class="galerie__fleche galerie__fleche--suivante" for="projet-2-image-1">
+                                <span aria-hidden="true">›</span>
+                                <span class="texte-accessible">Image suivante : 1 sur 3</span>
+                            </label>
+                        </div>
+                    </div>
+                </section>
+                <section class="analyse-projet" aria-labelledby="titre-demarche-2">
+                    <aside class="role-projet" aria-labelledby="titre-role-2">
+                        <h3 class="role-projet__titre" id="titre-role-2">Mon rôle</h3>
+                        <ul class="role-projet__liste">
+                            <li class="role-projet__element">Rôle nº 1</li>
+                            <li class="role-projet__element">Rôle nº 2</li>
+                            <li class="role-projet__element">Rôle nº 3</li>
+                        </ul>
+                    </aside>
+                    <div class="demarche-projet">
+                        <h3 class="demarche-projet__titre" id="titre-demarche-2">Démarche du projet</h3>
+                        <p class="demarche-projet__texte">Présente ici le point de départ du projet 2 et les objectifs à atteindre. Explique ensuite <mark class="demarche-projet__accent">tes choix de création</mark> : tes recherches, tes décisions visuelles ou techniques, puis les étapes principales de la réalisation. Mets en évidence un défi rencontré, la solution retenue et ce que cette expérience t’a permis d’apprendre.</p>
+                    </div>
+                </section>
+                <section class="outils-projet" aria-labelledby="titre-outils-2">
+                    <h3 class="outils-projet__titre" id="titre-outils-2">Logiciels &amp; technologies</h3>
+                    <ul class="outils-projet__liste">
+                        <li class="outil-projet">
+                            <img class="outil-projet__icone" src="assets/images/illustrator_logo.png" alt="" loading="lazy">
+                            <div>
+                                <h4 class="outil-projet__nom">Illustrator</h4>
+                                <p class="outil-projet__usage">Vectoriel &amp; typo</p>
+                            </div>
+                        </li>
+                        <li class="outil-projet">
+                            <img class="outil-projet__icone" src="assets/images/maya_logo.png" alt="" loading="lazy">
+                            <div>
+                                <h4 class="outil-projet__nom">Maya</h4>
+                                <p class="outil-projet__usage">Modélisation &amp; 3D</p>
+                            </div>
+                        </li>
+                        <li class="outil-projet">
+                            <img class="outil-projet__icone" src="assets/images/unity_logo.png" alt="" loading="lazy">
+                            <div>
+                                <h4 class="outil-projet__nom">Unity</h4>
+                                <p class="outil-projet__usage">Jeu vidéo &amp; interactif</p>
+                            </div>
+                        </li>
+                        <li class="outil-projet">
+                            <img class="outil-projet__icone" src="assets/images/after_effects_logo.png" alt="" loading="lazy">
+                            <div>
+                                <h4 class="outil-projet__nom">After Effects</h4>
+                                <p class="outil-projet__usage">Montage &amp; VFX</p>
+                            </div>
+                        </li>
+                        <li class="outil-projet">
+                            <img class="outil-projet__icone" src="assets/images/photoshop_logo.png" alt="" loading="lazy">
+                            <div>
+                                <h4 class="outil-projet__nom">Photoshop</h4>
+                                <p class="outil-projet__usage">Retouche &amp; texture</p>
+                            </div>
+                        </li>
+                        <li class="outil-projet">
+                            <img class="outil-projet__icone" src="assets/images/vscode_logo.png" alt="" loading="lazy">
+                            <div>
+                                <h4 class="outil-projet__nom">VS Code</h4>
+                                <p class="outil-projet__usage">Code &amp; développement front-end</p>
+                            </div>
+                        </li>
+                    </ul>
+                </section>
+            </article>
+            <!-- PROJET 3 — VERT : tous les projets restent visibles à la suite. -->
+            <article class="fiche-projet fiche-projet--vert" id="projet-3" aria-labelledby="titre-projet-3">
+                <section class="projet-presentation" aria-labelledby="titre-projet-3">
+                    <h2 class="projet-presentation__titre" id="titre-projet-3">
+                        <span>Titre du <span class="projet-presentation__accent">projet 3</span>
+                        </span>
+                    </h2>
+                    <p class="projet-presentation__description">Présente ici le projet 3, son contexte et son objectif. Explique en quelques phrases à qui il s’adresse, ce qu’il propose et le résultat que tu souhaitais obtenir.</p>
+                    <div class="galerie" role="region" aria-label="Images du projet 3">
+                        <!-- Carrousel 3 : ce groupe radio est indépendant des trois autres. -->
+                        <p class="texte-accessible" id="aide-galerie-3">Au clavier, utilisez les flèches gauche et droite pour changer d’image après avoir atteint ce groupe avec la touche Tab.</p>
+                        <input class="galerie__choix galerie__choix--1 texte-accessible" type="radio" name="image-projet-3" id="projet-3-image-1" aria-label="Afficher l’image 1 sur 3" aria-describedby="aide-galerie-3" checked>
+                        <input class="galerie__choix galerie__choix--2 texte-accessible" type="radio" name="image-projet-3" id="projet-3-image-2" aria-label="Afficher l’image 2 sur 3" aria-describedby="aide-galerie-3">
+                        <input class="galerie__choix galerie__choix--3 texte-accessible" type="radio" name="image-projet-3" id="projet-3-image-3" aria-label="Afficher l’image 3 sur 3" aria-describedby="aide-galerie-3">
+                        <div class="galerie__fenetre">
+                            <div class="galerie__barre" aria-hidden="true">
+                                <div class="galerie__temoins">
+                                    <span class="galerie__temoin"></span>
+                                    <span class="galerie__temoin galerie__temoin--jaune"></span>
+                                    <span class="galerie__temoin galerie__temoin--vert"></span>
+                                </div>
+                                <span class="galerie__adresse">Lien du projet 3</span>
+                            </div>
+                            <figure class="galerie__diapositive galerie__diapositive--1">
+                                <div class="galerie__emplacement">Visuel 1 du projet 3</div>
+                                <figcaption class="galerie__compteur">1 / 3</figcaption>
+                            </figure>
+                            <figure class="galerie__diapositive galerie__diapositive--2">
+                                <div class="galerie__emplacement">Visuel 2 du projet 3</div>
+                                <figcaption class="galerie__compteur">2 / 3</figcaption>
+                            </figure>
+                            <figure class="galerie__diapositive galerie__diapositive--3">
+                                <div class="galerie__emplacement">Visuel 3 du projet 3</div>
+                                <figcaption class="galerie__compteur">3 / 3</figcaption>
+                            </figure>
+                            <button class="galerie__visiter" type="button" disabled>Visiter <span aria-hidden="true">↗</span>
+                            </button>
+                        </div>
+                        <div class="galerie__navigation galerie__navigation--1">
+                            <label class="galerie__fleche galerie__fleche--precedente" for="projet-3-image-3">
+                                <span aria-hidden="true">‹</span>
+                                <span class="texte-accessible">Image précédente : 3 sur 3</span>
+                            </label>
+                            <label class="galerie__fleche galerie__fleche--suivante" for="projet-3-image-2">
+                                <span aria-hidden="true">›</span>
+                                <span class="texte-accessible">Image suivante : 2 sur 3</span>
+                            </label>
+                        </div>
+                        <div class="galerie__navigation galerie__navigation--2">
+                            <label class="galerie__fleche galerie__fleche--precedente" for="projet-3-image-1">
+                                <span aria-hidden="true">‹</span>
+                                <span class="texte-accessible">Image précédente : 1 sur 3</span>
+                            </label>
+                            <label class="galerie__fleche galerie__fleche--suivante" for="projet-3-image-3">
+                                <span aria-hidden="true">›</span>
+                                <span class="texte-accessible">Image suivante : 3 sur 3</span>
+                            </label>
+                        </div>
+                        <div class="galerie__navigation galerie__navigation--3">
+                            <label class="galerie__fleche galerie__fleche--precedente" for="projet-3-image-2">
+                                <span aria-hidden="true">‹</span>
+                                <span class="texte-accessible">Image précédente : 2 sur 3</span>
+                            </label>
+                            <label class="galerie__fleche galerie__fleche--suivante" for="projet-3-image-1">
+                                <span aria-hidden="true">›</span>
+                                <span class="texte-accessible">Image suivante : 1 sur 3</span>
+                            </label>
+                        </div>
+                    </div>
+                </section>
+                <section class="analyse-projet" aria-labelledby="titre-demarche-3">
+                    <aside class="role-projet" aria-labelledby="titre-role-3">
+                        <h3 class="role-projet__titre" id="titre-role-3">Mon rôle</h3>
+                        <ul class="role-projet__liste">
+                            <li class="role-projet__element">Rôle nº 1</li>
+                            <li class="role-projet__element">Rôle nº 2</li>
+                            <li class="role-projet__element">Rôle nº 3</li>
+                        </ul>
+                    </aside>
+                    <div class="demarche-projet">
+                        <h3 class="demarche-projet__titre" id="titre-demarche-3">Démarche du projet</h3>
+                        <p class="demarche-projet__texte">Présente ici le point de départ du projet 3 et les objectifs à atteindre. Explique ensuite <mark class="demarche-projet__accent">tes choix de création</mark> : tes recherches, tes décisions visuelles ou techniques, puis les étapes principales de la réalisation. Mets en évidence un défi rencontré, la solution retenue et ce que cette expérience t’a permis d’apprendre.</p>
+                    </div>
+                </section>
+                <section class="outils-projet" aria-labelledby="titre-outils-3">
+                    <h3 class="outils-projet__titre" id="titre-outils-3">Logiciels &amp; technologies</h3>
+                    <ul class="outils-projet__liste">
+                        <li class="outil-projet">
+                            <img class="outil-projet__icone" src="assets/images/illustrator_logo.png" alt="" loading="lazy">
+                            <div>
+                                <h4 class="outil-projet__nom">Illustrator</h4>
+                                <p class="outil-projet__usage">Vectoriel &amp; typo</p>
+                            </div>
+                        </li>
+                        <li class="outil-projet">
+                            <img class="outil-projet__icone" src="assets/images/maya_logo.png" alt="" loading="lazy">
+                            <div>
+                                <h4 class="outil-projet__nom">Maya</h4>
+                                <p class="outil-projet__usage">Modélisation &amp; 3D</p>
+                            </div>
+                        </li>
+                        <li class="outil-projet">
+                            <img class="outil-projet__icone" src="assets/images/unity_logo.png" alt="" loading="lazy">
+                            <div>
+                                <h4 class="outil-projet__nom">Unity</h4>
+                                <p class="outil-projet__usage">Jeu vidéo &amp; interactif</p>
+                            </div>
+                        </li>
+                        <li class="outil-projet">
+                            <img class="outil-projet__icone" src="assets/images/after_effects_logo.png" alt="" loading="lazy">
+                            <div>
+                                <h4 class="outil-projet__nom">After Effects</h4>
+                                <p class="outil-projet__usage">Montage &amp; VFX</p>
+                            </div>
+                        </li>
+                        <li class="outil-projet">
+                            <img class="outil-projet__icone" src="assets/images/photoshop_logo.png" alt="" loading="lazy">
+                            <div>
+                                <h4 class="outil-projet__nom">Photoshop</h4>
+                                <p class="outil-projet__usage">Retouche &amp; texture</p>
+                            </div>
+                        </li>
+                        <li class="outil-projet">
+                            <img class="outil-projet__icone" src="assets/images/vscode_logo.png" alt="" loading="lazy">
+                            <div>
+                                <h4 class="outil-projet__nom">VS Code</h4>
+                                <p class="outil-projet__usage">Code &amp; développement front-end</p>
+                            </div>
+                        </li>
+                    </ul>
+                </section>
+            </article>
+            <!-- PROJET 4 — BLEU : tous les projets restent visibles à la suite. -->
+            <article class="fiche-projet fiche-projet--bleu" id="projet-4" aria-labelledby="titre-projet-4">
+                <section class="projet-presentation" aria-labelledby="titre-projet-4">
+                    <h2 class="projet-presentation__titre" id="titre-projet-4">
+                        <span>Titre du <span class="projet-presentation__accent">projet 4</span>
+                        </span>
+                    </h2>
+                    <p class="projet-presentation__description">Présente ici le projet 4, son contexte et son objectif. Explique en quelques phrases à qui il s’adresse, ce qu’il propose et le résultat que tu souhaitais obtenir.</p>
+                    <div class="galerie" role="region" aria-label="Images du projet 4">
+                        <!-- Carrousel 4 : ce groupe radio est indépendant des trois autres. -->
+                        <p class="texte-accessible" id="aide-galerie-4">Au clavier, utilisez les flèches gauche et droite pour changer d’image après avoir atteint ce groupe avec la touche Tab.</p>
+                        <input class="galerie__choix galerie__choix--1 texte-accessible" type="radio" name="image-projet-4" id="projet-4-image-1" aria-label="Afficher l’image 1 sur 3" aria-describedby="aide-galerie-4" checked>
+                        <input class="galerie__choix galerie__choix--2 texte-accessible" type="radio" name="image-projet-4" id="projet-4-image-2" aria-label="Afficher l’image 2 sur 3" aria-describedby="aide-galerie-4">
+                        <input class="galerie__choix galerie__choix--3 texte-accessible" type="radio" name="image-projet-4" id="projet-4-image-3" aria-label="Afficher l’image 3 sur 3" aria-describedby="aide-galerie-4">
+                        <div class="galerie__fenetre">
+                            <div class="galerie__barre" aria-hidden="true">
+                                <div class="galerie__temoins">
+                                    <span class="galerie__temoin"></span>
+                                    <span class="galerie__temoin galerie__temoin--jaune"></span>
+                                    <span class="galerie__temoin galerie__temoin--vert"></span>
+                                </div>
+                                <span class="galerie__adresse">Lien du projet 4</span>
+                            </div>
+                            <figure class="galerie__diapositive galerie__diapositive--1">
+                                <div class="galerie__emplacement">Visuel 1 du projet 4</div>
+                                <figcaption class="galerie__compteur">1 / 3</figcaption>
+                            </figure>
+                            <figure class="galerie__diapositive galerie__diapositive--2">
+                                <div class="galerie__emplacement">Visuel 2 du projet 4</div>
+                                <figcaption class="galerie__compteur">2 / 3</figcaption>
+                            </figure>
+                            <figure class="galerie__diapositive galerie__diapositive--3">
+                                <div class="galerie__emplacement">Visuel 3 du projet 4</div>
+                                <figcaption class="galerie__compteur">3 / 3</figcaption>
+                            </figure>
+                            <button class="galerie__visiter" type="button" disabled>Visiter <span aria-hidden="true">↗</span>
+                            </button>
+                        </div>
+                        <div class="galerie__navigation galerie__navigation--1">
+                            <label class="galerie__fleche galerie__fleche--precedente" for="projet-4-image-3">
+                                <span aria-hidden="true">‹</span>
+                                <span class="texte-accessible">Image précédente : 3 sur 3</span>
+                            </label>
+                            <label class="galerie__fleche galerie__fleche--suivante" for="projet-4-image-2">
+                                <span aria-hidden="true">›</span>
+                                <span class="texte-accessible">Image suivante : 2 sur 3</span>
+                            </label>
+                        </div>
+                        <div class="galerie__navigation galerie__navigation--2">
+                            <label class="galerie__fleche galerie__fleche--precedente" for="projet-4-image-1">
+                                <span aria-hidden="true">‹</span>
+                                <span class="texte-accessible">Image précédente : 1 sur 3</span>
+                            </label>
+                            <label class="galerie__fleche galerie__fleche--suivante" for="projet-4-image-3">
+                                <span aria-hidden="true">›</span>
+                                <span class="texte-accessible">Image suivante : 3 sur 3</span>
+                            </label>
+                        </div>
+                        <div class="galerie__navigation galerie__navigation--3">
+                            <label class="galerie__fleche galerie__fleche--precedente" for="projet-4-image-2">
+                                <span aria-hidden="true">‹</span>
+                                <span class="texte-accessible">Image précédente : 2 sur 3</span>
+                            </label>
+                            <label class="galerie__fleche galerie__fleche--suivante" for="projet-4-image-1">
+                                <span aria-hidden="true">›</span>
+                                <span class="texte-accessible">Image suivante : 1 sur 3</span>
+                            </label>
+                        </div>
+                    </div>
+                </section>
+                <section class="analyse-projet" aria-labelledby="titre-demarche-4">
+                    <aside class="role-projet" aria-labelledby="titre-role-4">
+                        <h3 class="role-projet__titre" id="titre-role-4">Mon rôle</h3>
+                        <ul class="role-projet__liste">
+                            <li class="role-projet__element">Rôle nº 1</li>
+                            <li class="role-projet__element">Rôle nº 2</li>
+                            <li class="role-projet__element">Rôle nº 3</li>
+                        </ul>
+                    </aside>
+                    <div class="demarche-projet">
+                        <h3 class="demarche-projet__titre" id="titre-demarche-4">Démarche du projet</h3>
+                        <p class="demarche-projet__texte">Présente ici le point de départ du projet 4 et les objectifs à atteindre. Explique ensuite <mark class="demarche-projet__accent">tes choix de création</mark> : tes recherches, tes décisions visuelles ou techniques, puis les étapes principales de la réalisation. Mets en évidence un défi rencontré, la solution retenue et ce que cette expérience t’a permis d’apprendre.</p>
+                    </div>
+                </section>
+                <section class="outils-projet" aria-labelledby="titre-outils-4">
+                    <h3 class="outils-projet__titre" id="titre-outils-4">Logiciels &amp; technologies</h3>
+                    <ul class="outils-projet__liste">
+                        <li class="outil-projet">
+                            <img class="outil-projet__icone" src="assets/images/illustrator_logo.png" alt="" loading="lazy">
+                            <div>
+                                <h4 class="outil-projet__nom">Illustrator</h4>
+                                <p class="outil-projet__usage">Vectoriel &amp; typo</p>
+                            </div>
+                        </li>
+                        <li class="outil-projet">
+                            <img class="outil-projet__icone" src="assets/images/maya_logo.png" alt="" loading="lazy">
+                            <div>
+                                <h4 class="outil-projet__nom">Maya</h4>
+                                <p class="outil-projet__usage">Modélisation &amp; 3D</p>
+                            </div>
+                        </li>
+                        <li class="outil-projet">
+                            <img class="outil-projet__icone" src="assets/images/unity_logo.png" alt="" loading="lazy">
+                            <div>
+                                <h4 class="outil-projet__nom">Unity</h4>
+                                <p class="outil-projet__usage">Jeu vidéo &amp; interactif</p>
+                            </div>
+                        </li>
+                        <li class="outil-projet">
+                            <img class="outil-projet__icone" src="assets/images/after_effects_logo.png" alt="" loading="lazy">
+                            <div>
+                                <h4 class="outil-projet__nom">After Effects</h4>
+                                <p class="outil-projet__usage">Montage &amp; VFX</p>
+                            </div>
+                        </li>
+                        <li class="outil-projet">
+                            <img class="outil-projet__icone" src="assets/images/photoshop_logo.png" alt="" loading="lazy">
+                            <div>
+                                <h4 class="outil-projet__nom">Photoshop</h4>
+                                <p class="outil-projet__usage">Retouche &amp; texture</p>
+                            </div>
+                        </li>
+                        <li class="outil-projet">
+                            <img class="outil-projet__icone" src="assets/images/vscode_logo.png" alt="" loading="lazy">
+                            <div>
+                                <h4 class="outil-projet__nom">VS Code</h4>
+                                <p class="outil-projet__usage">Code &amp; développement front-end</p>
+                            </div>
+                        </li>
+                    </ul>
+                </section>
+            </article>
+        </main>
+        <footer class="pied-page">
+            <a class="pied-page__marque" href="index.html#accueil">
+                <img class="pied-page__logo" src="assets/images/white_logo.png" alt="" loading="lazy">
+                <span>Mariam Gevorgyan</span>
+            </a>
+            <a class="pied-page__retour" href="#haut" aria-label="Retour en haut de la page">↑</a>
+            <p class="pied-page__copyright">© 2026 Mariam Gevorgyan</p>
+        </footer>
+    </body>
+</html>

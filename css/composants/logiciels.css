@@ -1,7 +1,7 @@
 .logiciels {
     display: flex;
     align-items: center;
-    height: 22rem;
+    height: clamp(10rem, 18.334vw, 22rem);
     overflow: hidden;
     color: var(--blanc);
     background-color: var(--fond-contact);
@@ -28,13 +28,13 @@
 }
 
 .logiciel__icone {
-    width: 8.9rem;
-    height: 8.9rem;
+    width: clamp(4rem, 7.417vw, 8.9rem);
+    height: clamp(4rem, 7.417vw, 8.9rem);
 }
 
 .logiciel__nom {
-    font-family: var(--police-condensee);
-    font-size: 2.3rem;
+    font-family: var(--police-secondaire);
+    font-size: clamp(1.25rem, 1rem + 1.084vw, 2.3rem);
     font-weight: 700;
     line-height: 1.2;
     text-transform: uppercase;

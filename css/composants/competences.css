@@ -1,6 +1,6 @@
 .competences {
-    min-height: 93.75rem;
-    padding: 10rem 3.8% 12rem;
+    min-height: min(78.125vw, 93.75rem);
+    padding: clamp(3rem, 8.334vw, 10rem) 3.8% clamp(3rem, 10vw, 12rem);
     border: var(--bordure);
     background-color: var(--blanc);
 }
@@ -8,19 +8,19 @@
 .competences__titre {
     padding-bottom: 1.3rem;
     border-bottom: 0.25rem solid var(--noir);
-    white-space: nowrap;
+    white-space: normal;
 }
 
 .competences__grille {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 3.25rem 3rem;
-    margin-top: 6.5rem;
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 27rem), 1fr));
+    gap: clamp(1.5rem, 2.709vw, 3.25rem) clamp(1.5rem, 2.5vw, 3rem);
+    margin-top: clamp(2rem, 5.417vw, 6.5rem);
 }
 
 .competence {
     min-height: 21.6rem;
-    padding: 2.4rem 2rem;
+    padding: clamp(1.25rem, 2vw, 2.4rem) clamp(1rem, 1.667vw, 2rem);
     border: var(--bordure);
     border-radius: 2.3rem;
     background-color: var(--fond-clair);
@@ -35,8 +35,8 @@
 
 .competence__titre {
     margin-top: 0.3rem;
-    font-family: var(--police-condensee);
-    font-size: 2.15rem;
+    font-family: var(--police-secondaire);
+    font-size: clamp(1.35rem, 1rem + 0.959vw, 2.15rem);
     font-weight: 700;
     line-height: 1.2;
     text-transform: uppercase;

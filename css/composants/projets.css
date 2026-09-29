@@ -1,6 +1,6 @@
 .projets {
-    min-height: 93rem;
-    padding: 12rem 5.2% 12rem;
+    min-height: min(77.5vw, 93rem);
+    padding: clamp(3rem, 10vw, 12rem) 5.2%;
     background-color: var(--fond-clair);
     background-image: url("../../assets/images/background_projet.png");
     background-repeat: no-repeat;
@@ -26,15 +26,16 @@
 .projets__titre {
     width: fit-content;
     margin: 0.7rem auto 0;
-    padding: 0 3rem 0.5rem;
+    max-width: 100%;
+    padding: 0 clamp(0.5rem, 2.5vw, 3rem) 0.5rem;
     border-bottom: 0.25rem solid var(--noir);
 }
 
 .projets__grille {
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 4.2rem;
-    margin-top: 8.4rem;
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 20rem), 1fr));
+    gap: clamp(3.5rem, 3.5vw, 4.2rem);
+    margin-top: clamp(4rem, 7vw, 8.4rem);
     text-align: left;
 }
 
@@ -42,7 +43,7 @@
     position: relative;
     min-width: 0;
     min-height: 40rem;
-    padding: 1.9rem 1.9rem 2rem;
+    padding: clamp(1rem, 1.584vw, 1.9rem) clamp(1rem, 1.584vw, 1.9rem) 2rem;
     border: var(--bordure);
     border-radius: 0 2rem 2rem 2rem;
     color: var(--blanc);
@@ -89,7 +90,7 @@
     gap: 0.35rem;
     margin-top: 1.6rem;
     font-family: var(--police-mono);
-    font-size: 1.2rem;
+    font-size: clamp(1rem, 0.9rem + 0.25vw, 1.2rem);
     text-transform: uppercase;
 }
 
@@ -107,7 +108,7 @@
 .projet__titre {
     margin-top: 0.6rem;
     font-family: var(--police-titre);
-    font-size: 2.25rem;
+    font-size: clamp(1.5rem, 1rem + 1.042vw, 2.25rem);
     font-weight: 700;
     line-height: 1.25;
     text-transform: uppercase;
@@ -127,6 +128,10 @@
 }
 
 .projet__bouton {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    max-width: 100%;
     min-height: 3.2rem;
     padding: 0.55rem 1.5rem;
     border: 0.12rem solid var(--noir);
@@ -134,7 +139,7 @@
     color: var(--couleur-projet);
     background-color: var(--blanc);
     font-family: var(--police-interface);
-    font-size: 1.2rem;
+    font-size: clamp(1rem, 0.9rem + 0.25vw, 1.2rem);
     font-weight: 700;
     text-transform: uppercase;
 }

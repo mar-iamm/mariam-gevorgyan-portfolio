@@ -1,3 +1,4 @@
+/* Base desktop avec tailles fluides pour les fenêtres plus étroites. */
 .entete,
 main,
 .pied-page {
@@ -7,7 +8,8 @@ main,
 }
 
 .titre-section {
-    font-size: 9rem;
+    font-family: var(--police-titre);
+    font-size: clamp(2.25rem, 1rem + 6.667vw, 9rem);
     font-weight: 800;
     line-height: 1.15;
     text-align: center;
@@ -19,23 +21,26 @@ main,
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    gap: 1.4rem;
+    gap: clamp(0.5rem, 1.167vw, 1.4rem);
     min-height: 4.5rem;
-    padding: 0.6rem 2rem;
+    padding: 0.6rem clamp(0.8rem, 1.667vw, 2rem);
     border: var(--bordure);
     border-radius: 5rem;
     box-shadow: var(--ombre);
     color: var(--noir);
-    font-size: 1.6rem;
+    font-family: var(--police-interface);
+    font-size: clamp(1rem, 0.8rem + 0.667vw, 1.6rem);
     font-weight: 700;
     line-height: 1;
     text-transform: uppercase;
-    white-space: nowrap;
+    max-width: 100%;
+    white-space: normal;
+    text-align: center;
 }
 
 .bouton span {
     font-family: Arial, sans-serif;
-    font-size: 2rem;
+    font-size: clamp(1.25rem, 1rem + 0.834vw, 2rem);
 }
 
 .bouton--jaune {
@@ -51,4 +56,12 @@ main,
     background-color: var(--rose);
     border-color: var(--blanc);
     box-shadow: 0.3rem 0.3rem 0 var(--blanc);
+}
+
+/* Autoriser le retour à la ligne dans les titres longs. */
+.titre-section,
+.projet-presentation__titre,
+.demarche-projet__titre,
+.outils-projet__titre {
+    overflow-wrap: anywhere;
 }

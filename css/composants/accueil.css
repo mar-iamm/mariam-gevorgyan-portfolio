@@ -1,3 +1,4 @@
+/* Le même motif couvre l'en-tête et l'accueil. */
 .entete,
 .accueil {
     background-color: var(--fond-clair);
@@ -16,7 +17,7 @@
 }
 
 .entete__logo {
-    width: 6rem;
+    width: clamp(3rem, 5vw, 6rem);
 }
 
 .entete__navigation {
@@ -29,17 +30,17 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    gap: 2rem;
-    font-family: var(--police-condensee);
-    font-size: 1.25rem;
+    gap: clamp(1rem, 1.667vw, 2rem);
+    font-family: var(--police-secondaire);
+    font-size: clamp(0.875rem, 0.75rem + 0.417vw, 1.25rem);
     font-weight: 700;
     text-transform: uppercase;
 }
 
 .accueil {
     position: relative;
-    min-height: 64.25rem;
-    padding: 9.5rem 5.8% 8rem;
+    min-height: min(53.542vw, 64.25rem);
+    padding: clamp(3rem, 7.917vw, 9.5rem) 5.8% clamp(3rem, 6.667vw, 8rem);
     background-position: center bottom;
 }
 
@@ -50,9 +51,10 @@
 .accueil__lettres {
     display: flex;
     align-items: center;
-    width: 55.8rem;
-    height: 12.2rem;
-    margin-left: -0.6rem;
+    width: clamp(16rem, 72vw, 55.8rem);
+    max-width: 100%;
+    aspect-ratio: 55.8 / 12.2;
+    margin-left: clamp(-0.6rem, -0.5vw, -0.15rem);
 }
 
 .accueil__lettre {
@@ -61,34 +63,36 @@
     object-fit: contain;
 }
 
-/* Les inclinaisons sont déjà dans les PNG : aucun logo n'est redessiné. */
-.accueil__lettre--m { width: 15.4rem; }
-.accueil__lettre--a { width: 11rem; margin-left: -2.85rem; }
-.accueil__lettre--r { width: 11.3rem; margin-left: -3.3rem; margin-top: -0.6rem; }
-.accueil__lettre--i { width: 6.1rem; margin-left: -2.85rem; }
-.accueil__lettre--a-fin { width: 11.4rem; margin-left: -2.6rem; margin-top: 0.4rem; }
-.accueil__lettre--m-fin { width: 15.3rem; margin-left: -2.9rem; margin-top: 0.9rem; }
+/* Les PNG gardent leurs proportions. Les pourcentages suivent la largeur du prénom. */
+.accueil__lettre--m { width: 27.599%; }
+.accueil__lettre--a { width: 19.713%; margin-left: -5.108%; }
+.accueil__lettre--r { width: 20.251%; margin-left: -5.914%; margin-top: -1.075%; }
+.accueil__lettre--i { width: 10.932%; margin-left: -5.108%; }
+.accueil__lettre--a-fin { width: 20.430%; margin-left: -4.659%; margin-top: 0.717%; }
+.accueil__lettre--m-fin { width: 27.419%; margin-left: -5.197%; margin-top: 1.613%; }
 
 .accueil__texte {
     max-width: 48rem;
-    margin-top: 3.5rem;
-    font-size: 1.375rem;
+    margin-top: clamp(1.5rem, 2.917vw, 3.5rem);
+    font-family: var(--police-secondaire);
+    font-size: clamp(1rem, 0.85rem + 0.438vw, 1.375rem);
     line-height: 1.35;
 }
 
 .accueil__actions {
     display: flex;
-    gap: 1.6rem;
-    margin-top: 3.4rem;
+    flex-wrap: wrap;
+    gap: clamp(0.75rem, 1.334vw, 1.6rem);
+    margin-top: clamp(1.5rem, 2.834vw, 3.4rem);
     margin-left: 0.4rem;
 }
 
 .accueil__actions .bouton--jaune {
-    min-width: 24rem;
+    min-width: min(100%, 24rem);
 }
 
 .accueil__actions .bouton--vert {
-    min-width: 16rem;
+    min-width: min(100%, 16rem);
 }
 
 .accueil__carte {
@@ -96,4 +100,36 @@
     top: -7.25rem;
     right: 8.5%;
     width: 20.2%;
+}
+
+/* Le positionnement desktop du menu et de la carte doit changer sur petit écran. */
+@media (max-width: 64rem) {
+    .entete {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 1rem;
+        height: auto;
+        min-height: 7rem;
+        padding: 1rem 5%;
+    }
+
+    .entete__navigation {
+        position: static;
+        width: 100%;
+    }
+
+    .entete__liens {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .accueil__presentation {
+        width: 100%;
+    }
+
+    .accueil__carte {
+        position: static;
+        width: clamp(10rem, 45vw, 20rem);
+        margin: 3rem auto 0;
+    }
 }

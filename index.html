@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Portfolio de Mariam Gevorgyan : conception web, développement, animation et création multimédia.">
     <title>Mariam Gevorgyan — Portfolio</title>
-
     <!-- Ordre des styles : variables, base, mise en page, composants. -->
     <link rel="stylesheet" href="css/variable.css">
     <link rel="stylesheet" href="css/base.css">
@@ -15,15 +14,14 @@
     <link rel="stylesheet" href="css/composants/contact.css">
     <link rel="stylesheet" href="css/composants/logiciels.css">
     <link rel="stylesheet" href="css/composants/projets.css">
+    <link rel="stylesheet" href="css/mobile-accueil.css">
 </head>
 <body>
     <a class="lien-evitement" href="#contenu">Aller au contenu</a>
-
     <header class="entete" id="accueil">
         <a class="entete__marque" href="#accueil" aria-label="Mariam Gevorgyan — accueil">
             <img class="entete__logo" src="assets/images/black_logo.png" alt="">
         </a>
-
         <nav class="entete__navigation" aria-label="Navigation principale">
             <ul class="entete__liens">
                 <li><a href="#accueil">Accueil</a></li>
@@ -32,8 +30,24 @@
                 <li><a href="#a-propos">À propos</a></li>
             </ul>
         </nav>
-    </header>
 
+        <!-- Menu natif : Entrée ou Espace ouvre/ferme le panneau sans JavaScript. -->
+        <details class="menu-mobile">
+            <summary class="menu-mobile__bouton">
+                <span class="menu-mobile__icone" aria-hidden="true"></span>
+                <span class="menu-mobile__ouvrir">Menu</span>
+                <span class="menu-mobile__fermer">Fermer</span>
+            </summary>
+            <nav class="menu-mobile__panneau" aria-label="Navigation mobile">
+                <ul class="menu-mobile__liens">
+                    <li><a href="#accueil">Accueil</a></li>
+                    <li><a href="#projets">Projets</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                    <li><a href="#a-propos">À propos</a></li>
+                </ul>
+            </nav>
+        </details>
+    </header>
     <main id="contenu">
         <section class="accueil" aria-labelledby="titre-accueil">
             <div class="accueil__presentation" id="a-propos">
@@ -49,53 +63,43 @@
                         <img class="accueil__lettre accueil__lettre--m-fin" src="assets/images/M_end.png" alt="">
                     </span>
                 </h1>
-
                 <p class="accueil__texte">Je m’appelle Mariam Gevorgyan, diplômée en Techniques d’intégration multimédia. Ce qui m’anime au quotidien est de concevoir des univers captivants au croisement du web design, du développement de jeux vidéo et de l’animation. Je façonne des expériences interactives vivantes, ludiques et mémorables.</p>
-
                 <div class="accueil__actions">
                     <a class="bouton bouton--jaune" href="#projets">Voir mes projets <span aria-hidden="true"></span></a>
                     <a class="bouton bouton--vert" href="#contact">Contact <span aria-hidden="true"></span></a>
                 </div>
             </div>
-
             <!-- Le cordon et le porte-carte font déjà partie de cette image. -->
             <img class="accueil__carte" src="assets/images/id_card.png" alt="Carte étudiante de Mariam Gevorgyan, 2026">
         </section>
-
         <section class="competences" aria-labelledby="titre-competences">
             <h2 class="titre-section competences__titre" id="titre-competences">Compétence &amp; outils</h2>
-
             <div class="competences__grille">
                 <article class="competence">
                     <img class="competence__icone" src="assets/images/conception_web_logo.png" alt="" loading="lazy">
                     <h3 class="competence__titre">Conception web</h3>
                     <p class="competence__texte">Conception d’interfaces ergonomiques, maquettes fonctionnelles et systèmes de design percutants.</p>
                 </article>
-
                 <article class="competence">
                     <img class="competence__icone" src="assets/images/montage_video_logo.png" alt="" loading="lazy">
                     <h3 class="competence__titre">Montage vidéo &amp; sonore</h3>
                     <p class="competence__texte">Montage rythmé, mixage audio, création sonore immersive et habillage visuel dynamique.</p>
                 </article>
-
                 <article class="competence">
                     <img class="competence__icone" src="assets/images/code_front_end_logo.png" alt="" loading="lazy">
                     <h3 class="competence__titre">Code front-end</h3>
                     <p class="competence__texte">Développement réactif, moderne et accessible en HTML5/CSS et JavaScript interactif.</p>
                 </article>
-
                 <article class="competence">
                     <img class="competence__icone" src="assets/images/code_jeu_video_logo.png" alt="" loading="lazy">
                     <h3 class="competence__titre">Code jeu vidéo</h3>
                     <p class="competence__texte">Game design, gameplay interactif, modélisation temps réel et univers ludiques immersifs.</p>
                 </article>
-
                 <article class="competence">
                     <img class="competence__icone" src="assets/images/animation_2d_logo.png" alt="" loading="lazy">
                     <h3 class="competence__titre">Animation 2D</h3>
                     <p class="competence__texte">Micro-interactions, cinématiques fluides, animations vectorielles et animation graphique.</p>
                 </article>
-
                 <article class="competence">
                     <img class="competence__icone" src="assets/images/vectoriel_logo.png" alt="" loading="lazy">
                     <h3 class="competence__titre">Illustration vectorielle</h3>
@@ -103,7 +107,6 @@
                 </article>
             </div>
         </section>
-
         <!-- Bande statique : la piste dépasse, mais aucune animation n'est appliquée. -->
         <section class="logiciels" aria-labelledby="titre-logiciels">
             <h2 class="texte-accessible" id="titre-logiciels">Mes logiciels</h2>
@@ -157,13 +160,10 @@
                 </li>
             </ul>
         </section>
-
         <section class="projets" id="projets" aria-labelledby="titre-projets">
             <p class="projets__etiquette">Sélection de projets 2024 - 2026</p>
             <h2 class="titre-section projets__titre" id="titre-projets">Projets</h2>
-
             <div class="projets__grille">
-
                 <!-- Projet 1 : bleu -->
                 <article class="projet projet--bleu">
                     <div class="projet__apercu" aria-hidden="true"></div>
@@ -180,7 +180,6 @@
                         </a>
                     </div>
                 </article>
-
                 <!-- Projet 2 : rose -->
                 <article class="projet projet--rose">
                     <div class="projet__apercu" aria-hidden="true"></div>
@@ -197,7 +196,6 @@
                         </a>
                     </div>
                 </article>
-
                 <!-- Projet 3 : vert -->
                 <article class="projet projet--vert">
                     <div class="projet__apercu" aria-hidden="true"></div>
@@ -214,7 +212,6 @@
                         </a>
                     </div>
                 </article>
-
                 <!-- Projet 4 : jaune -->
                 <article class="projet projet--jaune">
                     <div class="projet__apercu" aria-hidden="true"></div>
@@ -231,13 +228,11 @@
                         </a>
                     </div>
                 </article>
-
             </div>
         </section>
         <section class="contact" id="contact" aria-labelledby="titre-contact">
             <h2 class="titre-section contact__titre" id="titre-contact">Travaillons<br>ensemble !</h2>
             <p class="contact__introduction">Stage, projet d’études ambitieux ou une collaboration créative ?<br>Envoyez-moi un message !</p>
-
             <!-- Présentation du formulaire seulement. L'envoi sera ajouté plus tard. -->
             <form class="contact__formulaire">
                 <div class="contact__champs">
@@ -266,7 +261,6 @@
             </form>
         </section>
     </main>
-
     <footer class="pied-page">
         <a class="pied-page__marque" href="#accueil">
             <img class="pied-page__logo" src="assets/images/white_logo.png" alt="" loading="lazy">

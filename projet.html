@@ -11,6 +11,7 @@
         <link rel="stylesheet" href="css/composants/accueil.css">
         <link rel="stylesheet" href="css/composants/contact.css">
         <link rel="stylesheet" href="css/composants/projet-detail.css">
+        <link rel="stylesheet" href="css/mobile-projet.css">
     </head>
     <body class="page-projet" id="haut">
         <a class="lien-evitement" href="#contenu">Aller au contenu</a>
@@ -34,6 +35,23 @@
                     </li>
                 </ul>
             </nav>
+
+            <!-- Menu natif : Entrée ou Espace ouvre/ferme le panneau sans JavaScript. -->
+            <details class="menu-mobile">
+                <summary class="menu-mobile__bouton">
+                    <span class="menu-mobile__icone" aria-hidden="true"></span>
+                    <span class="menu-mobile__ouvrir">Menu</span>
+                    <span class="menu-mobile__fermer">Fermer</span>
+                </summary>
+                <nav class="menu-mobile__panneau" aria-label="Navigation mobile">
+                    <ul class="menu-mobile__liens">
+                        <li><a href="index.html#accueil">Accueil</a></li>
+                        <li><a href="#contenu" aria-current="page">Projets</a></li>
+                        <li><a href="index.html#contact">Contact</a></li>
+                        <li><a href="index.html#a-propos">À propos</a></li>
+                    </ul>
+                </nav>
+            </details>
         </header>
         <main id="contenu" tabindex="-1">
             <h1 class="texte-accessible">Mes projets</h1>
@@ -433,8 +451,8 @@
                     </ul>
                 </section>
             </article>
-            <!-- PROJET 4 — BLEU : tous les projets restent visibles à la suite. -->
-            <article class="fiche-projet fiche-projet--bleu" id="projet-4" aria-labelledby="titre-projet-4">
+            <!-- PROJET 4 — JAUNE : tous les projets restent visibles à la suite. -->
+            <article class="fiche-projet fiche-projet--jaune" id="projet-4" aria-labelledby="titre-projet-4">
                 <section class="projet-presentation" aria-labelledby="titre-projet-4">
                     <h2 class="projet-presentation__titre" id="titre-projet-4">
                         <span>Titre du <span class="projet-presentation__accent">projet 4</span>

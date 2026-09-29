@@ -1,3 +1,8 @@
+/* ACCUEIL — styles desktop et dimensions fluides.
+   Emplacement : css/composants/accueil.css.
+   Les adaptations communes et mobiles sont dans css/mobile-accueil.css,
+   qui doit être chargé en dernier dans index.html. */
+
 /* Le même motif couvre l'en-tête et l'accueil. */
 .entete,
 .accueil {
@@ -65,10 +70,15 @@
 
 /* Les PNG gardent leurs proportions. Les pourcentages suivent la largeur du prénom. */
 .accueil__lettre--m { width: 27.599%; }
+
 .accueil__lettre--a { width: 19.713%; margin-left: -5.108%; }
+
 .accueil__lettre--r { width: 20.251%; margin-left: -5.914%; margin-top: -1.075%; }
+
 .accueil__lettre--i { width: 10.932%; margin-left: -5.108%; }
+
 .accueil__lettre--a-fin { width: 20.430%; margin-left: -4.659%; margin-top: 0.717%; }
+
 .accueil__lettre--m-fin { width: 27.419%; margin-left: -5.197%; margin-top: 1.613%; }
 
 .accueil__texte {
@@ -102,34 +112,446 @@
     width: 20.2%;
 }
 
-/* Le positionnement desktop du menu et de la carte doit changer sur petit écran. */
-@media (max-width: 64rem) {
-    .entete {
-        flex-wrap: wrap;
-        justify-content: center;
-        gap: 1rem;
-        height: auto;
-        min-height: 7rem;
-        padding: 1rem 5%;
+/* ==========================================================
+   ACCUEIL RESPONSIVE — index.html uniquement
+   Ce fichier complète css/composants/accueil.css et les autres composants.
+   Charger ce CSS en dernier, après les CSS des composants.
+   Desktop-first :
+   - Au-delà de 90rem : navigation classique.
+   - À 90rem et moins : menu burger fixe.
+   - À 75rem et moins : carte au-dessus du prénom.
+   - À 48rem et moins : ajustements des petits écrans.
+   Valeurs en pixels avec la police initiale à 16px : 1440 / 1200 / 768.
+   ========================================================== */
+/* 1. Règles communes : logo à gauche et carte attachée au haut. */
+:root {
+    --hauteur-entete: 7rem;
+}
+
+.entete {
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-items: center;
+    justify-content: space-between;
+    height: var(--hauteur-entete);
+    min-height: var(--hauteur-entete);
+}
+
+.entete__marque {
+    position: relative;
+    z-index: 2;
+    margin: 0 auto 0 0;
+    flex-shrink: 0;
+}
+
+.entete__logo {
+    display: block;
+    margin: 0;
+}
+
+/* État desktop explicite : les liens réapparaissent quand on agrandit. */
+.entete__navigation {
+    display: block;
+    position: absolute;
+    top: 50%;
+    left: 24%;
+    width: 48%;
+    transform: translateY(-50%);
+    z-index: 2;
+}
+
+.entete__liens {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 2;
+}
+
+/* Masqué sur desktop. La même media query inverse les deux menus. */
+.menu-mobile {
+    display: none;
+}
+
+.accueil {
+    position: relative;
+}
+
+.accueil__carte {
+    position: absolute;
+    top: calc(-1 * var(--hauteur-entete));
+    height: auto;
+    margin: 0;
+    z-index: 1;
+}
+
+.lien-evitement {
+    z-index: 101;
+}
+
+/* Même forme de pilule à toutes les tailles d'écran. */
+.bouton,
+.projet__bouton {
+    border-radius: 999rem;
+}
+
+/* Couleurs communes au desktop ET au mobile.
+   Les fonds des boutons restent ceux des composants d'origine :
+   blanc pour les projets bleu/rose, noir pour les projets vert/jaune. */
+.projet .projet__bouton {
+    color: var(--couleur-projet);
+}
+
+.bouton--rose,
+.contact__bouton {
+    color: var(--blanc);
+}
+
+/* Même échelle pour le fond du header et de l’accueil. */
+.entete,
+.accueil {
+    background-repeat: no-repeat;
+    background-size: 100% auto;
+}
+
+/* Début de l’image en haut de la page. */
+.entete {
+    background-position: center top;
+}
+
+/* Continuité du motif sous le header. */
+.accueil {
+    background-position:
+        center calc(-1 * var(--hauteur-entete));
+}
+
+/* 2. Burger et dimensions intermédiaires : seuil commun à 90rem. */
+@media screen and (max-width: 90rem) {
+    :root {
+        --hauteur-entete: 5.5rem;
     }
 
-    .entete__navigation {
-        position: static;
+    .entete { padding-inline: 1rem; }
+
+    .entete__logo { width: 4rem; }
+
+    /* Toujours couplé à display: block sur .menu-mobile, juste après. */
+    .entete__navigation { display: none; }
+
+    /* Reste au même endroit dans la fenêtre pendant le défilement. */
+    .menu-mobile {
+        display: block;
+        position: fixed;
+        top: calc(1rem + env(safe-area-inset-top, 0px));
+        right: calc(1rem + env(safe-area-inset-right, 0px));
+        z-index: 100;
+        width: 3.25rem;
+        margin: 0;
+    }
+
+    /* Libellés conservés pour les lecteurs d'écran, masqués visuellement. */
+    .menu-mobile__ouvrir, .menu-mobile__fermer {
+        position: absolute;
+        width: 1px;
+        height: 1px;
+        padding: 0;
+        overflow: hidden;
+        clip-path: inset(50%);
+        white-space: nowrap;
+    }
+
+    .menu-mobile__bouton {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 0.65rem;
+        width: 3.25rem;
+        height: 3.25rem;
+        margin-left: auto;
+        padding: 0.75rem;
+        border: 0.18rem solid #121212;
+        border-radius: 2rem;
+        box-shadow: 0.2rem 0.2rem 0 #121212;
+        background: #FFDD00;
+        color: #121212;
+        font-family: var(--police-interface);
+        font-size: 0.9rem;
+        font-weight: 700;
+        cursor: pointer;
+        list-style: none;
+    }
+
+    .menu-mobile__bouton::-webkit-details-marker { display: none; }
+
+    .menu-mobile__icone {
+        position: relative;
+        display: block;
+        width: 1.4rem;
+        height: 1rem;
+        border-top: 0.15rem solid currentColor;
+        border-bottom: 0.15rem solid currentColor;
+    }
+
+    .menu-mobile__icone::before, .menu-mobile__icone::after {
+        content: "";
+        position: absolute;
+        left: 0;
+        top: 50%;
         width: 100%;
+        height: 0.15rem;
+        background: currentColor;
+        transform: translateY(-50%);
     }
 
-    .entete__liens {
-        flex-wrap: wrap;
-        justify-content: center;
+    .menu-mobile__fermer { display: none; }
+
+    .menu-mobile[open] .menu-mobile__bouton { background: #FF428E; }
+
+    .menu-mobile[open] .menu-mobile__ouvrir { display: none; }
+
+    .menu-mobile[open] .menu-mobile__fermer { display: inline; }
+
+    .menu-mobile[open] .menu-mobile__icone { border: 0; }
+
+    .menu-mobile[open] .menu-mobile__icone::before { transform: translateY(-50%) rotate(45deg); }
+
+    .menu-mobile[open] .menu-mobile__icone::after { transform: translateY(-50%) rotate(-45deg); }
+
+    .menu-mobile__panneau {
+        position: absolute;
+        top: calc(100% + 0.75rem);
+        right: 0;
+        width: min(20rem, calc(100vw - 2rem - env(safe-area-inset-right, 0px)));
+        max-height: calc(100vh - 6rem - env(safe-area-inset-top, 0px));
+        max-height: calc(100dvh - 6rem - env(safe-area-inset-top, 0px));
+        overflow-y: auto;
+        margin: 0;
+        padding: 0.5rem 1rem;
+        border: 0.18rem solid #121212;
+        border-radius: 1.25rem;
+        box-shadow: 0.25rem 0.25rem 0 #121212;
+        background: #FFFFFF;
+    }
+
+    .menu-mobile__liens { display: grid; gap: 0; }
+
+    .menu-mobile__liens li + li { border-top: 0.1rem solid #121212; }
+
+    .menu-mobile__liens a {
+        display: block;
+        min-height: 3rem;
+        padding: 1rem 0.5rem;
+        border-radius: 0;
+        background: #FFFFFF;
+        color: #121212;
+        font-family: var(--police-secondaire);
+        font-size: 1.1rem;
+        font-weight: 700;
+    }
+
+    .menu-mobile__liens a:focus-visible { outline-color: #4346E6; outline-offset: -0.15rem; }
+
+    /* Mise en page intermédiaire et dimensions fluides. */
+    .accueil { min-height: 0; padding: 4rem 5% 5rem; }
+
+    .accueil__presentation { width: 65%; }
+
+    .accueil__titre { width: 100%; }
+
+    .accueil__lettres { width: 100%; height: auto; margin: 0; }
+
+    .accueil__lettre { height: auto; }
+
+    /* Proportions des six PNG, y compris leurs chevauchements. */
+    .accueil__lettre--m { width: 27.6%; }
+
+    .accueil__lettre--a { width: 19.71%; margin-left: -5.11%; }
+
+    .accueil__lettre--r { width: 20.25%; margin-left: -5.91%; margin-top: -1.08%; }
+
+    .accueil__lettre--i { width: 10.93%; margin-left: -5.11%; }
+
+    .accueil__lettre--a-fin { width: 20.43%; margin-left: -4.66%; margin-top: 0.72%; }
+
+    .accueil__lettre--m-fin { width: 27.42%; margin-left: -5.2%; margin-top: 1.61%; }
+
+    .accueil__carte { right: 3%; width: 24%; }
+
+    .accueil__actions { flex-wrap: wrap; margin-left: 0; }
+
+    .accueil__actions .bouton { min-width: 0; }
+
+    .titre-section { font-size: clamp(2rem, 6.5vw, 6rem); }
+
+    .competences__titre { white-space: normal; }
+
+    .competences, .projets, .contact { min-height: 0; padding: 5rem 5%; }
+
+    .competences__grille, .projets__grille {
+        grid-template-columns: repeat(auto-fit, minmax(min(100%, 17rem), 1fr));
+        gap: 3.5rem 2rem;
+        margin-top: 4rem;
+    }
+
+    .competence, .projet { min-height: 0; }
+
+    .competence__titre { font-size: clamp(1.25rem, 2vw, 2rem); }
+
+    .projet__titre { font-size: clamp(1.75rem, 3vw, 2.25rem); }
+
+    .projet__bouton { display: inline-flex; align-items: center; justify-content: center; max-width: 100%; }
+
+    .contact__formulaire { width: 100%; max-width: 60rem; margin-top: 3rem; }
+
+    .contact__bouton { max-width: 100%; margin-top: 3rem; }
+
+}
+
+/* 3. La carte passe AVANT la présentation, sans espace au-dessus. */
+@media screen and (max-width: 75rem) {
+    .accueil {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 2rem;
+        min-height: 0;
+        padding: 0 5% 5rem;
     }
 
     .accueil__presentation {
         width: 100%;
+        order: 0;
+    }
+
+    /* Boutons centrés, dimensionnés par leur texte. */
+    .accueil__actions {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .bouton,
+    .projet__bouton {
+        width: fit-content;
+        max-width: 100%;
+        min-width: 0;
+    }
+
+    .contact__bouton {
+        margin-inline: auto;
     }
 
     .accueil__carte {
         position: static;
-        width: clamp(10rem, 45vw, 20rem);
-        margin: 3rem auto 0;
+        order: -1;
+        width: min(65%, 16rem);
+        height: auto;
+        margin: calc(-1 * var(--hauteur-entete)) 0 0;
+        transform: none;
     }
+
 }
+
+/* 4. Petits écrans : confort de lecture et de saisie. */
+@media screen and (max-width: 48rem) {
+    .accueil { padding: 0 1.25rem 3.5rem; }
+
+    .accueil__texte { margin-top: 1.75rem; font-size: 1rem; line-height: 1.65; }
+
+    .accueil__actions { gap: 1rem; margin-top: 1.75rem; }
+
+    .bouton {
+        min-height: 3.25rem;
+        padding: 0.85rem 1rem;
+        font-size: 0.95rem;
+        line-height: 1.4;
+        white-space: normal;
+    }
+
+    .competences, .projets, .contact { padding: 3.5rem 1.25rem; }
+
+    .titre-section { font-size: clamp(1.9rem, 8vw, 3.5rem); letter-spacing: 0; overflow-wrap: anywhere; }
+
+    .competences__titre { padding-bottom: 1rem; }
+
+    .competences__grille, .projets__grille { margin-top: 2rem; }
+
+    .competence { padding: 1.5rem; border-radius: 1.5rem; }
+
+    .competence__icone { width: 4rem; height: 4rem; }
+
+    .competence__titre { margin-top: 0.75rem; font-size: 1.4rem; }
+
+    .competence__texte { margin-top: 1rem; font-size: 1rem; }
+
+    /* Tous les logiciels restent visibles sans défilement automatique. */
+    .logiciels { display: block; height: auto; overflow: visible; padding: 2.5rem 1.25rem; }
+
+    .logiciels__piste {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(min(100%, 15rem), 1fr));
+        width: 100%;
+        padding: 0;
+        gap: 1.75rem;
+    }
+
+    .logiciel { min-width: 0; gap: 1rem; }
+
+    .logiciel > div { min-width: 0; }
+
+    .logiciel__icone { width: 3.5rem; height: 3.5rem; object-fit: contain; flex-shrink: 0; }
+
+    .logiciel__nom { font-size: 1.25rem; }
+
+    .logiciel__usage { font-size: 0.9rem; white-space: normal; }
+
+    .logiciel__etoile { display: none; }
+
+    .projets__etiquette { padding: 0.5rem 0.75rem; font-size: 0.75rem; letter-spacing: 0; }
+
+    .projets__titre { max-width: 100%; padding-inline: 0.5rem; }
+
+    .projets__grille { margin-top: 4rem; gap: 4rem 2rem; }
+
+    .projet { padding: 1.25rem; }
+
+    .projet__categorie { font-size: 0.95rem; }
+
+    .projet__description { font-size: 1rem; }
+
+    .projet__bouton { min-height: 3rem; padding: 0.75rem 1rem; font-size: 0.95rem; text-align: center; }
+
+    .contact__introduction { margin-top: 1.5rem; font-size: 1rem; }
+
+    .contact__introduction br { display: none; }
+
+    .contact__champs {
+        grid-template-columns: repeat(auto-fit, minmax(min(100%, 18rem), 1fr));
+        gap: 1.75rem;
+    }
+
+    .champ { min-width: 0; }
+
+    .champ__etiquette { margin-bottom: 0.6rem; font-size: 0.95rem; }
+
+    .champ__saisie { min-height: 3rem; font-size: 1rem; }
+
+    .champ__saisie--message { min-height: 10rem; margin-top: 0; }
+
+    .contact__bouton { min-height: 3.5rem; margin-top: 2rem; }
+
+    .pied-page { flex-wrap: wrap; gap: 1.5rem; min-height: 0; padding: 2rem 1.25rem; }
+
+    .pied-page__marque { gap: 0.75rem; font-size: 0.85rem; }
+
+    .pied-page__logo { width: 3rem; }
+
+    .pied-page__retour { display: grid; place-items: center; min-width: 3rem; min-height: 3rem; font-size: 3rem; }
+
+    .pied-page__copyright { position: static; width: 100%; font-size: 0.8rem; }
+
+}
+
+

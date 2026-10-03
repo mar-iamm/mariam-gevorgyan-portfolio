@@ -23,3 +23,8 @@ Mariam Gevorgyan
 ## Lien du site
 
 http://127.0.0.1:5501/index.html
+
+## Lien du fichier QA 
+
+https://cmontmorency365-my.sharepoint.com/:x:/r/personal/2248723_cmontmorency_qc_ca/_layouts/15/Doc.aspx?sourcedoc=%7BB26A13FB-1C13-4F4D-9EF4-F2EF2E471D47%7D&file=gevorgyan_mariam.xlsx&action=default&mobileredirect=true
+

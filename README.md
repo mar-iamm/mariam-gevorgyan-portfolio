@@ -14,7 +14,7 @@ Ce portfolio présente mes compétences, les logiciels que j’utilise ainsi que
 
 Le design est inspiré d’un style rétro, coloré et moderne, avec des éléments interactifs et quelques animations.
 
-(lien figma)
+[(lien figma)](https://www.figma.com/design/iespT6Sv6TdBXdIFmX7tg4/WEB-5-PORTFOLIO?t=zqFSw9V5C43MOGwy-0)
 
 ## Auteur
 

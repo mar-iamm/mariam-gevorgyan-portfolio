@@ -82,7 +82,9 @@ Le résultat est plus cohérent, plus lisible et surtout plus personnel. Il repr
 
 > **Archive partielle.** Cette archive est partielle. Elle reproduit 19 messages de l’utilisatrice et les 5 réponses ou messages de progression de l’assistant encore accessibles dans le fil, ainsi que deux captures retrouvées. Plusieurs anciennes réponses et certains blocs de code annoncés ne sont plus disponibles. Leur absence est indiquée : aucune réponse manquante n’a été inventée. La chronologie du début du projet est une synthèse de la fiche de référence, pas une transcription des échanges d’origine.
 
-[PDF des échanges disponibles, avec les deux captures](Conversation_portfolio_Mariam.pdf)
+[PDF des échanges disponibles, avec les deux captures][Conversation_portfolio_Mariam.pdf](https://github.com/user-attachments/files/33011267/Conversation_portfolio_Mariam.pdf)
+
+)
 
 ## Utilisation dans JOURNAL.md
 

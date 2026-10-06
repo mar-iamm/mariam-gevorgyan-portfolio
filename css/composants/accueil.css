@@ -126,6 +126,7 @@
 /* 1. Règles communes : logo à gauche et carte attachée au haut. */
 :root {
     --hauteur-entete: 7rem;
+    --remontee-carte: 2rem;
 }
 
 .entete {
@@ -181,7 +182,7 @@
 
 .accueil__carte {
     position: absolute;
-    top: calc(-1 * var(--hauteur-entete));
+     top: calc(-1 * var(--hauteur-entete) - var(--remontee-carte));
     height: auto;
     margin: 0;
     z-index: 1;
@@ -554,30 +555,94 @@
 
 }
 
-/* ANIMATIONS DE L'ACCUEIL — charger après les autres CSS, y compris le mobile. */
+:root {
+    --courbe-douce: cubic-bezier(0.16, 1, 0.3, 1);
+    --courbe-rebond: cubic-bezier(0.34, 1.56, 0.64, 1);
+    --duree-survol: 450ms;
+}
+ 
 @media (prefers-reduced-motion: no-preference) {
     html.defilement-accueil { scroll-behavior: smooth; }
 }
-
-/* Apparition des titres et cartes : 420 ms et un décalage de groupe limité. */
+ 
+/* ---------- Apparition des sections au défilement ----------
+   En descendant : l'élément monte depuis le bas de l'écran.
+   En remontant : il redescend depuis le haut de l'écran.
+   Il disparaît en sortant de l'écran, puis réapparaît à son retour. */
 .animations-accueil .revelation {
-    transition: opacity 420ms ease var(--delai-revelation, 0ms),
-                transform 420ms cubic-bezier(0.22, 1, 0.36, 1) var(--delai-revelation, 0ms);
+    --duree-revelation: 1100ms;
+    --duree-opacite: 900ms;
+    transition:
+        opacity var(--duree-opacite) ease var(--delai-revelation, 0ms),
+        transform var(--duree-revelation) var(--courbe-douce) var(--delai-revelation, 0ms),
+        translate var(--duree-survol) var(--courbe-rebond),
+        scale var(--duree-survol) var(--courbe-rebond),
+        rotate var(--duree-survol) var(--courbe-rebond),
+        box-shadow var(--duree-survol) ease,
+        background-color 350ms ease,
+        color 350ms ease,
+        border-color 350ms ease;
 }
-.animations-accueil .revelation-attente { opacity: 0; transform: translateY(1rem); }
-.animations-accueil .revelation-immediate { transition: none; }
-
-/* MARIAM : apparition successive et petit rebond, sans boucle. */
+ 
+/* Sortie plus brève que l'entrée, sans décalage. */
+.animations-accueil .revelation--cachee {
+    --duree-revelation: 700ms;
+    --duree-opacite: 500ms;
+    opacity: 0;
+}
+.animations-accueil .revelation--dessous { transform: translateY(3.5rem); }
+.animations-accueil .revelation--dessus { transform: translateY(-3.5rem); }
+ 
+/* Compétences : arrivent un peu plus petites, puis prennent leur taille. */
+.animations-accueil .competence.revelation--dessous { transform: translateY(4rem) scale(0.94); }
+.animations-accueil .competence.revelation--dessus { transform: translateY(-4rem) scale(0.94); }
+ 
+/* Projets : arrivent inclinés, comme des fiches posées sur la page. */
+.animations-accueil .projet.revelation--dessous { transform: translateY(5rem) rotate(-3deg); }
+.animations-accueil .projet:nth-child(even).revelation--dessous { transform: translateY(5rem) rotate(3deg); }
+.animations-accueil .projet.revelation--dessus { transform: translateY(-5rem) rotate(3deg); }
+.animations-accueil .projet:nth-child(even).revelation--dessus { transform: translateY(-5rem) rotate(-3deg); }
+ 
+/* Bandeau des logiciels : simple fondu, sans laisser de vide entre les sections. */
+.animations-accueil .revelation--fondu.revelation--cachee { transform: none; }
+ 
+/* État de départ posé sans transition. */
+.animations-accueil .revelation--immediate { transition: none !important; }
+ 
+/* ---------- MARIAM : apparition successive et petit rebond, sans boucle ---------- */
 .animations-accueil .animation-lettre {
-    animation: entree-lettre 430ms cubic-bezier(0.22, 1, 0.36, 1) var(--delai-lettre, 0ms) backwards;
+    transform-origin: 50% 100%;
+    animation: entree-lettre 1100ms var(--delai-lettre, 0ms) backwards;
 }
+/* Chute, écrasement à l'impact, deux rebonds de plus en plus petits, puis pose. */
 @keyframes entree-lettre {
-    from { opacity: 0; transform: translateY(0.8rem); }
-    75% { opacity: 1; transform: translateY(-0.12rem); }
-    to { opacity: 1; transform: translateY(0); }
+    0% {
+        opacity: 0;
+        transform: translateY(-45%) scale(1, 1.08);
+        animation-timing-function: cubic-bezier(0.55, 0, 1, 0.45);
+    }
+    25% { opacity: 1; }
+    40% {
+        transform: translateY(0) scale(1.16, 0.8);
+        animation-timing-function: cubic-bezier(0.2, 0.8, 0.4, 1);
+    }
+    58% {
+        transform: translateY(-18%) scale(0.96, 1.05);
+        animation-timing-function: cubic-bezier(0.6, 0, 1, 0.6);
+    }
+    72% {
+        transform: translateY(0) scale(1.07, 0.92);
+        animation-timing-function: ease-out;
+    }
+    84% {
+        transform: translateY(-5%) scale(1);
+        animation-timing-function: ease-in;
+    }
+    92% { transform: translateY(0) scale(1.02, 0.98); }
+    100% { opacity: 1; transform: none; }
 }
-
-/* Navigation : apparition d'une ligne dans la couleur actuelle du lien. */
+ 
+/* ---------- Navigation : ligne dans la couleur actuelle du lien ---------- */
 .animations-accueil .entete__liens a,
 .animations-accueil .menu-mobile__liens a { position: relative; }
 .animations-accueil .entete__liens a { display: inline-block; }
@@ -592,30 +657,97 @@
     background: currentColor;
     transform: scaleX(0);
     transform-origin: left;
-    transition: transform 160ms ease-out;
+    transition: transform 350ms var(--courbe-douce);
     pointer-events: none;
 }
 .animations-accueil .menu-mobile__liens a::after { left: 0.5rem; right: 0.5rem; bottom: 0.5rem; }
 .animations-accueil .entete__liens a:focus-visible::after,
 .animations-accueil .menu-mobile__liens a:focus-visible::after { transform: scaleX(1); }
-
-/* Boutons : déplacement rapide, sans changement des couleurs ni des arrondis. */
-.animations-accueil :is(.bouton, .projet__bouton, .menu-mobile__bouton) {
-    transition: translate 140ms ease-out, scale 140ms ease-out;
+ 
+/* ---------- Boutons : rebond, changement de couleur et ombre qui s'allonge ----------
+   Ces règles ne dépendent pas du JavaScript : elles s'appliquent aussi sur projet.html. */
+.bouton,
+.projet__bouton,
+.menu-mobile__bouton,
+.galerie__visiter {
+    transition:
+        translate var(--duree-survol) var(--courbe-rebond),
+        scale var(--duree-survol) var(--courbe-rebond),
+        box-shadow var(--duree-survol) ease,
+        background-color 350ms ease,
+        color 350ms ease;
 }
 .animations-accueil .projet__bouton { display: inline-flex; align-items: center; justify-content: center; }
-.animations-accueil :is(.bouton, .projet__bouton, .menu-mobile__bouton):active { translate: 0.1rem 0.1rem; scale: 0.98; }
-
-/* Survols : réservés aux appareils munis d'une souris précise. */
-@media (hover: hover) and (pointer: fine) and (prefers-reduced-motion: no-preference) {
-    .animations-accueil .accueil__lettre { transition: scale 180ms ease-out; }
-    .animations-accueil .accueil__lettre:hover { scale: 1.07; }
-    .animations-accueil .projet {
-        --inclinaison-projet: -1deg;
-        transition: translate 180ms ease-out, scale 180ms ease-out, rotate 180ms ease-out,
-                    box-shadow 180ms ease-out, opacity 420ms ease var(--delai-revelation, 0ms),
-                    transform 420ms cubic-bezier(0.22, 1, 0.36, 1) var(--delai-revelation, 0ms);
+ 
+/* La flèche ↗ pivote vers la droite au survol. */
+.bouton span,
+.galerie__visiter span {
+    display: inline-block;
+    transition: rotate var(--duree-survol) var(--courbe-rebond);
+}
+ 
+@media (hover: hover) and (pointer: fine) {
+    /* Le bouton se soulève : il monte vers la gauche et son ombre s'allonge. */
+    .bouton:hover,
+    .galerie__visiter:not(:disabled):hover {
+        translate: -0.25rem -0.25rem;
+        scale: 1.05;
+        box-shadow: 0.75rem 0.75rem 0 var(--noir);
     }
+    .bouton:hover span,
+    .galerie__visiter:not(:disabled):hover span { rotate: 45deg; }
+ 
+    /* Chaque couleur passe à une autre couleur de la palette. */
+    .bouton--jaune:hover { background-color: var(--rose); }
+    .bouton--vert:hover { color: var(--blanc); background-color: var(--bleu); }
+    .bouton--rose:hover {
+        color: var(--noir);
+        background-color: var(--jaune);
+        box-shadow: 0.75rem 0.75rem 0 var(--blanc);
+    }
+    .galerie__visiter:not(:disabled):hover {
+        background-color: var(--jaune);
+        box-shadow: 0.5rem 0.5rem 0 var(--noir);
+    }
+ 
+    /* Boutons des cartes projets : jaune sur bleu et rose, rose sur vert et jaune. */
+    .projet .projet__bouton:hover {
+        translate: 0 -0.25rem;
+        scale: 1.08;
+        color: var(--noir);
+        background-color: var(--jaune);
+        box-shadow: 0.35rem 0.35rem 0 var(--noir);
+    }
+    .projet--vert .projet__bouton:hover,
+    .projet--jaune .projet__bouton:hover { background-color: var(--rose); }
+ 
+    /* Burger : vert au survol, rose une fois ouvert (règle existante). */
+    .menu-mobile__bouton:hover {
+        translate: -0.15rem -0.15rem;
+        scale: 1.08;
+        background: var(--vert);
+        box-shadow: 0.4rem 0.4rem 0 #121212;
+    }
+}
+ 
+/* Clic : le bouton s'enfonce dans son ombre. */
+.bouton:active,
+.menu-mobile__bouton:active,
+.projet .projet__bouton:active,
+.galerie__visiter:not(:disabled):active {
+    translate: 0.15rem 0.15rem;
+    scale: 0.97;
+    box-shadow: 0.1rem 0.1rem 0 var(--noir);
+}
+.bouton--rose:active { box-shadow: 0.1rem 0.1rem 0 var(--blanc); }
+ 
+/* ---------- Survols réservés aux appareils munis d'une souris précise ---------- */
+@media (hover: hover) and (pointer: fine) and (prefers-reduced-motion: no-preference) {
+    /* MARIAM : la lettre survolée grossit et passe devant ses voisines. */
+    .animations-accueil .accueil__lettre { transition: scale var(--duree-survol) var(--courbe-rebond); }
+    .animations-accueil .accueil__lettre:hover { z-index: 1; scale: 1.25; }
+ 
+    .animations-accueil .projet { --inclinaison-projet: -1deg; }
     .animations-accueil .projet:nth-child(even) { --inclinaison-projet: 1deg; }
     .animations-accueil .projet:is(:hover, :focus-within) {
         translate: 0 -0.4rem;
@@ -624,34 +756,41 @@
         box-shadow: 0.6rem 0.75rem 0 var(--noir, #121212);
         z-index: 1;
     }
-    .animations-accueil .projet.revelation-immediate { transition: none; }
-    .animations-accueil :is(.bouton, .projet__bouton, .menu-mobile__bouton):hover { translate: 0 -0.12rem; scale: 1.025; }
-    .animations-accueil :is(.bouton, .projet__bouton, .menu-mobile__bouton):active { translate: 0.1rem 0.1rem; scale: 0.98; }
     .animations-accueil .entete__liens a:hover::after,
     .animations-accueil .menu-mobile__liens a:hover::after { transform: scaleX(1); }
-
-
 }
-
-/* Carte étudiante : animation automatique, aucune interaction. */
+ 
+/* ---------- Carte étudiante : descente, puis balancement infini ---------- */
 .animations-accueil .accueil__carte {
     pointer-events: none;
     user-select: none;
     transform-origin: 50% 0;
 }
 .animations-accueil .accueil__carte.carte-entree {
-    animation: entree-carte 1600ms ease-out both;
+    animation: entree-carte 2600ms both;
 }
+/* La carte tombe, oscille de moins en moins, puis s'arrête à -5deg. */
 @keyframes entree-carte {
-    0% { translate: 0 var(--carte-depart, -100vh); rotate: -6deg; }
-    45% { translate: 0 0; rotate: 5deg; }
-    62% { translate: 0 0; rotate: -4deg; }
-    78% { translate: 0 0; rotate: 2.5deg; }
-    90% { translate: 0 0; rotate: -1deg; }
-    100% { translate: 0 0; rotate: 0deg; }
+    0% {
+        translate: 0 var(--carte-depart, -100vh);
+        rotate: -10deg;
+        animation-timing-function: cubic-bezier(0.33, 0, 0.2, 1);
+    }
+    40% { translate: 0 0; rotate: 9deg; animation-timing-function: ease-in-out; }
+    60% { rotate: -7deg; animation-timing-function: ease-in-out; }
+    80% { rotate: 5deg; animation-timing-function: ease-in-out; }
+    100% { translate: 0 0; rotate: -5deg; }
 }
-
-/* Logiciels : bandeau continu sur ordinateur et mobile. */
+/* Le balancement repart de -5deg : aucune saccade entre les deux animations. */
+.animations-accueil .accueil__carte.carte-balancement {
+    animation: balancement-carte 1800ms ease-in-out infinite alternate both;
+}
+@keyframes balancement-carte {
+    from { rotate: -5deg; }
+    to { rotate: 5deg; }
+}
+ 
+/* ---------- Logiciels : bandeau continu sur ordinateur et mobile ---------- */
 .animations-accueil .logiciels.logiciels--anime {
     position: relative;
     display: block;
@@ -699,8 +838,8 @@
 .animations-accueil .logiciels:not(.logiciels--anime) .logiciel > div { min-width: 0; }
 .animations-accueil .logiciels:not(.logiciels--anime) .logiciel__usage { white-space: normal; }
 .animations-accueil .logiciels:not(.logiciels--anime) .logiciel__etoile { display: none; }
-
-/* Curseur : placé au-dessus de la page sans intercepter les clics. */
+ 
+/* ---------- Curseur : au-dessus de la page sans intercepter les clics ---------- */
 .curseur-point, .curseur-cercle {
     display: none;
     position: fixed;
@@ -737,28 +876,35 @@
     transition: width 140ms ease, height 140ms ease, background-color 140ms ease, border-radius 140ms ease;
 }
 .curseur-cercle--actif::before { width: 2.6rem; height: 2.6rem; background: var(--vert, #8AE819); }
-.curseur-cercle--libelle::before { width: 3.6rem; height: 3.6rem; border-radius: 1rem; opacity: 1; }
-.curseur-cercle span { color: #121212; font: 700 0.55rem var(--police-mono, monospace); letter-spacing: 0.02em; }
-.curseur-point { z-index: 10001; }
-.curseur-point--libelle::before { visibility: hidden; }
 @media (hover: hover) and (pointer: fine) and (forced-colors: none) and (prefers-reduced-motion: no-preference) {
     .animations-accueil.curseur-actif, .animations-accueil.curseur-actif * { cursor: none !important; }
     .curseur-actif :is(.curseur-point, .curseur-cercle) { display: block; }
 }
-
-/* Réduction des mouvements : contenu visible et interactions sans animation. */
+ 
+/* ---------- Réduction des mouvements : contenu visible, couleurs conservées ---------- */
 @media (prefers-reduced-motion: reduce) {
     html.defilement-accueil { scroll-behavior: auto; }
-    .animations-accueil :is(.revelation, .animation-lettre, .accueil__lettre, .accueil__carte, .projet, .bouton, .projet__bouton, .menu-mobile__bouton) {
+    .animations-accueil :is(.revelation, .animation-lettre, .accueil__lettre, .accueil__carte, .projet) {
         animation: none !important;
         transition: none !important;
         translate: none !important;
         scale: none !important;
         rotate: none !important;
     }
-    .animations-accueil .revelation-attente { opacity: 1; transform: none; }
+    .animations-accueil .revelation--cachee { opacity: 1 !important; transform: none !important; }
+    .bouton,
+    .projet__bouton,
+    .menu-mobile__bouton,
+    .galerie__visiter {
+        transition: background-color 200ms ease, color 200ms ease, box-shadow 200ms ease;
+        translate: none !important;
+        scale: none !important;
+    }
+    .bouton span,
+    .galerie__visiter span { rotate: none !important; transition: none; }
     .animations-accueil :is(.entete__liens a, .menu-mobile__liens a)::after { transition: none; }
 }
+ 
 @media print {
     .animations-accueil .revelation {
         transition: none !important;

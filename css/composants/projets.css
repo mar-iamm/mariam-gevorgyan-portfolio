@@ -155,4 +155,6 @@
     width: 100%;
     height: 100%;
     object-fit: cover;
+    /* Assombrit les aperçus des projets de 25 %. */
+    filter: brightness(0.75);
 }

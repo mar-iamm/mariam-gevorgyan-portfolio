@@ -4,12 +4,10 @@ export function initialiserCurseur() {
     const options = { signal: controle.signal };
     const point = document.createElement("div");
     const cercle = document.createElement("div");
-    const etiquette = document.createElement("span");
     point.className = "curseur-point";
     cercle.className = "curseur-cercle";
     point.setAttribute("aria-hidden", "true");
     cercle.setAttribute("aria-hidden", "true");
-    cercle.append(etiquette);
     document.body.append(point, cercle);
     let cible = { x: 0, y: 0 };
     let position = { x: 0, y: 0 };
@@ -39,18 +37,15 @@ export function initialiserCurseur() {
         else precedent = 0;
     }
 
+    /* Le cercle grossit et devient vert sur tout ce qui est cliquable. */
     function contexte(element) {
         if (!(element instanceof Element) || element.closest("input, textarea, select, [contenteditable]:not([contenteditable='false']), iframe")) {
             masquer();
             return false;
         }
         const projet = element.closest(".projet");
-        const lienProjet = element.closest("a.projet__bouton[href]");
-        const interactif = element.closest("a[href], button:not(:disabled), summary, [role='button']");
+        const interactif = element.closest("a[href], button:not(:disabled), summary, [role='button'], label[for]");
         cercle.classList.toggle("curseur-cercle--actif", Boolean(interactif || projet));
-        cercle.classList.toggle("curseur-cercle--libelle", Boolean(lienProjet));
-        point.classList.toggle("curseur-point--libelle", Boolean(lienProjet));
-        etiquette.textContent = lienProjet ? "VOIR" : "";
         return true;
     }
 

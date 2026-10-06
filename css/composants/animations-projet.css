@@ -1,0 +1,111 @@
+/* ==========================================================
+   ANIMATIONS DE LA PAGE PROJETS — projet.html uniquement
+   Emplacement : css/composants/animations-projet.css.
+   Charger après projet-detail.css. Les courbes (--courbe-douce,
+   --courbe-rebond, --duree-survol) viennent d'accueil.css.
+   ========================================================== */
+
+/* ---------- Apparition au défilement, dans les deux sens ---------- */
+.animations-projet .revelation {
+    --duree-revelation: 1100ms;
+    --duree-opacite: 900ms;
+    transition:
+        opacity var(--duree-opacite) ease var(--delai-revelation, 0ms),
+        transform var(--duree-revelation) var(--courbe-douce) var(--delai-revelation, 0ms);
+}
+
+/* Sortie plus brève que l'entrée, sans décalage. */
+.animations-projet .revelation--cachee {
+    --duree-revelation: 700ms;
+    --duree-opacite: 500ms;
+    opacity: 0;
+}
+.animations-projet .revelation--dessous { transform: translateY(3.5rem); }
+.animations-projet .revelation--dessus { transform: translateY(-3.5rem); }
+
+/* « Mon rôle » : arrive incliné, comme les cartes projets de l'accueil. */
+.animations-projet .role-projet.revelation--dessous { transform: translateY(4rem) rotate(-3deg); }
+.animations-projet .role-projet.revelation--dessus { transform: translateY(-4rem) rotate(3deg); }
+
+/* Logiciels : arrivent un peu plus petits, l'un après l'autre. */
+.animations-projet .outil-projet.revelation--dessous { transform: translateY(3rem) scale(0.9); }
+.animations-projet .outil-projet.revelation--dessus { transform: translateY(-3rem) scale(0.9); }
+
+/* État de départ posé sans transition. */
+.animations-projet .revelation--immediate { transition: none !important; }
+
+/* ---------- Ouverture au défilement, comme une carte que l'on déplie ----------
+   --ouverture vaut 0 (fermée) à 1 (ouverte) ; le JavaScript la met à jour.
+   Sans JavaScript, la valeur par défaut 1 laisse tout ouvert. */
+
+/* Section sombre : une carte arrondie qui s'élargit jusqu'aux bords de l'écran. */
+.animations-projet .projet-presentation.ouverture {
+    clip-path: inset(
+        calc((1 - var(--ouverture, 1)) * 2.5rem)
+        calc((1 - var(--ouverture, 1)) * 5%)
+        0
+        round calc((1 - var(--ouverture, 1)) * 3rem)
+    );
+}
+
+/* Cadre de navigateur : il se redresse comme l'écran d'un portable qu'on ouvre. */
+.animations-projet .galerie.ouverture {
+    perspective: 1400px;
+}
+.animations-projet .galerie.ouverture .galerie__fenetre {
+    transform-origin: 50% 100%;
+    transform:
+        rotateX(calc((1 - var(--ouverture, 1)) * 32deg))
+        scale(calc(0.9 + var(--ouverture, 1) * 0.1));
+}
+
+/* ---------- Navigation : ligne dans la couleur actuelle du lien ---------- */
+.animations-projet .entete__liens a,
+.animations-projet .menu-mobile__liens a { position: relative; }
+.animations-projet .entete__liens a { display: inline-block; }
+.animations-projet .entete__liens a::after,
+.animations-projet .menu-mobile__liens a::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: -0.25rem;
+    height: 0.125rem;
+    background: currentColor;
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 350ms var(--courbe-douce);
+    pointer-events: none;
+}
+.animations-projet .menu-mobile__liens a::after { left: 0.5rem; right: 0.5rem; bottom: 0.5rem; }
+.animations-projet .entete__liens a:focus-visible::after,
+.animations-projet .menu-mobile__liens a:focus-visible::after { transform: scaleX(1); }
+
+@media (hover: hover) and (pointer: fine) and (prefers-reduced-motion: no-preference) {
+    .animations-projet .entete__liens a:hover::after,
+    .animations-projet .menu-mobile__liens a:hover::after { transform: scaleX(1); }
+}
+
+/* ---------- Curseur personnalisé (styles communs dans accueil.css) ---------- */
+@media (hover: hover) and (pointer: fine) and (forced-colors: none) and (prefers-reduced-motion: no-preference) {
+    .animations-projet.curseur-actif, .animations-projet.curseur-actif * { cursor: none !important; }
+}
+
+/* ---------- Réduction des mouvements : tout reste visible et ouvert ---------- */
+@media (prefers-reduced-motion: reduce) {
+    .animations-projet .revelation { transition: none !important; }
+    .animations-projet .revelation--cachee { opacity: 1 !important; transform: none !important; }
+    .animations-projet .projet-presentation.ouverture { clip-path: none; }
+    .animations-projet .galerie.ouverture .galerie__fenetre { transform: none; }
+    .animations-projet :is(.entete__liens a, .menu-mobile__liens a)::after { transition: none; }
+}
+
+@media print {
+    .animations-projet .revelation {
+        transition: none !important;
+        opacity: 1 !important;
+        transform: none !important;
+    }
+    .animations-projet .projet-presentation.ouverture { clip-path: none !important; }
+    .animations-projet .galerie.ouverture .galerie__fenetre { transform: none !important; }
+}

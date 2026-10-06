@@ -1,0 +1,72 @@
+/* ==========================================================
+   LOGO — index.html et projet.html
+   Emplacement : css/composants/logo.css. Charger après accueil.css.
+   Même langage que les boutons : rebond, ombre décalée nette
+   dans une couleur de la palette, qui change à chaque survol.
+   ========================================================== */
+
+.entete__marque,
+.pied-page__marque {
+    --couleur-logo: var(--rose);
+}
+
+.entete__logo,
+.pied-page__logo {
+    filter: drop-shadow(0 0 0 transparent);
+    transition:
+        translate var(--duree-survol, 450ms) var(--courbe-rebond, ease),
+        filter 300ms ease;
+}
+
+/* Entrée au chargement : le logo surgit en tournant et rebondit. */
+.entete__logo.logo-entree {
+    animation: entree-logo 1000ms ease-out 150ms backwards;
+}
+@keyframes entree-logo {
+    0% { opacity: 0; transform: scale(0) rotate(-25deg); }
+    55% { opacity: 1; transform: scale(1.15) rotate(8deg); }
+    75% { transform: scale(0.94) rotate(-3deg); }
+    90% { transform: scale(1.03) rotate(1deg); }
+    100% { opacity: 1; transform: none; }
+}
+
+/* Survol : le logo se soulève, son ombre colorée apparaît et il tremble comme de la gelée. */
+@media (hover: hover) and (pointer: fine) {
+    .entete__marque:hover .entete__logo,
+    .pied-page__marque:hover .pied-page__logo {
+        translate: -0.15rem -0.15rem;
+        filter: drop-shadow(0.3rem 0.3rem 0 var(--couleur-logo));
+        animation: gelee-logo 800ms ease-out;
+    }
+}
+@keyframes gelee-logo {
+    0% { transform: none; }
+    25% { transform: scale(1.18, 0.84) rotate(-4deg); }
+    45% { transform: scale(0.9, 1.12) rotate(3deg); }
+    65% { transform: scale(1.06, 0.95) rotate(-1.5deg); }
+    85% { transform: scale(0.98, 1.02); }
+    100% { transform: none; }
+}
+
+/* Clavier : même ombre colorée, sans tremblement. */
+.entete__marque:focus-visible .entete__logo,
+.pied-page__marque:focus-visible .pied-page__logo {
+    translate: -0.15rem -0.15rem;
+    filter: drop-shadow(0.3rem 0.3rem 0 var(--couleur-logo));
+}
+
+/* Clic : le logo s'enfonce dans son ombre. */
+.entete__marque:active .entete__logo,
+.pied-page__marque:active .pied-page__logo {
+    translate: 0.1rem 0.1rem;
+    filter: drop-shadow(0.1rem 0.1rem 0 var(--couleur-logo));
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .entete__logo,
+    .pied-page__logo {
+        animation: none !important;
+        translate: none !important;
+        transition: filter 200ms ease;
+    }
+}

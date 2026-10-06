@@ -12,8 +12,10 @@
         <link rel="stylesheet" href="css/composants/accueil.css">
         <link rel="stylesheet" href="css/composants/contact.css">
         <link rel="stylesheet" href="css/composants/projet-detail.css">
-        <link rel="stylesheet" href="css/mobile-projet.css">
-        
+        <link rel="stylesheet" href="css/composants/animations-projet.css">
+        <link rel="stylesheet" href="css/composants/retour-haut.css">
+        <link rel="stylesheet" href="css/composants/logo.css">
+        <script type="module" src="js/animations-projet.js"></script>
     </head>
     <body class="page-projet" id="haut">
         <a class="lien-evitement" href="#contenu">Aller au contenu</a>
@@ -68,7 +70,7 @@
                         <span>WICKED <span class="projet-presentation__accent">WIZARD</span>
                         </span>
                     </h2>
-                    <p class="projet-presentation__description">Wicked Wizard est un jeu vidéo de plateforme que j’ai réalisé seule en trois mois, lors de ma troisième session en technique multimédia, dans le cadre du cours d’interactivité ludique. Développé avec le moteur de jeu Godot, il plonge le joueur dans l’univers d’une caverne moussue où il doit franchir les obstacles et récolter des pièces. Les ressources graphiques et sonores proviennent de créateurs indépendants et sont toutes créditées dans le fichier README de mon dépôt <a class="projet-presentation__lien" href="https://github.com/mar-iamm/mariam_gevorgyan_TP4_godot" target="_blank" rel="noopener noreferrer">GitHub</a>.</p>
+                    <p class="projet-presentation__description">Wicked Wizard est un jeu vidéo de plateforme que j’ai réalisé seule en trois mois, lors de ma troisième session dans le cours d'intéractivité ludique. Développé avec le moteur de jeu Godot, il plonge le joueur dans l’univers d’une caverne moussue où il doit franchir les obstacles et récolter des pièces. Les ressources graphiques et sonores proviennent de créateurs indépendants et sont toutes créditées dans le fichier README de mon dépôt <a class="projet-presentation__lien" href="https://github.com/mar-iamm/mariam_gevorgyan_TP4_godot" target="_blank" rel="noopener noreferrer">GitHub</a>.</p>
                     <div class="galerie" role="region" aria-label="Images du projet 1">
                         <!-- Carrousel 1 : ce groupe radio est indépendant des trois autres. -->
                         <p class="texte-accessible" id="aide-galerie-1">Au clavier, utilisez les flèches gauche et droite pour changer d’image après avoir atteint ce groupe avec la touche Tab.</p>
@@ -181,7 +183,7 @@
                     <h2 class="projet-presentation__titre" id="titre-projet-2">
                         <span>L'animatronique</span>
                     </h2>
-                    <p class="projet-presentation__description">Dernière garde est une animation 3D que j’ai réalisée lors de ma quatrième session en technique multimédia. Fortement inspirée de l’univers de la franchise Five Nights at Freddy’s, elle plonge le spectateur dans l’atmosphère inquiétante d’une nuit de surveillance, où les animatroniques s’animent dans la pénombre. J’ai construit la scène à partir de modèles 3D trouvés sur Sketchfab, puis j’ai travaillé la mise en scène, l’éclairage et l’animation pour faire monter la tension.</p>
+                    <p class="projet-presentation__description">L'animatronique est une animation que j’ai réalisée lors de ma quatrième session dans le cours d'animation 3D. Fortement inspirée de l’univers de la franchise Five Nights at Freddy’s, elle plonge le spectateur dans l’atmosphère inquiétante d’une nuit de surveillance, où les animatroniques s’animent dans la pénombre. J’ai construit la scène à partir de modèles 3D trouvés sur Sketchfab, puis j’ai travaillé la mise en scène, l’éclairage et l’animation pour faire monter la tension.</p>
                     <div class="galerie" role="region" aria-label="Images du projet 2">
                         <!-- Carrousel 2 : ce groupe radio est indépendant des trois autres. -->
                         <p class="texte-accessible" id="aide-galerie-2">Au clavier, utilisez les flèches gauche et droite pour changer d’image après avoir atteint ce groupe avec la touche Tab.</p>
@@ -295,7 +297,7 @@
                         <span>Liquid <span class="projet-presentation__accent">Loom</span>
                         </span>
                     </h2>
-                    <p class="projet-presentation__description">Liquid Loom est un site web de vente de jus que j’ai réalisé comme projet final lors de ma quatrième session en technique multimédia. Pensé comme une véritable boutique en ligne, il réunit toutes les fonctionnalités essentielles d’un site de commerce : présentation des produits, fiches détaillées, panier d’achat et parcours de commande. L’objectif était de concevoir une expérience à la fois fraîche, colorée et intuitive, qui donne envie de découvrir les produits et facilite l’achat du premier clic jusqu’à la commande.</p>
+                    <p class="projet-presentation__description">Liquid Loom est un site web de vente de jus que j’ai réalisé comme projet final lors de ma quatrième session dans le cours de Web 4. Pensé comme une véritable boutique en ligne, il réunit toutes les fonctionnalités essentielles d’un site de commerce : présentation des produits, fiches détaillées, panier d’achat et parcours de commande. L’objectif était de concevoir une expérience à la fois fraîche, colorée et intuitive, qui donne envie de découvrir les produits et facilite l’achat du premier clic jusqu’à la commande.</p>
                     <div class="galerie" role="region" aria-label="Images du projet 3">
                         <!-- Carrousel 3 : ce groupe radio est indépendant des trois autres. -->
                         <p class="texte-accessible" id="aide-galerie-3">Au clavier, utilisez les flèches gauche et droite pour changer d’image après avoir atteint ce groupe avec la touche Tab.</p>
@@ -399,10 +401,10 @@
             <article class="fiche-projet fiche-projet--jaune" id="projet-4" aria-labelledby="titre-projet-4">
                 <section class="projet-presentation" aria-labelledby="titre-projet-4">
                     <h2 class="projet-presentation__titre" id="titre-projet-4">
-                        <span>Titre du <span class="projet-presentation__accent">projet 4</span>
+                        <span>Dernière<span class="projet-presentation__accent">danse</span>
                         </span>
                     </h2>
-                    <p class="projet-presentation__description">Présente ici le projet 4, son contexte et son objectif. Explique en quelques phrases à qui il s’adresse, ce qu’il propose et le résultat que tu souhaitais obtenir.</p>
+                    <p class="projet-presentation__description">Dernière danse est une vidéo narrative que j'ai réalisée en équipe lors de ma quatrième session en technique multimédia. Elle suit une jeune femme malade qui, confrontée à sa propre mort, traverse les cinq étapes du deuil : le déni, la colère, le marchandage, la dépression et l'acceptation. Le récit avance au rythme de ces étapes, du refus de la maladie jusqu'à la paix retrouvée.</p>
                     <div class="galerie" role="region" aria-label="Images du projet 4">
                         <!-- Carrousel 4 : ce groupe radio est indépendant des trois autres. -->
                         <p class="texte-accessible" id="aide-galerie-4">Au clavier, utilisez les flèches gauche et droite pour changer d’image après avoir atteint ce groupe avec la touche Tab.</p>
@@ -416,22 +418,28 @@
                                     <span class="galerie__temoin galerie__temoin--jaune"></span>
                                     <span class="galerie__temoin galerie__temoin--vert"></span>
                                 </div>
-                                <span class="galerie__adresse">Lien du projet 4</span>
+                                <span class="galerie__adresse">https://youtu.be/12qI768CY04</span>
                             </div>
-                            <figure class="galerie__diapositive galerie__diapositive--1">
-                                <div class="galerie__emplacement">Visuel 1 du projet 4</div>
+                           <figure class="galerie__diapositive galerie__diapositive--1">
+                                <img class="galerie__image" src="assets/images/projet4-visuel1.png" alt="Visuel 1 du projet 1">
                                 <figcaption class="galerie__compteur">1 / 3</figcaption>
                             </figure>
                             <figure class="galerie__diapositive galerie__diapositive--2">
-                                <div class="galerie__emplacement">Visuel 2 du projet 4</div>
+                                <img class="galerie__image" src="assets/images/projet4-visuel2.png" alt="Visuel 2 du projet 1">
                                 <figcaption class="galerie__compteur">2 / 3</figcaption>
                             </figure>
                             <figure class="galerie__diapositive galerie__diapositive--3">
-                                <div class="galerie__emplacement">Visuel 3 du projet 4</div>
+                                <img class="galerie__image" src="assets/images/projet4-visuel3.png" alt="Visuel 3 du projet 1">
                                 <figcaption class="galerie__compteur">3 / 3</figcaption>
                             </figure>
-                            <button class="galerie__visiter" type="button" disabled>Visiter <span aria-hidden="true">↗</span>
-                            </button>
+
+                        <a class="galerie__visiter"
+                        href="https://youtu.be/12qI768CY04"
+                        target="_blank"
+                        rel="noopener noreferrer">
+                        Visiter <span aria-hidden="true">↗</span>
+                        </a>
+                        
                         </div>
                         <div class="galerie__navigation galerie__navigation--1">
                             <label class="galerie__fleche galerie__fleche--precedente" for="projet-4-image-3">
@@ -471,14 +479,13 @@
                     <aside class="role-projet" aria-labelledby="titre-role-4">
                         <h3 class="role-projet__titre" id="titre-role-4">Mon rôle</h3>
                         <ul class="role-projet__liste">
-                            <li class="role-projet__element">Rôle nº 1</li>
-                            <li class="role-projet__element">Rôle nº 2</li>
-                            <li class="role-projet__element">Rôle nº 3</li>
+                            <li class="role-projet__element">Prise de vue</li>
+                            <li class="role-projet__element">Montage final</li>
                         </ul>
                     </aside>
                     <div class="demarche-projet">
                         <h3 class="demarche-projet__titre" id="titre-demarche-4">Démarche du projet</h3>
-                        <p class="demarche-projet__texte">Présente ici le point de départ du projet 4 et les objectifs à atteindre. Explique ensuite <mark class="demarche-projet__accent">tes choix de création</mark> : tes recherches, tes décisions visuelles ou techniques, puis les étapes principales de la réalisation. Mets en évidence un défi rencontré, la solution retenue et ce que cette expérience t’a permis d’apprendre.</p>
+                        <p class="demarche-projet__texte">Pour ce projet, notre point de départ était de raconter une histoire forte et intime : celle d'une jeune femme malade qui fait face à sa propre mort. Avec mon équipe, nous avons fait le choix <mark class="demarche-projet__accent">de faire avancer le récit au rythme des cinq étapes du deuil</mark> , du déni jusqu'à l'acceptation. Au sein de l'équipe, je me suis occupée de la caméra pendant le tournage, puis du montage final dans DaVinci Resolve, où j'ai assemblé les plans pour construire la progression émotionnelle du récit. Mon plus grand défi a été le tournage sur place, où il fallait composer avec les contraintes réelles du lieu ; en adaptant mes cadrages et en vérifiant chaque prise, j'ai pu obtenir les plans dont nous avions besoin au montage. Ce projet m'a appris à travailler en équipe sur une production vidéo et à penser mes prises de vue en fonction du montage final.</p>
                     </div>
                 </section>
 
@@ -487,45 +494,10 @@
                     <h3 class="outils-projet__titre" id="titre-outils-4">Logiciels &amp; technologies</h3>
                     <ul class="outils-projet__liste">
                         <li class="outil-projet">
-                            <img class="outil-projet__icone" src="assets/images/illustrator_logo.png" alt="" loading="lazy">
+                            <img class="outil-projet__icone" src="assets/images/davinci_logo.png" alt="" loading="lazy">
                             <div>
-                                <h4 class="outil-projet__nom">Illustrator</h4>
-                                <p class="outil-projet__usage">Vectoriel &amp; typo</p>
-                            </div>
-                        </li>
-                        <li class="outil-projet">
-                            <img class="outil-projet__icone" src="assets/images/maya_logo.png" alt="" loading="lazy">
-                            <div>
-                                <h4 class="outil-projet__nom">Maya</h4>
-                                <p class="outil-projet__usage">Modélisation &amp; 3D</p>
-                            </div>
-                        </li>
-                        <li class="outil-projet">
-                            <img class="outil-projet__icone" src="assets/images/unity_logo.png" alt="" loading="lazy">
-                            <div>
-                                <h4 class="outil-projet__nom">Unity</h4>
-                                <p class="outil-projet__usage">Jeu vidéo &amp; interactif</p>
-                            </div>
-                        </li>
-                        <li class="outil-projet">
-                            <img class="outil-projet__icone" src="assets/images/after_effects_logo.png" alt="" loading="lazy">
-                            <div>
-                                <h4 class="outil-projet__nom">After Effects</h4>
-                                <p class="outil-projet__usage">Montage &amp; VFX</p>
-                            </div>
-                        </li>
-                        <li class="outil-projet">
-                            <img class="outil-projet__icone" src="assets/images/photoshop_logo.png" alt="" loading="lazy">
-                            <div>
-                                <h4 class="outil-projet__nom">Photoshop</h4>
-                                <p class="outil-projet__usage">Retouche &amp; texture</p>
-                            </div>
-                        </li>
-                        <li class="outil-projet">
-                            <img class="outil-projet__icone" src="assets/images/vscode_logo.png" alt="" loading="lazy">
-                            <div>
-                                <h4 class="outil-projet__nom">VS Code</h4>
-                                <p class="outil-projet__usage">Code &amp; développement front-end</p>
+                                <h4 class="outil-projet__nom">DaVinci Resolve</h4>
+                                <p class="outil-projet__usage">Montage vidéo</p>
                             </div>
                         </li>
                     </ul>
@@ -537,7 +509,9 @@
                 <img class="pied-page__logo" src="assets/images/white_logo.png" alt="" loading="lazy">
                 <span>Mariam Gevorgyan</span>
             </a>
-            <a class="pied-page__retour" href="#haut" aria-label="Retour en haut de la page">↑</a>
+                        <a class="pied-page__retour" href="#haut" aria-label="Retour en haut de la page">
+                <svg class="pied-page__fleche" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 19V5M5 12l7-7 7 7"/></svg>
+            </a>
             <p class="pied-page__copyright">© 2026 Mariam Gevorgyan</p>
         </footer>
     </body>

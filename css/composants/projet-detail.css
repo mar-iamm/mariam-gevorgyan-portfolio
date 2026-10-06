@@ -851,3 +851,99 @@
         outline-offset: 0.35rem;
     }
 }
+
+/* ==========================================================
+   FLÈCHES DU CARROUSEL — pastilles rondes dans le style des boutons
+   Le chevron est dessiné en CSS ; le caractère ‹ › reste dans le HTML,
+   masqué visuellement. Au survol, la pastille prend la couleur du projet.
+   ========================================================== */
+.galerie .galerie__fleche {
+    display: grid;
+    place-items: center;
+    width: 4.25rem;
+    height: 4.25rem;
+    margin: 0;
+    border: 0.2rem solid var(--noir);
+    border-radius: 50%;
+    color: var(--noir);
+    background-color: var(--jaune);
+    box-shadow: 0.3rem 0.3rem 0 var(--blanc);
+    font-size: 0;
+    transform: translateY(-50%);
+    transition:
+        translate var(--duree-survol, 450ms) var(--courbe-rebond, ease),
+        scale var(--duree-survol, 450ms) var(--courbe-rebond, ease),
+        box-shadow var(--duree-survol, 450ms) ease,
+        background-color 350ms ease,
+        color 350ms ease;
+}
+
+.galerie .galerie__fleche > span[aria-hidden="true"] {
+    display: none;
+}
+
+/* Chevron : deux traits épais et arrondis. */
+.galerie .galerie__fleche::before {
+    content: "";
+    width: 0.85rem;
+    height: 0.85rem;
+    border-top: 0.22rem solid currentColor;
+    border-left: 0.22rem solid currentColor;
+    border-radius: 0.1rem;
+    transition: translate var(--duree-survol, 450ms) var(--courbe-rebond, ease);
+}
+.galerie .galerie__fleche--precedente::before { margin-left: 0.35rem; rotate: -45deg; }
+.galerie .galerie__fleche--suivante::before { margin-right: 0.35rem; rotate: 135deg; }
+
+@media (hover: hover) and (pointer: fine) {
+    .galerie .galerie__fleche:hover {
+        translate: 0 -0.25rem;
+        scale: 1.1;
+        color: var(--texte-role);
+        background-color: var(--couleur-projet);
+        box-shadow: 0.3rem 0.55rem 0 var(--blanc);
+    }
+    /* Le projet 4 est déjà jaune : sa flèche passe au rose. */
+    .fiche-projet--jaune .galerie .galerie__fleche:hover {
+        color: var(--noir);
+        background-color: var(--rose);
+    }
+    .galerie .galerie__fleche--precedente:hover::before { translate: -0.2rem 0; }
+    .galerie .galerie__fleche--suivante:hover::before { translate: 0.2rem 0; }
+}
+
+.galerie .galerie__fleche:active {
+    translate: 0.1rem 0.1rem;
+    scale: 0.95;
+    box-shadow: 0.1rem 0.1rem 0 var(--blanc);
+}
+
+@media screen and (max-width: 90rem) {
+    .galerie .galerie__fleche {
+        width: clamp(3.25rem, 4vw, 4.25rem);
+        height: clamp(3.25rem, 4vw, 4.25rem);
+    }
+}
+
+/* Mobile : les deux pastilles restent sous l'image, un peu plus espacées. */
+@media screen and (max-width: 48rem) {
+    .galerie .galerie__navigation { width: 9rem; }
+
+    .galerie .galerie__fleche {
+        top: 0;
+        width: 3.25rem;
+        height: 3.25rem;
+        transform: none;
+    }
+
+    .galerie .galerie__fleche::before { width: 0.7rem; height: 0.7rem; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .galerie .galerie__fleche,
+    .galerie .galerie__fleche::before {
+        translate: none !important;
+        scale: none !important;
+        transition: background-color 200ms ease, color 200ms ease;
+    }
+}

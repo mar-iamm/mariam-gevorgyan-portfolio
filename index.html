@@ -15,8 +15,9 @@
     <link rel="stylesheet" href="css/composants/contact.css">
     <link rel="stylesheet" href="css/composants/logiciels.css">
     <link rel="stylesheet" href="css/composants/projets.css">
-    <link rel="stylesheet" href="css/mobile-accueil.css">
     <link rel="stylesheet" href="css/animations-accueil.css">
+    <link rel="stylesheet" href="css/composants/retour-haut.css">
+    <link rel="stylesheet" href="css/composants/logo.css">
     
 </head>
 
@@ -233,11 +234,13 @@
                 </article>
                 <!-- Projet 2 : rose -->
                 <article class="projet projet--rose">
-                    <div class="projet__apercu" aria-hidden="true"></div>
-                    <p class="projet__categorie">Mini titre</p>
-                    <h3 class="projet__titre">Titre du<br>projet</h3>
+                    <div class="projet__apercu" aria-hidden="true">
+                        <img class="projet__image" src="assets/images/projet2-visuel1.png" alt="">
+                    </div>
+                    <p class="projet__categorie">Animation 3D</p>
+                    <h3 class="projet__titre">L'anima<br>tronique</h3>
                     <p class="projet__description">
-                        Description du projet un peu plus en détail.
+                        Animation 3D inspirée de Five Nights at Freddy's, où des animatroniques s'éveillent dans la pénombre d'une nuit de surveillance.
                     </p>
                     <div class="projet__action">
                         <a class="projet__bouton"
@@ -249,11 +252,13 @@
                 </article>
                 <!-- Projet 3 : vert -->
                 <article class="projet projet--vert">
-                    <div class="projet__apercu" aria-hidden="true"></div>
-                    <p class="projet__categorie">Mini titre</p>
-                    <h3 class="projet__titre">Titre du<br>projet</h3>
+                    <div class="projet__apercu" aria-hidden="true">
+                        <img class="projet__image" src="assets/images/projet3-visuel1.png" alt="">
+                    </div>
+                    <p class="projet__categorie">Site Web</p>
+                    <h3 class="projet__titre">Liquid<br>Loom</h3>
                     <p class="projet__description">
-                        Description du projet un peu plus en détail.
+                        Boutique en ligne de jus réalisée avec WordPress, de la fiche produit jusqu'au parcours de commande.
                     </p>
                     <div class="projet__action">
                         <a class="projet__bouton"
@@ -265,11 +270,13 @@
                 </article>
                 <!-- Projet 4 : jaune -->
                 <article class="projet projet--jaune">
-                    <div class="projet__apercu" aria-hidden="true"></div>
-                    <p class="projet__categorie">Mini titre</p>
-                    <h3 class="projet__titre">Titre du<br>projet</h3>
+                    <div class="projet__apercu" aria-hidden="true">
+                        <img class="projet__image" src="assets/images/projet4-visuel3.png" alt="">
+                    </div>
+                    <p class="projet__categorie">Vidéo et montage</p>
+                    <h3 class="projet__titre">Dernière<br>danse</h3>
                     <p class="projet__description">
-                        Description du projet un peu plus en détail.
+                        Vidéo narrative réalisée en équipe, où une jeune femme malade traverse les cinq étapes du deuil face à sa propre mort.
                     </p>
                     <div class="projet__action">
                         <a class="projet__bouton"
@@ -322,7 +329,9 @@
             <img class="pied-page__logo" src="assets/images/white_logo.png" alt="" loading="lazy">
             <span>Mariam Gevorgyan</span>
         </a>
-        <a class="pied-page__retour" href="#accueil" aria-label="Retour en haut de la page">↑</a> <!-- Le symbole ↑ est accompagné d’un aria-label qui explicite sa fonction de retour en haut. -->
+                <a class="pied-page__retour" href="#accueil" aria-label="Retour en haut de la page">
+            <svg class="pied-page__fleche" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 19V5M5 12l7-7 7 7"/></svg>
+        </a>
         <p class="pied-page__copyright">© 2026 Mariam Gevorgyan</p> <!-- Mention du copyright -->
     </footer>
 </body>

@@ -1,0 +1,121 @@
+/* ==========================================================
+   BOUTON DE RETOUR EN HAUT — index.html et projet.html
+   Emplacement : css/composants/retour-haut.css. Charger en dernier.
+   Pastille jaune fixée en bas à droite, dans le style des autres boutons :
+   bordure noire, ombre décalée et anneau rose de progression.
+   ========================================================== */
+
+.pied-page .pied-page__retour {
+    --progression: 0;
+    position: fixed;
+    right: calc(1.5rem + env(safe-area-inset-right, 0px));
+    bottom: calc(1.5rem + env(safe-area-inset-bottom, 0px));
+    z-index: 90;
+    display: grid;
+    place-items: center;
+    width: 3.75rem;
+    height: 3.75rem;
+    min-width: 0;
+    min-height: 0;
+    border: 0.2rem solid var(--noir);
+    border-radius: 50%;
+    color: var(--noir);
+    background-color: var(--jaune);
+    box-shadow: 0.25rem 0.25rem 0 var(--noir);
+    line-height: 1;
+    transition:
+        opacity 400ms ease,
+        visibility 0s linear 0s,
+        translate var(--duree-survol, 450ms) var(--courbe-rebond, ease),
+        scale var(--duree-survol, 450ms) var(--courbe-rebond, ease),
+        box-shadow var(--duree-survol, 450ms) ease,
+        background-color 350ms ease;
+}
+
+/* Anneau rose : il se remplit à mesure que l'on descend dans la page. */
+.pied-page .pied-page__retour::before {
+    content: "";
+    position: absolute;
+    inset: -0.55rem;
+    border-radius: 50%;
+    background: conic-gradient(var(--rose) calc(var(--progression) * 360deg), transparent 0);
+    -webkit-mask: radial-gradient(farthest-side, transparent calc(100% - 0.3rem), #000 calc(100% - 0.3rem));
+    mask: radial-gradient(farthest-side, transparent calc(100% - 0.3rem), #000 calc(100% - 0.3rem));
+    pointer-events: none;
+}
+
+/* Flèche dessinée en SVG : trait épais et arrondi. */
+.pied-page__fleche {
+    width: 1.6rem;
+    height: 1.6rem;
+    fill: none;
+    stroke: currentColor;
+    stroke-width: 2.75;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    transition: translate var(--duree-survol, 450ms) var(--courbe-rebond, ease);
+}
+
+/* Masqué en haut de page ; le JavaScript l'affiche après un peu de défilement.
+   Sans JavaScript, le bouton reste toujours visible. */
+.retour-haut-actif .pied-page .pied-page__retour:not(.pied-page__retour--visible) {
+    opacity: 0;
+    visibility: hidden;
+    translate: 0 1.5rem;
+    scale: 0.8;
+    pointer-events: none;
+    transition:
+        opacity 300ms ease,
+        visibility 0s linear 300ms,
+        translate 300ms ease,
+        scale 300ms ease;
+}
+
+@media (hover: hover) and (pointer: fine) {
+    /* Il se soulève, passe au rose et la flèche monte. */
+    .pied-page .pied-page__retour:hover {
+        translate: 0 -0.3rem;
+        scale: 1.08;
+        background-color: var(--rose);
+        box-shadow: 0.25rem 0.55rem 0 var(--noir);
+    }
+    .pied-page .pied-page__retour:hover .pied-page__fleche { translate: 0 -0.15rem; }
+}
+
+.pied-page .pied-page__retour:active {
+    translate: 0.1rem 0.1rem;
+    scale: 0.95;
+    box-shadow: 0.1rem 0.1rem 0 var(--noir);
+}
+
+/* Bleu : visible sur les fonds clairs comme sur les fonds sombres. */
+.pied-page .pied-page__retour:focus-visible {
+    outline: 0.2rem solid var(--bleu);
+    outline-offset: 0.75rem;
+}
+
+@media screen and (max-width: 48rem) {
+    .pied-page .pied-page__retour {
+        right: calc(1rem + env(safe-area-inset-right, 0px));
+        bottom: calc(1rem + env(safe-area-inset-bottom, 0px));
+        width: 3.25rem;
+        height: 3.25rem;
+    }
+    .pied-page__fleche { width: 1.4rem; height: 1.4rem; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .pied-page .pied-page__retour {
+        translate: none !important;
+        scale: none !important;
+        transition: opacity 200ms ease, visibility 0s linear 0s, background-color 200ms ease;
+    }
+    .retour-haut-actif .pied-page .pied-page__retour:not(.pied-page__retour--visible) {
+        transition: opacity 200ms ease, visibility 0s linear 200ms;
+    }
+    .pied-page__fleche { translate: none !important; transition: none; }
+}
+
+@media print {
+    .pied-page .pied-page__retour { display: none; }
+}

@@ -554,4 +554,226 @@
 
 }
 
+/* ANIMATIONS DE L'ACCUEIL — charger après les autres CSS, y compris le mobile. */
+@media (prefers-reduced-motion: no-preference) {
+    html.defilement-accueil { scroll-behavior: smooth; }
+}
 
+/* Apparition des titres et cartes : 420 ms et un décalage de groupe limité. */
+.animations-accueil .revelation {
+    transition: opacity 420ms ease var(--delai-revelation, 0ms),
+                transform 420ms cubic-bezier(0.22, 1, 0.36, 1) var(--delai-revelation, 0ms);
+}
+.animations-accueil .revelation-attente { opacity: 0; transform: translateY(1rem); }
+.animations-accueil .revelation-immediate { transition: none; }
+
+/* MARIAM : apparition successive et petit rebond, sans boucle. */
+.animations-accueil .animation-lettre {
+    animation: entree-lettre 430ms cubic-bezier(0.22, 1, 0.36, 1) var(--delai-lettre, 0ms) backwards;
+}
+@keyframes entree-lettre {
+    from { opacity: 0; transform: translateY(0.8rem); }
+    75% { opacity: 1; transform: translateY(-0.12rem); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* Navigation : apparition d'une ligne dans la couleur actuelle du lien. */
+.animations-accueil .entete__liens a,
+.animations-accueil .menu-mobile__liens a { position: relative; }
+.animations-accueil .entete__liens a { display: inline-block; }
+.animations-accueil .entete__liens a::after,
+.animations-accueil .menu-mobile__liens a::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: -0.25rem;
+    height: 0.125rem;
+    background: currentColor;
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 160ms ease-out;
+    pointer-events: none;
+}
+.animations-accueil .menu-mobile__liens a::after { left: 0.5rem; right: 0.5rem; bottom: 0.5rem; }
+.animations-accueil .entete__liens a:focus-visible::after,
+.animations-accueil .menu-mobile__liens a:focus-visible::after { transform: scaleX(1); }
+
+/* Boutons : déplacement rapide, sans changement des couleurs ni des arrondis. */
+.animations-accueil :is(.bouton, .projet__bouton, .menu-mobile__bouton) {
+    transition: translate 140ms ease-out, scale 140ms ease-out;
+}
+.animations-accueil .projet__bouton { display: inline-flex; align-items: center; justify-content: center; }
+.animations-accueil :is(.bouton, .projet__bouton, .menu-mobile__bouton):active { translate: 0.1rem 0.1rem; scale: 0.98; }
+
+/* Survols : réservés aux appareils munis d'une souris précise. */
+@media (hover: hover) and (pointer: fine) and (prefers-reduced-motion: no-preference) {
+    .animations-accueil .accueil__lettre { transition: scale 180ms ease-out; }
+    .animations-accueil .accueil__lettre:hover { scale: 1.07; }
+    .animations-accueil .projet {
+        --inclinaison-projet: -1deg;
+        transition: translate 180ms ease-out, scale 180ms ease-out, rotate 180ms ease-out,
+                    box-shadow 180ms ease-out, opacity 420ms ease var(--delai-revelation, 0ms),
+                    transform 420ms cubic-bezier(0.22, 1, 0.36, 1) var(--delai-revelation, 0ms);
+    }
+    .animations-accueil .projet:nth-child(even) { --inclinaison-projet: 1deg; }
+    .animations-accueil .projet:is(:hover, :focus-within) {
+        translate: 0 -0.4rem;
+        scale: 1.012;
+        rotate: var(--inclinaison-projet);
+        box-shadow: 0.6rem 0.75rem 0 var(--noir, #121212);
+        z-index: 1;
+    }
+    .animations-accueil .projet.revelation-immediate { transition: none; }
+    .animations-accueil :is(.bouton, .projet__bouton, .menu-mobile__bouton):hover { translate: 0 -0.12rem; scale: 1.025; }
+    .animations-accueil :is(.bouton, .projet__bouton, .menu-mobile__bouton):active { translate: 0.1rem 0.1rem; scale: 0.98; }
+    .animations-accueil .entete__liens a:hover::after,
+    .animations-accueil .menu-mobile__liens a:hover::after { transform: scaleX(1); }
+
+
+}
+
+/* Carte étudiante : animation automatique, aucune interaction. */
+.animations-accueil .accueil__carte {
+    pointer-events: none;
+    user-select: none;
+    transform-origin: 50% 0;
+}
+.animations-accueil .accueil__carte.carte-entree {
+    animation: entree-carte 1600ms ease-out both;
+}
+@keyframes entree-carte {
+    0% { translate: 0 var(--carte-depart, -100vh); rotate: -6deg; }
+    45% { translate: 0 0; rotate: 5deg; }
+    62% { translate: 0 0; rotate: -4deg; }
+    78% { translate: 0 0; rotate: 2.5deg; }
+    90% { translate: 0 0; rotate: -1deg; }
+    100% { translate: 0 0; rotate: 0deg; }
+}
+
+/* Logiciels : bandeau continu sur ordinateur et mobile. */
+.animations-accueil .logiciels.logiciels--anime {
+    position: relative;
+    display: block;
+    height: auto;
+    padding: clamp(2.5rem, 5vw, 5rem) 0 4.5rem;
+    overflow: hidden;
+}
+.animations-accueil .logiciels__fenetre { width: 100%; overflow: hidden; }
+.animations-accueil .logiciels--anime .logiciels__piste {
+    display: flex;
+    align-items: center;
+    width: max-content;
+    max-width: none;
+    margin: 0;
+    padding: 0;
+    gap: clamp(1.5rem, 3vw, 3rem);
+    will-change: transform;
+}
+.animations-accueil .logiciels--anime .logiciel { flex: 0 0 auto; }
+.animations-accueil .logiciels--anime .logiciel__etoile { margin-inline: 1.5rem 0; }
+.animations-accueil .logiciels__pause {
+    position: absolute;
+    right: 1.25rem;
+    bottom: 0.8rem;
+    min-height: 2.75rem;
+    padding: 0.45rem 1rem;
+    border: 2px solid #121212;
+    border-radius: 999rem;
+    color: #121212;
+    background: var(--jaune, #FFDD00);
+    font: 700 0.8rem var(--police-interface, sans-serif);
+    cursor: pointer;
+}
+.animations-accueil .logiciels__pause:focus-visible { outline: 3px solid #fff; outline-offset: 3px; }
+/* Si le mouvement est désactivé, afficher les six originaux en grille. */
+.animations-accueil .logiciels:not(.logiciels--anime) { display: block; height: auto; padding: 2.5rem 1.25rem; }
+.animations-accueil .logiciels:not(.logiciels--anime) .logiciels__piste {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 17rem), 1fr));
+    width: 100%;
+    padding: 0;
+    gap: 2rem;
+}
+.animations-accueil .logiciels:not(.logiciels--anime) .logiciel { min-width: 0; }
+.animations-accueil .logiciels:not(.logiciels--anime) .logiciel > div { min-width: 0; }
+.animations-accueil .logiciels:not(.logiciels--anime) .logiciel__usage { white-space: normal; }
+.animations-accueil .logiciels:not(.logiciels--anime) .logiciel__etoile { display: none; }
+
+/* Curseur : placé au-dessus de la page sans intercepter les clics. */
+.curseur-point, .curseur-cercle {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 0;
+    pointer-events: none;
+    z-index: 10000;
+}
+.curseur-point::before, .curseur-cercle::before, .curseur-cercle span {
+    position: absolute;
+    top: 0;
+    left: 0;
+    translate: -50% -50%;
+}
+.curseur-point::before {
+    content: "";
+    width: 0.4rem;
+    height: 0.4rem;
+    border-radius: 50%;
+    background: #121212;
+    box-shadow: 0 0 0 1px #fff;
+}
+.curseur-cercle::before {
+    content: "";
+    width: 1.9rem;
+    height: 1.9rem;
+    border: 2px solid #121212;
+    border-radius: 50%;
+    background: var(--rose, #FF428E);
+    box-shadow: 0 0 0 1px #fff;
+    opacity: 0.8;
+    transition: width 140ms ease, height 140ms ease, background-color 140ms ease, border-radius 140ms ease;
+}
+.curseur-cercle--actif::before { width: 2.6rem; height: 2.6rem; background: var(--vert, #8AE819); }
+.curseur-cercle--libelle::before { width: 3.6rem; height: 3.6rem; border-radius: 1rem; opacity: 1; }
+.curseur-cercle span { color: #121212; font: 700 0.55rem var(--police-mono, monospace); letter-spacing: 0.02em; }
+.curseur-point { z-index: 10001; }
+.curseur-point--libelle::before { visibility: hidden; }
+@media (hover: hover) and (pointer: fine) and (forced-colors: none) and (prefers-reduced-motion: no-preference) {
+    .animations-accueil.curseur-actif, .animations-accueil.curseur-actif * { cursor: none !important; }
+    .curseur-actif :is(.curseur-point, .curseur-cercle) { display: block; }
+}
+
+/* Réduction des mouvements : contenu visible et interactions sans animation. */
+@media (prefers-reduced-motion: reduce) {
+    html.defilement-accueil { scroll-behavior: auto; }
+    .animations-accueil :is(.revelation, .animation-lettre, .accueil__lettre, .accueil__carte, .projet, .bouton, .projet__bouton, .menu-mobile__bouton) {
+        animation: none !important;
+        transition: none !important;
+        translate: none !important;
+        scale: none !important;
+        rotate: none !important;
+    }
+    .animations-accueil .revelation-attente { opacity: 1; transform: none; }
+    .animations-accueil :is(.entete__liens a, .menu-mobile__liens a)::after { transition: none; }
+}
+@media print {
+    .animations-accueil .revelation {
+        transition: none !important;
+        opacity: 1 !important;
+        transform: none !important;
+    }
+    .animations-accueil .animation-lettre { animation: none; }
+    .animations-accueil .accueil__carte { animation: none !important; translate: none !important; rotate: none !important; }
+    .animations-accueil .logiciels { height: auto !important; padding: 1rem !important; }
+    .animations-accueil .logiciels .logiciels__piste {
+        display: grid !important;
+        grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
+        width: 100% !important;
+        transform: none !important;
+    }
+    .animations-accueil .logiciels__pause, [data-copie-logiciel] { display: none !important; }
+    .curseur-point, .curseur-cercle { display: none !important; }
+}

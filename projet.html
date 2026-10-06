@@ -65,10 +65,10 @@
             <article class="fiche-projet fiche-projet--bleu" id="projet-1" aria-labelledby="titre-projet-1">
                 <section class="projet-presentation" aria-labelledby="titre-projet-1">
                     <h2 class="projet-presentation__titre" id="titre-projet-1">
-                        <span>Titre du <span class="projet-presentation__accent">projet 1</span>
+                        <span>WICKED <span class="projet-presentation__accent">WIZARD</span>
                         </span>
                     </h2>
-                    <p class="projet-presentation__description">Présente ici le projet 1, son contexte et son objectif. Explique en quelques phrases à qui il s’adresse, ce qu’il propose et le résultat que tu souhaitais obtenir.</p>
+                    <p class="projet-presentation__description">Wicked Wizard est un jeu vidéo de plateforme que j’ai réalisé seule en trois mois, lors de ma troisième session en technique multimédia, dans le cadre du cours d’interactivité ludique. Développé avec le moteur de jeu Godot, il plonge le joueur dans l’univers d’une caverne moussue où il doit franchir les obstacles et récolter des pièces. Les ressources graphiques et sonores proviennent de créateurs indépendants et sont toutes créditées dans le fichier README de mon dépôt <a class="projet-presentation__lien" href="https://github.com/mar-iamm/mariam_gevorgyan_TP4_godot" target="_blank" rel="noopener noreferrer">GitHub</a>.</p>
                     <div class="galerie" role="region" aria-label="Images du projet 1">
                         <!-- Carrousel 1 : ce groupe radio est indépendant des trois autres. -->
                         <p class="texte-accessible" id="aide-galerie-1">Au clavier, utilisez les flèches gauche et droite pour changer d’image après avoir atteint ce groupe avec la touche Tab.</p>
@@ -82,22 +82,28 @@
                                     <span class="galerie__temoin galerie__temoin--jaune"></span>
                                     <span class="galerie__temoin galerie__temoin--vert"></span>
                                 </div>
-                                <span class="galerie__adresse">Lien du projet 1</span>
+                                <span class="galerie__adresse">https://mar-iamm.github.io/mariam_gevorgyan_TP4_godot/index.html</span>
                             </div>
                             <figure class="galerie__diapositive galerie__diapositive--1">
-                                <div class="galerie__emplacement">Visuel 1 du projet 1</div>
+                                <img class="galerie__image" src="assets/images/projet1-visuel1.png" alt="Visuel 1 du projet 1">
                                 <figcaption class="galerie__compteur">1 / 3</figcaption>
                             </figure>
                             <figure class="galerie__diapositive galerie__diapositive--2">
-                                <div class="galerie__emplacement">Visuel 2 du projet 1</div>
+                                <img class="galerie__image" src="assets/images/projet1-visuel2.png" alt="Visuel 2 du projet 1">
                                 <figcaption class="galerie__compteur">2 / 3</figcaption>
                             </figure>
                             <figure class="galerie__diapositive galerie__diapositive--3">
-                                <div class="galerie__emplacement">Visuel 3 du projet 1</div>
+                                <img class="galerie__image" src="assets/images/projet1-visuel3.png" alt="Visuel 3 du projet 1">
                                 <figcaption class="galerie__compteur">3 / 3</figcaption>
                             </figure>
-                            <button class="galerie__visiter" type="button" disabled>Visiter <span aria-hidden="true">↗</span>
-                            </button>
+
+                        <a class="galerie__visiter"
+                        href="https://mar-iamm.github.io/mariam_gevorgyan_TP4_godot/index.html"
+                        target="_blank"
+                        rel="noopener noreferrer">
+                        Visiter <span aria-hidden="true">↗</span>
+                        </a>
+
                         </div>
                         <div class="galerie__navigation galerie__navigation--1">
                             <label class="galerie__fleche galerie__fleche--precedente" for="projet-1-image-3">
@@ -137,14 +143,14 @@
                     <aside class="role-projet" aria-labelledby="titre-role-1">
                         <h3 class="role-projet__titre" id="titre-role-1">Mon rôle</h3>
                         <ul class="role-projet__liste">
-                            <li class="role-projet__element">Rôle nº 1</li>
-                            <li class="role-projet__element">Rôle nº 2</li>
-                            <li class="role-projet__element">Rôle nº 3</li>
+                            <li class="role-projet__element">Game design</li>
+                            <li class="role-projet__element">Programmation</li>
+                            <li class="role-projet__element">Intégration des assets</li>
                         </ul>
                     </aside>
                     <div class="demarche-projet">
                         <h3 class="demarche-projet__titre" id="titre-demarche-1">Démarche du projet</h3>
-                        <p class="demarche-projet__texte">Présente ici le point de départ du projet 1 et les objectifs à atteindre. Explique ensuite <mark class="demarche-projet__accent">tes choix de création</mark> : tes recherches, tes décisions visuelles ou techniques, puis les étapes principales de la réalisation. Mets en évidence un défi rencontré, la solution retenue et ce que cette expérience t’a permis d’apprendre.</p>
+                        <p class="demarche-projet__texte">Pour ce projet, mon point de départ était de créer un jeu de plateforme complet dans Godot, un moteur que je découvrais, avec pour objectif d’offrir une expérience fluide, lisible et agréable à jouer. J’ai d’abord défini <mark class="demarche-projet__accent">l’ambiance d’une caverne moussue et mystérieuse</mark>, puis j’ai sélectionné des ressources graphiques et sonores cohérentes avec cet univers. J’ai ensuite programmé les déplacements et les sauts du personnage, conçu les niveaux, intégré la collecte de pièces, puis ajouté la musique, les effets sonores et le menu principal. Mon plus grand défi a été d’obtenir des mouvements précis et des collisions fiables ; en m’appuyant sur un tutoriel vidéo et de nombreux tests, j’ai ajusté la physique du personnage jusqu’à obtenir une jouabilité satisfaisante. Ce projet m’a permis de maîtriser les bases de Godot et d’apprendre à mener seule un projet de jeu, de l’idée à la version jouable.</p>
                     </div>
                 </section>
 
@@ -153,38 +159,10 @@
                     <h3 class="outils-projet__titre" id="titre-outils-1">Logiciels &amp; technologies</h3>
                     <ul class="outils-projet__liste">
                         <li class="outil-projet">
-                            <img class="outil-projet__icone" src="assets/images/illustrator_logo.png" alt="" loading="lazy">
+                            <img class="outil-projet__icone" src="assets/images/godot_logo.png" alt="" loading="lazy">
                             <div>
-                                <h4 class="outil-projet__nom">Illustrator</h4>
-                                <p class="outil-projet__usage">Vectoriel &amp; typo</p>
-                            </div>
-                        </li>
-                        <li class="outil-projet">
-                            <img class="outil-projet__icone" src="assets/images/maya_logo.png" alt="" loading="lazy">
-                            <div>
-                                <h4 class="outil-projet__nom">Maya</h4>
-                                <p class="outil-projet__usage">Modélisation &amp; 3D</p>
-                            </div>
-                        </li>
-                        <li class="outil-projet">
-                            <img class="outil-projet__icone" src="assets/images/unity_logo.png" alt="" loading="lazy">
-                            <div>
-                                <h4 class="outil-projet__nom">Unity</h4>
-                                <p class="outil-projet__usage">Jeu vidéo &amp; interactif</p>
-                            </div>
-                        </li>
-                        <li class="outil-projet">
-                            <img class="outil-projet__icone" src="assets/images/after_effects_logo.png" alt="" loading="lazy">
-                            <div>
-                                <h4 class="outil-projet__nom">After Effects</h4>
-                                <p class="outil-projet__usage">Montage &amp; VFX</p>
-                            </div>
-                        </li>
-                        <li class="outil-projet">
-                            <img class="outil-projet__icone" src="assets/images/photoshop_logo.png" alt="" loading="lazy">
-                            <div>
-                                <h4 class="outil-projet__nom">Photoshop</h4>
-                                <p class="outil-projet__usage">Retouche &amp; texture</p>
+                                <h4 class="outil-projet__nom">Godot</h4>
+                                <p class="outil-projet__usage">Moteur de jeu &amp; GDscript</p>
                             </div>
                         </li>
                         <li class="outil-projet">
@@ -201,10 +179,9 @@
             <article class="fiche-projet fiche-projet--rose" id="projet-2" aria-labelledby="titre-projet-2">
                 <section class="projet-presentation" aria-labelledby="titre-projet-2">
                     <h2 class="projet-presentation__titre" id="titre-projet-2">
-                        <span>Titre du <span class="projet-presentation__accent">projet 2</span>
-                        </span>
+                        <span>L'animatronique</span>
                     </h2>
-                    <p class="projet-presentation__description">Présente ici le projet 2, son contexte et son objectif. Explique en quelques phrases à qui il s’adresse, ce qu’il propose et le résultat que tu souhaitais obtenir.</p>
+                    <p class="projet-presentation__description">Dernière garde est une animation 3D que j’ai réalisée lors de ma quatrième session en technique multimédia. Fortement inspirée de l’univers de la franchise Five Nights at Freddy’s, elle plonge le spectateur dans l’atmosphère inquiétante d’une nuit de surveillance, où les animatroniques s’animent dans la pénombre. J’ai construit la scène à partir de modèles 3D trouvés sur Sketchfab, puis j’ai travaillé la mise en scène, l’éclairage et l’animation pour faire monter la tension.</p>
                     <div class="galerie" role="region" aria-label="Images du projet 2">
                         <!-- Carrousel 2 : ce groupe radio est indépendant des trois autres. -->
                         <p class="texte-accessible" id="aide-galerie-2">Au clavier, utilisez les flèches gauche et droite pour changer d’image après avoir atteint ce groupe avec la touche Tab.</p>
@@ -218,22 +195,28 @@
                                     <span class="galerie__temoin galerie__temoin--jaune"></span>
                                     <span class="galerie__temoin galerie__temoin--vert"></span>
                                 </div>
-                                <span class="galerie__adresse">Lien du projet 2</span>
+                                <span class="galerie__adresse">https://www.youtube.com/watch?v=sQ6bLbsoSf4</span>
                             </div>
                             <figure class="galerie__diapositive galerie__diapositive--1">
-                                <div class="galerie__emplacement">Visuel 1 du projet 2</div>
+                                <img class="galerie__image" src="assets/images/projet2-visuel1.png" alt="Visuel 1 du projet 1">
                                 <figcaption class="galerie__compteur">1 / 3</figcaption>
                             </figure>
                             <figure class="galerie__diapositive galerie__diapositive--2">
-                                <div class="galerie__emplacement">Visuel 2 du projet 2</div>
+                                <img class="galerie__image" src="assets/images/projet2-visuel2.png" alt="Visuel 2 du projet 1">
                                 <figcaption class="galerie__compteur">2 / 3</figcaption>
                             </figure>
                             <figure class="galerie__diapositive galerie__diapositive--3">
-                                <div class="galerie__emplacement">Visuel 3 du projet 2</div>
+                                <img class="galerie__image" src="assets/images/projet2-visuel3.png" alt="Visuel 3 du projet 1">
                                 <figcaption class="galerie__compteur">3 / 3</figcaption>
                             </figure>
-                            <button class="galerie__visiter" type="button" disabled>Visiter <span aria-hidden="true">↗</span>
-                            </button>
+
+                        <a class="galerie__visiter"
+                        href="https://youtu.be/sQ6bLbsoSf4"
+                        target="_blank"
+                        rel="noopener noreferrer">
+                        Visiter <span aria-hidden="true">↗</span>
+                        </a>
+
                         </div>
                         <div class="galerie__navigation galerie__navigation--1">
                             <label class="galerie__fleche galerie__fleche--precedente" for="projet-2-image-3">
@@ -273,14 +256,14 @@
                     <aside class="role-projet" aria-labelledby="titre-role-2">
                         <h3 class="role-projet__titre" id="titre-role-2">Mon rôle</h3>
                         <ul class="role-projet__liste">
-                            <li class="role-projet__element">Rôle nº 1</li>
-                            <li class="role-projet__element">Rôle nº 2</li>
-                            <li class="role-projet__element">Rôle nº 3</li>
+                            <li class="role-projet__element">Animation 3D</li>
+                            <li class="role-projet__element">Éclairage & rendu</li>
+                            <li class="role-projet__element">Montage vidéo</li>
                         </ul>
                     </aside>
                     <div class="demarche-projet">
                         <h3 class="demarche-projet__titre" id="titre-demarche-2">Démarche du projet</h3>
-                        <p class="demarche-projet__texte">Présente ici le point de départ du projet 2 et les objectifs à atteindre. Explique ensuite <mark class="demarche-projet__accent">tes choix de création</mark> : tes recherches, tes décisions visuelles ou techniques, puis les étapes principales de la réalisation. Mets en évidence un défi rencontré, la solution retenue et ce que cette expérience t’a permis d’apprendre.</p>
+                        <p class="demarche-projet__texte">Pour ce projet, mon point de départ était mon intérêt pour l’univers de Five Nights at Freddy’s, avec pour objectif de recréer en animation 3D la tension propre aux jeux d’horreur. J’ai d’abord étudié l’ambiance de la franchise, puis j’ai fait <mark class="demarche-projet__accent">le choix d’une lumière faible et de cadrages serrés</mark> pour garder le spectateur dans l’inconfort. J’ai ensuite sélectionné et assemblé des modèles 3D trouvés sur Sketchfab pour construire la scène, avant de travailler l’animation des personnages, l’éclairage, le rendu et l’ambiance sonore à partir de sons libres de droits. Mon plus grand défi a été d’harmoniser des modèles provenant de créateurs différents ; en ajustant leurs textures, leurs échelles et l’éclairage de la scène, j’ai réussi à leur donner un rendu cohérent. Ce projet m’a permis d’approfondir mes compétences en animation 3D et de comprendre l’importance de la lumière et du son dans la création d’une atmosphère.</p>
                     </div>
                 </section>
 
@@ -289,24 +272,10 @@
                     <h3 class="outils-projet__titre" id="titre-outils-2">Logiciels &amp; technologies</h3>
                     <ul class="outils-projet__liste">
                         <li class="outil-projet">
-                            <img class="outil-projet__icone" src="assets/images/illustrator_logo.png" alt="" loading="lazy">
-                            <div>
-                                <h4 class="outil-projet__nom">Illustrator</h4>
-                                <p class="outil-projet__usage">Vectoriel &amp; typo</p>
-                            </div>
-                        </li>
-                        <li class="outil-projet">
                             <img class="outil-projet__icone" src="assets/images/maya_logo.png" alt="" loading="lazy">
                             <div>
                                 <h4 class="outil-projet__nom">Maya</h4>
                                 <p class="outil-projet__usage">Modélisation &amp; 3D</p>
-                            </div>
-                        </li>
-                        <li class="outil-projet">
-                            <img class="outil-projet__icone" src="assets/images/unity_logo.png" alt="" loading="lazy">
-                            <div>
-                                <h4 class="outil-projet__nom">Unity</h4>
-                                <p class="outil-projet__usage">Jeu vidéo &amp; interactif</p>
                             </div>
                         </li>
                         <li class="outil-projet">
@@ -316,20 +285,6 @@
                                 <p class="outil-projet__usage">Montage &amp; VFX</p>
                             </div>
                         </li>
-                        <li class="outil-projet">
-                            <img class="outil-projet__icone" src="assets/images/photoshop_logo.png" alt="" loading="lazy">
-                            <div>
-                                <h4 class="outil-projet__nom">Photoshop</h4>
-                                <p class="outil-projet__usage">Retouche &amp; texture</p>
-                            </div>
-                        </li>
-                        <li class="outil-projet">
-                            <img class="outil-projet__icone" src="assets/images/vscode_logo.png" alt="" loading="lazy">
-                            <div>
-                                <h4 class="outil-projet__nom">VS Code</h4>
-                                <p class="outil-projet__usage">Code &amp; développement front-end</p>
-                            </div>
-                        </li>
                     </ul>
                 </section>
             </article>
@@ -337,10 +292,10 @@
             <article class="fiche-projet fiche-projet--vert" id="projet-3" aria-labelledby="titre-projet-3">
                 <section class="projet-presentation" aria-labelledby="titre-projet-3">
                     <h2 class="projet-presentation__titre" id="titre-projet-3">
-                        <span>Titre du <span class="projet-presentation__accent">projet 3</span>
+                        <span>Liquid <span class="projet-presentation__accent">Loom</span>
                         </span>
                     </h2>
-                    <p class="projet-presentation__description">Présente ici le projet 3, son contexte et son objectif. Explique en quelques phrases à qui il s’adresse, ce qu’il propose et le résultat que tu souhaitais obtenir.</p>
+                    <p class="projet-presentation__description">Liquid Loom est un site web de vente de jus que j’ai réalisé comme projet final lors de ma quatrième session en technique multimédia. Pensé comme une véritable boutique en ligne, il réunit toutes les fonctionnalités essentielles d’un site de commerce : présentation des produits, fiches détaillées, panier d’achat et parcours de commande. L’objectif était de concevoir une expérience à la fois fraîche, colorée et intuitive, qui donne envie de découvrir les produits et facilite l’achat du premier clic jusqu’à la commande.</p>
                     <div class="galerie" role="region" aria-label="Images du projet 3">
                         <!-- Carrousel 3 : ce groupe radio est indépendant des trois autres. -->
                         <p class="texte-accessible" id="aide-galerie-3">Au clavier, utilisez les flèches gauche et droite pour changer d’image après avoir atteint ce groupe avec la touche Tab.</p>
@@ -354,22 +309,28 @@
                                     <span class="galerie__temoin galerie__temoin--jaune"></span>
                                     <span class="galerie__temoin galerie__temoin--vert"></span>
                                 </div>
-                                <span class="galerie__adresse">Lien du projet 3</span>
+                                <span class="galerie__adresse">https://202248723.tim-momo.com/projet_final_jus/</span>
                             </div>
                             <figure class="galerie__diapositive galerie__diapositive--1">
-                                <div class="galerie__emplacement">Visuel 1 du projet 3</div>
+                                <img class="galerie__image" src="assets/images/projet3-visuel1.png" alt="Visuel 1 du projet 1">
                                 <figcaption class="galerie__compteur">1 / 3</figcaption>
                             </figure>
                             <figure class="galerie__diapositive galerie__diapositive--2">
-                                <div class="galerie__emplacement">Visuel 2 du projet 3</div>
+                                <img class="galerie__image" src="assets/images/projet3-visuel2.png" alt="Visuel 2 du projet 1">
                                 <figcaption class="galerie__compteur">2 / 3</figcaption>
                             </figure>
                             <figure class="galerie__diapositive galerie__diapositive--3">
-                                <div class="galerie__emplacement">Visuel 3 du projet 3</div>
+                                <img class="galerie__image" src="assets/images/projet3-visuel3.png" alt="Visuel 3 du projet 1">
                                 <figcaption class="galerie__compteur">3 / 3</figcaption>
                             </figure>
-                            <button class="galerie__visiter" type="button" disabled>Visiter <span aria-hidden="true">↗</span>
-                            </button>
+
+                        <a class="galerie__visiter"
+                        href="https://202248723.tim-momo.com/projet_final_jus/"
+                        target="_blank"
+                        rel="noopener noreferrer">
+                        Visiter <span aria-hidden="true">↗</span>
+                        </a>
+
                         </div>
                         <div class="galerie__navigation galerie__navigation--1">
                             <label class="galerie__fleche galerie__fleche--precedente" for="projet-3-image-3">
@@ -409,14 +370,14 @@
                     <aside class="role-projet" aria-labelledby="titre-role-3">
                         <h3 class="role-projet__titre" id="titre-role-3">Mon rôle</h3>
                         <ul class="role-projet__liste">
-                            <li class="role-projet__element">Rôle nº 1</li>
-                            <li class="role-projet__element">Rôle nº 2</li>
-                            <li class="role-projet__element">Rôle nº 3</li>
+                            <li class="role-projet__element">Conception web</li>
+                            <li class="role-projet__element">Développement web</li>
+                            <li class="role-projet__element">Design</li>
                         </ul>
                     </aside>
                     <div class="demarche-projet">
                         <h3 class="demarche-projet__titre" id="titre-demarche-3">Démarche du projet</h3>
-                        <p class="demarche-projet__texte">Présente ici le point de départ du projet 3 et les objectifs à atteindre. Explique ensuite <mark class="demarche-projet__accent">tes choix de création</mark> : tes recherches, tes décisions visuelles ou techniques, puis les étapes principales de la réalisation. Mets en évidence un défi rencontré, la solution retenue et ce que cette expérience t’a permis d’apprendre.</p>
+                        <p class="demarche-projet__texte">Pour ce projet final, mon objectif était de créer une boutique en ligne complète et crédible, tout en gardant une navigation simple. Après avoir analysé des sites de commerce existants, j’ai fait <mark class="demarche-projet__accent">le choix d’une identité fraîche et colorée</mark> qui évoque l’énergie des jus. J’ai ensuite conçu les maquettes, développé les pages de produits, le panier et le parcours de commande, puis adapté le site à tous les écrans. Mon plus grand défi a été de garder l’achat fluide malgré le nombre de fonctionnalités ; en simplifiant la navigation et en testant chaque étape, j’ai obtenu un parcours clair. Ce projet m’a appris à mener un site web complet, de la conception au développement.</p>
                     </div>
                 </section>
 
@@ -425,45 +386,10 @@
                     <h3 class="outils-projet__titre" id="titre-outils-3">Logiciels &amp; technologies</h3>
                     <ul class="outils-projet__liste">
                         <li class="outil-projet">
-                            <img class="outil-projet__icone" src="assets/images/illustrator_logo.png" alt="" loading="lazy">
+                            <img class="outil-projet__icone" src="assets/images/wordpress_logo.png" alt="" loading="lazy">
                             <div>
-                                <h4 class="outil-projet__nom">Illustrator</h4>
-                                <p class="outil-projet__usage">Vectoriel &amp; typo</p>
-                            </div>
-                        </li>
-                        <li class="outil-projet">
-                            <img class="outil-projet__icone" src="assets/images/maya_logo.png" alt="" loading="lazy">
-                            <div>
-                                <h4 class="outil-projet__nom">Maya</h4>
-                                <p class="outil-projet__usage">Modélisation &amp; 3D</p>
-                            </div>
-                        </li>
-                        <li class="outil-projet">
-                            <img class="outil-projet__icone" src="assets/images/unity_logo.png" alt="" loading="lazy">
-                            <div>
-                                <h4 class="outil-projet__nom">Unity</h4>
-                                <p class="outil-projet__usage">Jeu vidéo &amp; interactif</p>
-                            </div>
-                        </li>
-                        <li class="outil-projet">
-                            <img class="outil-projet__icone" src="assets/images/after_effects_logo.png" alt="" loading="lazy">
-                            <div>
-                                <h4 class="outil-projet__nom">After Effects</h4>
-                                <p class="outil-projet__usage">Montage &amp; VFX</p>
-                            </div>
-                        </li>
-                        <li class="outil-projet">
-                            <img class="outil-projet__icone" src="assets/images/photoshop_logo.png" alt="" loading="lazy">
-                            <div>
-                                <h4 class="outil-projet__nom">Photoshop</h4>
-                                <p class="outil-projet__usage">Retouche &amp; texture</p>
-                            </div>
-                        </li>
-                        <li class="outil-projet">
-                            <img class="outil-projet__icone" src="assets/images/vscode_logo.png" alt="" loading="lazy">
-                            <div>
-                                <h4 class="outil-projet__nom">VS Code</h4>
-                                <p class="outil-projet__usage">Code &amp; développement front-end</p>
+                                <h4 class="outil-projet__nom">Wordpress</h4>
+                                <p class="outil-projet__usage">Création de sites &amp; boutique en ligne</p>
                             </div>
                         </li>
                     </ul>

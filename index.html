@@ -17,22 +17,25 @@
     <link rel="stylesheet" href="css/mobile-accueil.css">
     
 </head>
+
+<!--CONTENU DE LA PAGE D’ACCUEIL-->
 <body>
-    <a class="lien-evitement" href="#contenu">Aller au contenu</a>
+    <a class="lien-evitement" href="#contenu">Aller au contenu</a> <!-- Lien d’évitement, mène directement au main identifié par contenu, pour contourner la navigation -->
     <header class="entete" id="accueil">
-        <a class="entete__marque" href="#accueil" aria-label="Mariam Gevorgyan — accueil">
-            <img class="entete__logo" src="assets/images/black_logo.png" alt="">
+        <a class="entete__marque" href="#accueil" aria-label="Mariam Gevorgyan — accueil"> <!-- Le logo est un lien vers le haut de l’accueil -->
+            <img class="entete__logo" src="assets/images/black_logo.png" alt=""> 
         </a>
+        <!-- Navigation principale sur desktop -->
         <nav class="entete__navigation" aria-label="Navigation principale">
             <ul class="entete__liens">
                 <li><a href="#accueil">Accueil</a></li>
-                <li><a href="projet.html">Projets</a></li>
+                <li><a href="projet.html">Projets</a></li> <!-- Ce lien ouvre le fichier projet.html, contrairement aux liens avec # qui ciblent cette page -->
                 <li><a href="#contact">Contact</a></li>
                 <li><a href="#a-propos">À propos</a></li>
             </ul>
         </nav>
 
-        <!-- Menu natif : Entrée ou Espace ouvre/ferme le panneau sans JavaScript. -->
+        <!-- Menu "burger" mobile -->
         <details class="menu-mobile">
             <summary class="menu-mobile__bouton">
                 <span class="menu-mobile__icone" aria-hidden="true"></span>
@@ -49,12 +52,15 @@
             </nav>
         </details>
     </header>
+
+    <!-- CONTENU PRINCIPAL : destination du lien d’évitement placé au début de la page. -->
     <main id="contenu">
         <section class="accueil" aria-labelledby="titre-accueil">
             <div class="accueil__presentation" id="a-propos">
-                <!-- Un seul titre lisible, même si le prénom utilise six images. -->
+                <!-- Un seul titre lisible, même si le prénom utilise six images -->
                 <h1 class="accueil__titre" id="titre-accueil">
                     <span class="texte-accessible">Mariam Gevorgyan — Portfolio</span>
+                    <!-- Les six PNG composent visuellement MARIAM -->
                     <span class="accueil__lettres" aria-hidden="true">
                         <img class="accueil__lettre accueil__lettre--m" src="assets/images/M.png" alt="">
                         <img class="accueil__lettre accueil__lettre--a" src="assets/images/A.png" alt="">
@@ -64,43 +70,63 @@
                         <img class="accueil__lettre accueil__lettre--m-fin" src="assets/images/M_end.png" alt="">
                     </span>
                 </h1>
+                <!-- Paragraphe de présentation -->
                 <p class="accueil__texte">Je m’appelle Mariam Gevorgyan, diplômée en Techniques d’intégration multimédia. Ce qui m’anime au quotidien est de concevoir des univers captivants au croisement du web design, du développement de jeux vidéo et de l’animation. Je façonne des expériences interactives vivantes, ludiques et mémorables.</p>
+                <!-- Liens d'actions contact et projets -->
                 <div class="accueil__actions">
                     <a class="bouton bouton--jaune" href="#projets">Voir mes projets <span aria-hidden="true"></span></a>
                     <a class="bouton bouton--vert" href="#contact">Contact <span aria-hidden="true"></span></a>
                 </div>
             </div>
-            <!-- Le cordon et le porte-carte font déjà partie de cette image. -->
+            <!-- Image du porte-clé -->
             <img class="accueil__carte" src="assets/images/id_card.png" alt="Carte étudiante de Mariam Gevorgyan, 2026">
         </section>
+
+         <!-- COMPÉTENCES ET OUTILS -->
+
         <section class="competences" aria-labelledby="titre-competences">
             <h2 class="titre-section competences__titre" id="titre-competences">Compétences &amp; outils</h2>
+
+            <!-- Contenue des six cartes -->
+
             <div class="competences__grille">
+
+                <!-- Compétence 1 : Conception web. -->
                 <article class="competence">
                     <img class="competence__icone" src="assets/images/conception_web_logo.png" alt="" loading="lazy">
                     <h3 class="competence__titre">Conception web</h3>
                     <p class="competence__texte">Conception d’interfaces ergonomiques, maquettes fonctionnelles et systèmes de design percutants.</p>
                 </article>
+
+                <!-- Compétence 2 : Montage vidéo et sonore. -->
                 <article class="competence">
                     <img class="competence__icone" src="assets/images/montage_video_logo.png" alt="" loading="lazy">
                     <h3 class="competence__titre">Montage vidéo &amp; sonore</h3>
                     <p class="competence__texte">Montage rythmé, mixage audio, création sonore immersive et habillage visuel dynamique.</p>
                 </article>
+
+                <!-- Compétence 3 : Code front-end. -->
                 <article class="competence">
                     <img class="competence__icone" src="assets/images/code_front_end_logo.png" alt="" loading="lazy">
                     <h3 class="competence__titre">Code front-end</h3>
                     <p class="competence__texte">Développement réactif, moderne et accessible en HTML5/CSS et JavaScript interactif.</p>
                 </article>
+
+                <!-- Compétence 4 : Code jeu vidéo. -->
                 <article class="competence">
                     <img class="competence__icone" src="assets/images/code_jeu_video_logo.png" alt="" loading="lazy">
                     <h3 class="competence__titre">Code jeu vidéo</h3>
                     <p class="competence__texte">Game design, gameplay interactif, modélisation temps réel et univers ludiques immersifs.</p>
                 </article>
+
+                <!-- Compétence 5 : Animation 2D. -->
                 <article class="competence">
                     <img class="competence__icone" src="assets/images/animation_2d_logo.png" alt="" loading="lazy">
                     <h3 class="competence__titre">Animation 2D</h3>
                     <p class="competence__texte">Micro-interactions, cinématiques fluides, animations vectorielles et animation graphique.</p>
                 </article>
+
+                <!-- Compétence 6 : Illustration vectorielle. -->
                 <article class="competence">
                     <img class="competence__icone" src="assets/images/vectoriel_logo.png" alt="" loading="lazy">
                     <h3 class="competence__titre">Illustration vectorielle</h3>
@@ -108,10 +134,14 @@
                 </article>
             </div>
         </section>
-        <!-- Bande statique : la piste dépasse, mais aucune animation n'est appliquée. -->
+        <!-- Bande statique -->
+
+        <!-- LOGICIELS MAÎTRISÉS -->
         <section class="logiciels" aria-labelledby="titre-logiciels">
             <h2 class="texte-accessible" id="titre-logiciels">Mes logiciels</h2>
             <ul class="logiciels__piste">
+
+                <!-- Logiciel 1 : Illustrator. -->
                 <li class="logiciel">
                     <img class="logiciel__icone" src="assets/images/illustrator_logo.png" alt="" loading="lazy">
                     <div>
@@ -120,6 +150,8 @@
                     </div>
                     <span class="logiciel__etoile" aria-hidden="true">★</span>
                 </li>
+
+                <!-- Logiciel 2 : Maya. -->
                 <li class="logiciel">
                     <img class="logiciel__icone" src="assets/images/maya_logo.png" alt="" loading="lazy">
                     <div>
@@ -128,6 +160,8 @@
                     </div>
                     <span class="logiciel__etoile" aria-hidden="true">★</span>
                 </li>
+
+                <!-- Logiciel 3 : Unity. -->
                 <li class="logiciel">
                     <img class="logiciel__icone" src="assets/images/unity_logo.png" alt="" loading="lazy">
                     <div>
@@ -136,6 +170,8 @@
                     </div>
                     <span class="logiciel__etoile" aria-hidden="true">★</span>
                 </li>
+                
+                <!-- Logiciel 4 : After Effects. -->
                 <li class="logiciel">
                     <img class="logiciel__icone" src="assets/images/after_effects_logo.png" alt="" loading="lazy">
                     <div>
@@ -144,6 +180,8 @@
                     </div>
                     <span class="logiciel__etoile" aria-hidden="true">★</span>
                 </li>
+
+                <!-- Logiciel 5 : Photoshop. -->
                 <li class="logiciel">
                     <img class="logiciel__icone" src="assets/images/photoshop_logo.png" alt="" loading="lazy">
                     <div>
@@ -152,6 +190,8 @@
                     </div>
                     <span class="logiciel__etoile" aria-hidden="true">★</span>
                 </li>
+
+                <!-- Logiciel 6 : VSCode. -->
                 <li class="logiciel">
                     <img class="logiciel__icone" src="assets/images/vscode_logo.png" alt="" loading="lazy">
                     <div>
@@ -161,6 +201,9 @@
                 </li>
             </ul>
         </section>
+
+        <!-- SÉLECTION DE PROJETS -->
+
         <section class="projets" id="projets" aria-labelledby="titre-projets">
             <p class="projets__etiquette">Sélection de projets 2024 - 2026</p>
             <h2 class="titre-section projets__titre" id="titre-projets">Projets</h2>
@@ -231,6 +274,9 @@
                 </article>
             </div>
         </section>
+
+        <!-- CONTACT -->
+
         <section class="contact" id="contact" aria-labelledby="titre-contact">
             <h2 class="titre-section contact__titre" id="titre-contact">Travaillons<br>ensemble !</h2>
             <p class="contact__introduction">Stage, projet d’études ambitieux ou une collaboration créative ?<br>Envoyez-moi un message !</p>
@@ -262,13 +308,15 @@
             </form>
         </section>
     </main>
+
+    <!-- PIED DE PAGE -->
     <footer class="pied-page">
         <a class="pied-page__marque" href="#accueil">
             <img class="pied-page__logo" src="assets/images/white_logo.png" alt="" loading="lazy">
             <span>Mariam Gevorgyan</span>
         </a>
-        <a class="pied-page__retour" href="#accueil" aria-label="Retour en haut de la page">↑</a>
-        <p class="pied-page__copyright">© 2026 Mariam Gevorgyan</p>
+        <a class="pied-page__retour" href="#accueil" aria-label="Retour en haut de la page">↑</a> <!-- Le symbole ↑ est accompagné d’un aria-label qui explicite sa fonction de retour en haut. -->
+        <p class="pied-page__copyright">© 2026 Mariam Gevorgyan</p> <!-- Mention du copyright -->
     </footer>
 </body>
 </html>

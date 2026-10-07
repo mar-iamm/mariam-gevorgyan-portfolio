@@ -33,6 +33,14 @@
     gap: clamp(1.5rem, 2.5vw, 3rem) clamp(1.5rem, 3.75vw, 4.5rem);
 }
 
+/* Message affiché sous le bouton après l'envoi. */
+.contact__statut {
+    min-height: 1.5em;
+    margin-top: 2.5rem;
+    font-weight: 600;
+    text-align: center;
+}
+
 .champ--large {
     grid-column: 1 / -1;
 }

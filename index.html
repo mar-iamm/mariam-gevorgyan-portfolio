@@ -17,7 +17,7 @@
     <link rel="stylesheet" href="css/composants/projets.css">
     <link rel="stylesheet" href="css/composants/retour-haut.css">
     <link rel="stylesheet" href="css/composants/logo.css">
-    <!-- Génère les cartes de projets à partir de data/projets.json, puis lance les animations. -->
+    <!-- Génère les cartes de projets à partir de data/projets.json, lance les animations et le formulaire de contact. -->
     <script type="module" src="js/animations-index.js"></script>
 </head>
 
@@ -219,8 +219,12 @@
         <section class="contact" id="contact" aria-labelledby="titre-contact">
             <h2 class="titre-section contact__titre" id="titre-contact">Travaillons<br>ensemble !</h2>
             <p class="contact__introduction">Stage, projet d’études ambitieux ou une collaboration créative ?<br>Envoyez-moi un message !</p>
-            <!-- Présentation du formulaire seulement. L'envoi sera ajouté plus tard. -->
-            <form class="contact__formulaire">
+            <!-- Les messages sont envoyés par Formspree (formulaire « Portfolio », identifiant mgaoakwr).
+                 js/composants/contact.js envoie le message sans quitter la page. -->
+            <form class="contact__formulaire" action="https://formspree.io/f/mgaoakwr" method="POST">
+                <!-- Sujet du courriel reçu, et champ piège invisible contre les robots. -->
+                <input type="hidden" name="_subject" value="Nouveau message depuis le portfolio">
+                <input class="texte-accessible" type="text" name="_gotcha" tabindex="-1" autocomplete="off" aria-hidden="true">
                 <div class="contact__champs">
                     <div class="champ">
                         <label class="champ__etiquette" for="nom">Votre nom ou entreprise <span aria-hidden="true">*</span></label>
@@ -228,7 +232,7 @@
                     </div>
                     <div class="champ">
                         <label class="champ__etiquette" for="courriel">Votre email <span aria-hidden="true">*</span></label>
-                        <input class="champ__saisie" id="courriel" name="courriel" type="email" autocomplete="email" placeholder="johndoe@agence.com" required>
+                        <input class="champ__saisie" id="courriel" name="email" type="email" autocomplete="email" placeholder="johndoe@agence.com" required>
                     </div>
                     <div class="champ">
                         <label class="champ__etiquette" for="telephone">Numéro de téléphone <span aria-hidden="true">*</span></label>
@@ -243,7 +247,9 @@
                         <textarea class="champ__saisie champ__saisie--message" id="message" name="message" rows="2" placeholder="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua." required></textarea>
                     </div>
                 </div>
-                <button class="bouton bouton--rose contact__bouton" type="button">Envoyer le message <span aria-hidden="true">↗</span></button>
+                <button class="bouton bouton--rose contact__bouton" type="submit">Envoyer le message <span aria-hidden="true">↗</span></button>
+                <!-- Message de confirmation ou d'erreur, annoncé aux lecteurs d'écran. -->
+                <p class="contact__statut" role="status" aria-live="polite"></p>
             </form>
         </section>
     </main>

@@ -1,28 +1,29 @@
-/* Polices locales : le portfolio peut être ouvert sans connexion Internet. */
+/* Polices locales : le portfolio peut être ouvert sans connexion Internet.
+   Fichiers d'origine de Google Fonts (licence dans assets/polices/OFL.txt). */
 @font-face {
     font-family: "Poppins";
-    src: url("../assets/polices/Poppins-400.ttf") format("truetype");
+    src: url("../assets/polices/Poppins-Regular.ttf") format("truetype");
     font-weight: 400;
     font-display: swap;
 }
 
 @font-face {
     font-family: "Poppins";
-    src: url("../assets/polices/Poppins-600.ttf") format("truetype");
+    src: url("../assets/polices/Poppins-SemiBold.ttf") format("truetype");
     font-weight: 600;
     font-display: swap;
 }
 
 @font-face {
     font-family: "Poppins";
-    src: url("../assets/polices/Poppins-700.ttf") format("truetype");
+    src: url("../assets/polices/Poppins-Bold.ttf") format("truetype");
     font-weight: 700;
     font-display: swap;
 }
 
 @font-face {
     font-family: "Poppins";
-    src: url("../assets/polices/Poppins-800.ttf") format("truetype");
+    src: url("../assets/polices/Poppins-ExtraBold.ttf") format("truetype");
     font-weight: 800;
     font-display: swap;
 }

@@ -126,6 +126,7 @@
 /* 1. Règles communes : logo à gauche et carte attachée au haut. */
 :root {
     --hauteur-entete: 7rem;
+    /* Remonte la carte pour cacher le bout du fil, même quand le cordon s'étire. */
     --remontee-carte: 2rem;
 }
 
@@ -182,7 +183,7 @@
 
 .accueil__carte {
     position: absolute;
-     top: calc(-1 * var(--hauteur-entete) - var(--remontee-carte));
+    top: calc(-1 * var(--hauteur-entete) - var(--remontee-carte));
     height: auto;
     margin: 0;
     z-index: 1;
@@ -234,7 +235,17 @@
         --hauteur-entete: 5.5rem;
     }
 
-    .entete { padding-inline: 1rem; }
+    /* L'en-tête passe par-dessus la présentation :
+       un seul fond couvre les deux, du haut de l'écran jusqu'aux boutons. */
+    .entete {
+        position: absolute;
+        top: 0;
+        right: 0;
+        left: 0;
+        z-index: 2;
+        padding-inline: 1rem;
+        background: none;
+    }
 
     .entete__logo { width: 4rem; }
 
@@ -354,8 +365,15 @@
 
     .menu-mobile__liens a:focus-visible { outline-color: #4346E6; outline-offset: -0.15rem; }
 
-    /* Mise en page intermédiaire et dimensions fluides. */
-    .accueil { min-height: 0; padding: 4rem 5% 5rem; }
+    /* Mise en page intermédiaire et dimensions fluides.
+       L'espace de l'en-tête est ajouté en haut de la présentation,
+       et le fond remplit toute la hauteur de la section. */
+    .accueil {
+        min-height: 0;
+        padding: calc(4rem + var(--hauteur-entete)) 5% 5rem;
+        background-size: cover;
+        background-position: center top;
+    }
 
     .accueil__presentation { width: 65%; }
 
@@ -378,7 +396,8 @@
 
     .accueil__lettre--m-fin { width: 27.42%; margin-left: -5.2%; margin-top: 1.61%; }
 
-    .accueil__carte { right: 3%; width: 24%; }
+    /* La présentation commence maintenant tout en haut de la page. */
+    .accueil__carte { top: calc(-1 * var(--remontee-carte)); right: 3%; width: 24%; }
 
     .accueil__actions { flex-wrap: wrap; margin-left: 0; }
 
@@ -449,7 +468,7 @@
         order: -1;
         width: min(65%, 16rem);
         height: auto;
-        margin: calc(-1 * var(--hauteur-entete)) 0 0;
+        margin: calc(-1 * var(--remontee-carte)) 0 0;
         transform: none;
     }
 
@@ -549,22 +568,26 @@
 
     .pied-page__logo { width: 3rem; }
 
-    .pied-page__retour { display: grid; place-items: center; min-width: 3rem; min-height: 3rem; font-size: 3rem; }
-
     .pied-page__copyright { position: static; width: 100%; font-size: 0.8rem; }
 
 }
 
+/* ==========================================================
+   ANIMATIONS DE L'ACCUEIL
+   Rythme ralenti : entrées longues et douces, survols plus marqués.
+   ========================================================== */
+
+/* Courbes et durées communes. */
 :root {
     --courbe-douce: cubic-bezier(0.16, 1, 0.3, 1);
     --courbe-rebond: cubic-bezier(0.34, 1.56, 0.64, 1);
     --duree-survol: 450ms;
 }
- 
+
 @media (prefers-reduced-motion: no-preference) {
     html.defilement-accueil { scroll-behavior: smooth; }
 }
- 
+
 /* ---------- Apparition des sections au défilement ----------
    En descendant : l'élément monte depuis le bas de l'écran.
    En remontant : il redescend depuis le haut de l'écran.
@@ -583,7 +606,7 @@
         color 350ms ease,
         border-color 350ms ease;
 }
- 
+
 /* Sortie plus brève que l'entrée, sans décalage. */
 .animations-accueil .revelation--cachee {
     --duree-revelation: 700ms;
@@ -592,29 +615,30 @@
 }
 .animations-accueil .revelation--dessous { transform: translateY(3.5rem); }
 .animations-accueil .revelation--dessus { transform: translateY(-3.5rem); }
- 
+
 /* Compétences : arrivent un peu plus petites, puis prennent leur taille. */
 .animations-accueil .competence.revelation--dessous { transform: translateY(4rem) scale(0.94); }
 .animations-accueil .competence.revelation--dessus { transform: translateY(-4rem) scale(0.94); }
- 
+
 /* Projets : arrivent inclinés, comme des fiches posées sur la page. */
 .animations-accueil .projet.revelation--dessous { transform: translateY(5rem) rotate(-3deg); }
 .animations-accueil .projet:nth-child(even).revelation--dessous { transform: translateY(5rem) rotate(3deg); }
 .animations-accueil .projet.revelation--dessus { transform: translateY(-5rem) rotate(3deg); }
 .animations-accueil .projet:nth-child(even).revelation--dessus { transform: translateY(-5rem) rotate(-3deg); }
- 
+
 /* Bandeau des logiciels : simple fondu, sans laisser de vide entre les sections. */
 .animations-accueil .revelation--fondu.revelation--cachee { transform: none; }
- 
+
 /* État de départ posé sans transition. */
 .animations-accueil .revelation--immediate { transition: none !important; }
- 
-/* ---------- MARIAM : apparition successive et petit rebond, sans boucle ---------- */
+
+/* ---------- MARIAM : une lettre à la fois, qui rebondit en atterrissant ---------- */
 .animations-accueil .animation-lettre {
     transform-origin: 50% 100%;
     animation: entree-lettre 1100ms var(--delai-lettre, 0ms) backwards;
 }
-/* Chute, écrasement à l'impact, deux rebonds de plus en plus petits, puis pose. */
+/* Courte chute en fondu sous le menu, écrasement à l'impact,
+   deux rebonds de plus en plus petits, puis pose. */
 @keyframes entree-lettre {
     0% {
         opacity: 0;
@@ -641,7 +665,7 @@
     92% { transform: translateY(0) scale(1.02, 0.98); }
     100% { opacity: 1; transform: none; }
 }
- 
+
 /* ---------- Navigation : ligne dans la couleur actuelle du lien ---------- */
 .animations-accueil .entete__liens a,
 .animations-accueil .menu-mobile__liens a { position: relative; }
@@ -663,7 +687,7 @@
 .animations-accueil .menu-mobile__liens a::after { left: 0.5rem; right: 0.5rem; bottom: 0.5rem; }
 .animations-accueil .entete__liens a:focus-visible::after,
 .animations-accueil .menu-mobile__liens a:focus-visible::after { transform: scaleX(1); }
- 
+
 /* ---------- Boutons : rebond, changement de couleur et ombre qui s'allonge ----------
    Ces règles ne dépendent pas du JavaScript : elles s'appliquent aussi sur projet.html. */
 .bouton,
@@ -678,14 +702,14 @@
         color 350ms ease;
 }
 .animations-accueil .projet__bouton { display: inline-flex; align-items: center; justify-content: center; }
- 
+
 /* La flèche ↗ pivote vers la droite au survol. */
 .bouton span,
 .galerie__visiter span {
     display: inline-block;
     transition: rotate var(--duree-survol) var(--courbe-rebond);
 }
- 
+
 @media (hover: hover) and (pointer: fine) {
     /* Le bouton se soulève : il monte vers la gauche et son ombre s'allonge. */
     .bouton:hover,
@@ -696,7 +720,7 @@
     }
     .bouton:hover span,
     .galerie__visiter:not(:disabled):hover span { rotate: 45deg; }
- 
+
     /* Chaque couleur passe à une autre couleur de la palette. */
     .bouton--jaune:hover { background-color: var(--rose); }
     .bouton--vert:hover { color: var(--blanc); background-color: var(--bleu); }
@@ -709,7 +733,7 @@
         background-color: var(--jaune);
         box-shadow: 0.5rem 0.5rem 0 var(--noir);
     }
- 
+
     /* Boutons des cartes projets : jaune sur bleu et rose, rose sur vert et jaune. */
     .projet .projet__bouton:hover {
         translate: 0 -0.25rem;
@@ -720,7 +744,7 @@
     }
     .projet--vert .projet__bouton:hover,
     .projet--jaune .projet__bouton:hover { background-color: var(--rose); }
- 
+
     /* Burger : vert au survol, rose une fois ouvert (règle existante). */
     .menu-mobile__bouton:hover {
         translate: -0.15rem -0.15rem;
@@ -729,7 +753,7 @@
         box-shadow: 0.4rem 0.4rem 0 #121212;
     }
 }
- 
+
 /* Clic : le bouton s'enfonce dans son ombre. */
 .bouton:active,
 .menu-mobile__bouton:active,
@@ -740,13 +764,13 @@
     box-shadow: 0.1rem 0.1rem 0 var(--noir);
 }
 .bouton--rose:active { box-shadow: 0.1rem 0.1rem 0 var(--blanc); }
- 
+
 /* ---------- Survols réservés aux appareils munis d'une souris précise ---------- */
 @media (hover: hover) and (pointer: fine) and (prefers-reduced-motion: no-preference) {
     /* MARIAM : la lettre survolée grossit et passe devant ses voisines. */
     .animations-accueil .accueil__lettre { transition: scale var(--duree-survol) var(--courbe-rebond); }
     .animations-accueil .accueil__lettre:hover { z-index: 1; scale: 1.25; }
- 
+
     .animations-accueil .projet { --inclinaison-projet: -1deg; }
     .animations-accueil .projet:nth-child(even) { --inclinaison-projet: 1deg; }
     .animations-accueil .projet:is(:hover, :focus-within) {
@@ -759,46 +783,63 @@
     .animations-accueil .entete__liens a:hover::after,
     .animations-accueil .menu-mobile__liens a:hover::after { transform: scaleX(1); }
 }
- 
-/* ---------- Carte étudiante : descente, puis balancement infini ---------- */
+
+/* ---------- Carte étudiante : simulation physique en JavaScript ---------- */
 .animations-accueil .accueil__carte {
     pointer-events: none;
     user-select: none;
     transform-origin: 50% 0;
 }
-.animations-accueil .accueil__carte.carte-entree {
-    animation: entree-carte 2600ms both;
+.animations-accueil .accueil__carte.carte-physique {
+    will-change: translate, rotate, transform, filter;
 }
-/* La carte tombe, oscille de moins en moins, puis s'arrête à -5deg. */
-@keyframes entree-carte {
-    0% {
-        translate: 0 var(--carte-depart, -100vh);
-        rotate: -10deg;
-        animation-timing-function: cubic-bezier(0.33, 0, 0.2, 1);
-    }
-    40% { translate: 0 0; rotate: 9deg; animation-timing-function: ease-in-out; }
-    60% { rotate: -7deg; animation-timing-function: ease-in-out; }
-    80% { rotate: 5deg; animation-timing-function: ease-in-out; }
-    100% { translate: 0 0; rotate: -5deg; }
+
+/* Reflet de lumière sur la carte, créé par carte-identite.js.
+   Il est découpé à la forme du PNG et n'apparaît que pendant les grands balancements. */
+.accueil__reflet {
+    position: absolute;
+    z-index: 1;
+    opacity: 0;
+    pointer-events: none;
+    transform-origin: 50% 0;
+    background: linear-gradient(
+        105deg,
+        transparent 38%,
+        rgba(255, 255, 255, 0.75) 50%,
+        transparent 62%
+    );
+    background-repeat: no-repeat;
+    background-size: 250% 100%;
+    -webkit-mask-repeat: no-repeat;
+    mask-repeat: no-repeat;
+    -webkit-mask-size: 100% 100%;
+    mask-size: 100% 100%;
 }
-/* Le balancement repart de -5deg : aucune saccade entre les deux animations. */
-.animations-accueil .accueil__carte.carte-balancement {
-    animation: balancement-carte 1800ms ease-in-out infinite alternate both;
-}
-@keyframes balancement-carte {
-    from { rotate: -5deg; }
-    to { rotate: 5deg; }
-}
- 
-/* ---------- Logiciels : bandeau continu sur ordinateur et mobile ---------- */
+
+/* ---------- Logiciels : bandeau continu, glissable dans les deux sens ---------- */
 .animations-accueil .logiciels.logiciels--anime {
     position: relative;
     display: block;
     height: auto;
-    padding: clamp(2.5rem, 5vw, 5rem) 0 4.5rem;
+    padding: clamp(2.5rem, 5vw, 5rem) 0;
     overflow: hidden;
 }
-.animations-accueil .logiciels__fenetre { width: 100%; overflow: hidden; }
+
+/* Main ouverte au repos, main fermée pendant le glissement. */
+.animations-accueil .logiciels__fenetre {
+    width: 100%;
+    overflow: hidden;
+    cursor: grab;
+    touch-action: pan-y;
+    user-select: none;
+    -webkit-user-select: none;
+}
+.animations-accueil .logiciels__fenetre--glisse { cursor: grabbing; }
+.animations-accueil .logiciels__fenetre:focus-visible {
+    outline: 0.2rem solid var(--jaune);
+    outline-offset: -0.4rem;
+}
+
 .animations-accueil .logiciels--anime .logiciels__piste {
     display: flex;
     align-items: center;
@@ -811,20 +852,7 @@
 }
 .animations-accueil .logiciels--anime .logiciel { flex: 0 0 auto; }
 .animations-accueil .logiciels--anime .logiciel__etoile { margin-inline: 1.5rem 0; }
-.animations-accueil .logiciels__pause {
-    position: absolute;
-    right: 1.25rem;
-    bottom: 0.8rem;
-    min-height: 2.75rem;
-    padding: 0.45rem 1rem;
-    border: 2px solid #121212;
-    border-radius: 999rem;
-    color: #121212;
-    background: var(--jaune, #FFDD00);
-    font: 700 0.8rem var(--police-interface, sans-serif);
-    cursor: pointer;
-}
-.animations-accueil .logiciels__pause:focus-visible { outline: 3px solid #fff; outline-offset: 3px; }
+
 /* Si le mouvement est désactivé, afficher les six originaux en grille. */
 .animations-accueil .logiciels:not(.logiciels--anime) { display: block; height: auto; padding: 2.5rem 1.25rem; }
 .animations-accueil .logiciels:not(.logiciels--anime) .logiciels__piste {
@@ -838,7 +866,7 @@
 .animations-accueil .logiciels:not(.logiciels--anime) .logiciel > div { min-width: 0; }
 .animations-accueil .logiciels:not(.logiciels--anime) .logiciel__usage { white-space: normal; }
 .animations-accueil .logiciels:not(.logiciels--anime) .logiciel__etoile { display: none; }
- 
+
 /* ---------- Curseur : au-dessus de la page sans intercepter les clics ---------- */
 .curseur-point, .curseur-cercle {
     display: none;
@@ -850,7 +878,7 @@
     pointer-events: none;
     z-index: 10000;
 }
-.curseur-point::before, .curseur-cercle::before, .curseur-cercle span {
+.curseur-point::before, .curseur-cercle::before {
     position: absolute;
     top: 0;
     left: 0;
@@ -880,7 +908,7 @@
     .animations-accueil.curseur-actif, .animations-accueil.curseur-actif * { cursor: none !important; }
     .curseur-actif :is(.curseur-point, .curseur-cercle) { display: block; }
 }
- 
+
 /* ---------- Réduction des mouvements : contenu visible, couleurs conservées ---------- */
 @media (prefers-reduced-motion: reduce) {
     html.defilement-accueil { scroll-behavior: auto; }
@@ -904,7 +932,7 @@
     .galerie__visiter span { rotate: none !important; transition: none; }
     .animations-accueil :is(.entete__liens a, .menu-mobile__liens a)::after { transition: none; }
 }
- 
+
 @media print {
     .animations-accueil .revelation {
         transition: none !important;
@@ -912,7 +940,8 @@
         transform: none !important;
     }
     .animations-accueil .animation-lettre { animation: none; }
-    .animations-accueil .accueil__carte { animation: none !important; translate: none !important; rotate: none !important; }
+    .animations-accueil .accueil__carte { translate: none !important; rotate: none !important; transform: none !important; }
+    .accueil__reflet { display: none !important; }
     .animations-accueil .logiciels { height: auto !important; padding: 1rem !important; }
     .animations-accueil .logiciels .logiciels__piste {
         display: grid !important;
@@ -920,6 +949,6 @@
         width: 100% !important;
         transform: none !important;
     }
-    .animations-accueil .logiciels__pause, [data-copie-logiciel] { display: none !important; }
+    [data-copie-logiciel] { display: none !important; }
     .curseur-point, .curseur-cercle { display: none !important; }
 }

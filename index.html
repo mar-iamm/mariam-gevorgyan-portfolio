@@ -15,14 +15,11 @@
     <link rel="stylesheet" href="css/composants/contact.css">
     <link rel="stylesheet" href="css/composants/logiciels.css">
     <link rel="stylesheet" href="css/composants/projets.css">
-    <link rel="stylesheet" href="css/animations-accueil.css">
     <link rel="stylesheet" href="css/composants/retour-haut.css">
     <link rel="stylesheet" href="css/composants/logo.css">
-    
+    <!-- Génère les cartes de projets à partir de data/projets.json, puis lance les animations. -->
+    <script type="module" src="js/animations-index.js"></script>
 </head>
-
-<script type="module" src="js/animations-index.js"></script>
-
 
 <!--CONTENU DE LA PAGE D’ACCUEIL-->
 <body>
@@ -35,7 +32,7 @@
         <nav class="entete__navigation" aria-label="Navigation principale">
             <ul class="entete__liens">
                 <li><a href="#accueil">Accueil</a></li>
-                <li><a href="projet.html">Projets</a></li> <!-- Ce lien ouvre le fichier projet.html, contrairement aux liens avec # qui ciblent cette page -->
+                <li><a href="#projets">Projets</a></li> <!-- Mène à la liste des projets ; chaque carte ouvre ensuite sa fiche dans projet.html -->
                 <li><a href="#contact">Contact</a></li>
                 <li><a href="#a-propos">À propos</a></li>
             </ul>
@@ -213,80 +210,8 @@
         <section class="projets" id="projets" aria-labelledby="titre-projets">
             <p class="projets__etiquette">Sélection de projets 2024 - 2026</p>
             <h2 class="titre-section projets__titre" id="titre-projets">Projets</h2>
-            <div class="projets__grille">
-                <!-- Projet 1 : bleu -->
-                <article class="projet projet--bleu">
-                    <div class="projet__apercu" aria-hidden="true">
-                    <img class="projet__image" src="assets/images/projet1-visuel2.png" alt="">
-                    </div>
-                    <p class="projet__categorie">Jeu vidéo</p>
-                    <h3 class="projet__titre">Wicked<br>Wizard</h3>
-                    <p class="projet__description">
-                        Jeu de plateforme développé seule avec Godot, dans l’univers d’une caverne moussue.
-                    </p>
-                    <div class="projet__action">
-                        <a class="projet__bouton"
-                        href="projet.html#projet-1"
-                        aria-label="Voir le projet 1">
-                            Voir le projet
-                        </a>
-                    </div>
-                </article>
-                <!-- Projet 2 : rose -->
-                <article class="projet projet--rose">
-                    <div class="projet__apercu" aria-hidden="true">
-                        <img class="projet__image" src="assets/images/projet2-visuel1.png" alt="">
-                    </div>
-                    <p class="projet__categorie">Animation 3D</p>
-                    <h3 class="projet__titre">L'anima<br>tronique</h3>
-                    <p class="projet__description">
-                        Animation 3D inspirée de Five Nights at Freddy's, où des animatroniques s'éveillent dans la pénombre d'une nuit de surveillance.
-                    </p>
-                    <div class="projet__action">
-                        <a class="projet__bouton"
-                        href="projet.html#projet-2"
-                        aria-label="Voir le projet 2">
-                            Voir le projet
-                        </a>
-                    </div>
-                </article>
-                <!-- Projet 3 : vert -->
-                <article class="projet projet--vert">
-                    <div class="projet__apercu" aria-hidden="true">
-                        <img class="projet__image" src="assets/images/projet3-visuel1.png" alt="">
-                    </div>
-                    <p class="projet__categorie">Site Web</p>
-                    <h3 class="projet__titre">Liquid<br>Loom</h3>
-                    <p class="projet__description">
-                        Boutique en ligne de jus réalisée avec WordPress, de la fiche produit jusqu'au parcours de commande.
-                    </p>
-                    <div class="projet__action">
-                        <a class="projet__bouton"
-                        href="projet.html#projet-3"
-                        aria-label="Voir le projet 3">
-                            Voir le projet
-                        </a>
-                    </div>
-                </article>
-                <!-- Projet 4 : jaune -->
-                <article class="projet projet--jaune">
-                    <div class="projet__apercu" aria-hidden="true">
-                        <img class="projet__image" src="assets/images/projet4-visuel3.png" alt="">
-                    </div>
-                    <p class="projet__categorie">Vidéo et montage</p>
-                    <h3 class="projet__titre">Dernière<br>danse</h3>
-                    <p class="projet__description">
-                        Vidéo narrative réalisée en équipe, où une jeune femme malade traverse les cinq étapes du deuil face à sa propre mort.
-                    </p>
-                    <div class="projet__action">
-                        <a class="projet__bouton"
-                        href="projet.html#projet-4"
-                        aria-label="Voir le projet 4">
-                            Voir le projet
-                        </a>
-                    </div>
-                </article>
-            </div>
+            <!-- Les cartes sont générées par js/composants/cartes.js à partir de data/projets.json. -->
+            <div class="projets__grille"></div>
         </section>
 
         <!-- CONTACT -->
@@ -329,7 +254,7 @@
             <img class="pied-page__logo" src="assets/images/white_logo.png" alt="" loading="lazy">
             <span>Mariam Gevorgyan</span>
         </a>
-                <a class="pied-page__retour" href="#accueil" aria-label="Retour en haut de la page">
+        <a class="pied-page__retour" href="#accueil" aria-label="Retour en haut de la page">
             <svg class="pied-page__fleche" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 19V5M5 12l7-7 7 7"/></svg>
         </a>
         <p class="pied-page__copyright">© 2026 Mariam Gevorgyan</p> <!-- Mention du copyright -->

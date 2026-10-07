@@ -1,0 +1,182 @@
+[
+    {
+        "id": "wicked-wizard",
+        "color": "bleu",
+        "category": "Jeu vidéo",
+        "title": "Wicked",
+        "titleAccent": "Wizard",
+        "summary": "Jeu de plateforme développé seule avec Godot, dans l’univers d’une caverne moussue.",
+        "thumbnail": "assets/images/projet1-visuel2.png",
+        "description": "Wicked Wizard est un jeu vidéo de plateforme que j’ai réalisé seule en trois mois, lors de ma troisième session en technique multimédia, dans le cadre du cours d’interactivité ludique. Développé avec le moteur de jeu Godot, il plonge le joueur dans l’univers d’une caverne moussue où il doit franchir les obstacles et récolter des pièces. Les ressources graphiques et sonores proviennent de créateurs indépendants et sont toutes créditées dans le fichier README de mon dépôt GitHub.",
+        "repository": "https://github.com/mar-iamm/mariam_gevorgyan_TP4_godot",
+        "link": "https://mar-iamm.github.io/mariam_gevorgyan_TP4_godot/index.html",
+        "address": "https://mar-iamm.github.io/mariam_gevorgyan_TP4_godot/index.html",
+        "images": [
+            {
+                "src": "assets/images/projet1-visuel1.png",
+                "alt": "Visuel 1 de Wicked Wizard"
+            },
+            {
+                "src": "assets/images/projet1-visuel2.png",
+                "alt": "Visuel 2 de Wicked Wizard"
+            },
+            {
+                "src": "assets/images/projet1-visuel3.png",
+                "alt": "Visuel 3 de Wicked Wizard"
+            }
+        ],
+        "roles": [
+            "Game design",
+            "Programmation",
+            "Intégration des assets"
+        ],
+        "approach": {
+            "before": "Pour ce projet, mon point de départ était de créer un jeu de plateforme complet dans Godot, un moteur que je découvrais, avec pour objectif d’offrir une expérience fluide, lisible et agréable à jouer. J’ai d’abord défini ",
+            "highlight": "l’ambiance d’une caverne moussue et mystérieuse",
+            "after": ", puis j’ai sélectionné des ressources graphiques et sonores cohérentes avec cet univers. J’ai ensuite programmé les déplacements et les sauts du personnage, conçu les niveaux, intégré la collecte de pièces, puis ajouté la musique, les effets sonores et le menu principal. Mon plus grand défi a été d’obtenir des mouvements précis et des collisions fiables ; en m’appuyant sur un tutoriel vidéo et de nombreux tests, j’ai ajusté la physique du personnage jusqu’à obtenir une jouabilité satisfaisante. Ce projet m’a permis de maîtriser les bases de Godot et d’apprendre à mener seule un projet de jeu, de l’idée à la version jouable."
+        },
+        "tools": [
+            {
+                "name": "Godot",
+                "usage": "Moteur de jeu & GDscript",
+                "icon": "assets/images/godot_logo.svg"
+            },
+            {
+                "name": "VS Code",
+                "usage": "Code & développement front-end",
+                "icon": "assets/images/vscode_logo.svg"
+            }
+        ]
+    },
+    {
+        "id": "animatronique",
+        "color": "rose",
+        "category": "Animation 3D",
+        "title": "L’animatronique",
+        "titleAccent": null,
+        "cardTitle": [
+            "L’anima",
+            "tronique"
+        ],
+        "summary": "Animation 3D inspirée de Five Nights at Freddy’s, où des animatroniques s’éveillent dans la pénombre d’une nuit de surveillance.",
+        "thumbnail": "assets/images/projet2-visuel1.png",
+        "description": "L’animatronique est une animation 3D que j’ai réalisée lors de ma quatrième session en technique multimédia. Fortement inspirée de l’univers de la franchise Five Nights at Freddy’s, elle plonge le spectateur dans l’atmosphère inquiétante d’une nuit de surveillance, où les animatroniques s’animent dans la pénombre. J’ai construit la scène à partir de modèles 3D trouvés sur Sketchfab, puis j’ai travaillé la mise en scène, l’éclairage et l’animation pour faire monter la tension.",
+        "repository": null,
+        "link": "https://youtu.be/sQ6bLbsoSf4",
+        "address": "https://www.youtube.com/watch?v=sQ6bLbsoSf4",
+        "images": [
+            {
+                "src": "assets/images/projet2-visuel1.png",
+                "alt": "Visuel 1 de L’animatronique"
+            },
+            {
+                "src": "assets/images/projet2-visuel2.png",
+                "alt": "Visuel 2 de L’animatronique"
+            },
+            {
+                "src": "assets/images/projet2-visuel3.png",
+                "alt": "Visuel 3 de L’animatronique"
+            }
+        ],
+        "roles": [
+            "Animation 3D",
+            "Éclairage & rendu",
+            "Montage vidéo"
+        ],
+        "approach": {
+            "before": "Pour ce projet, mon point de départ était mon intérêt pour l’univers de Five Nights at Freddy’s, avec pour objectif de recréer en animation 3D la tension propre aux jeux d’horreur. J’ai d’abord étudié l’ambiance de la franchise, puis j’ai fait ",
+            "highlight": "le choix d’une lumière faible et de cadrages serrés",
+            "after": " pour garder le spectateur dans l’inconfort. J’ai ensuite sélectionné et assemblé des modèles 3D trouvés sur Sketchfab pour construire la scène, avant de travailler l’animation des personnages, l’éclairage, le rendu et l’ambiance sonore à partir de sons libres de droits. Mon plus grand défi a été d’harmoniser des modèles provenant de créateurs différents ; en ajustant leurs textures, leurs échelles et l’éclairage de la scène, j’ai réussi à leur donner un rendu cohérent. Ce projet m’a permis d’approfondir mes compétences en animation 3D et de comprendre l’importance de la lumière et du son dans la création d’une atmosphère."
+        },
+        "tools": [
+            {
+                "name": "Maya",
+                "usage": "Modélisation & 3D",
+                "icon": "assets/images/maya_logo.svg"
+            },
+            {
+                "name": "After Effects",
+                "usage": "Montage & VFX",
+                "icon": "assets/images/after_effects_logo.svg"
+            }
+        ]
+    },
+    {
+        "id": "liquid-loom",
+        "color": "vert",
+        "category": "Site Web",
+        "title": "Liquid",
+        "titleAccent": "Loom",
+        "summary": "Boutique en ligne de jus réalisée avec WordPress, de la fiche produit jusqu’au parcours de commande.",
+        "thumbnail": "assets/images/projet3-visuel1.png",
+        "description": "Liquid Loom est un site web de vente de jus que j’ai réalisé comme projet final lors de ma quatrième session en technique multimédia. Pensé comme une véritable boutique en ligne, il réunit toutes les fonctionnalités essentielles d’un site de commerce : présentation des produits, fiches détaillées, panier d’achat et parcours de commande. L’objectif était de concevoir une expérience à la fois fraîche, colorée et intuitive, qui donne envie de découvrir les produits et facilite l’achat du premier clic jusqu’à la commande.",
+        "repository": null,
+        "link": "https://202248723.tim-momo.com/projet_final_jus/",
+        "address": "https://202248723.tim-momo.com/projet_final_jus/",
+        "images": [
+            {
+                "src": "assets/images/projet3-visuel1.png",
+                "alt": "Visuel 1 de Liquid Loom"
+            },
+            {
+                "src": "assets/images/projet3-visuel2.png",
+                "alt": "Visuel 2 de Liquid Loom"
+            },
+            {
+                "src": "assets/images/projet3-visuel3.png",
+                "alt": "Visuel 3 de Liquid Loom"
+            }
+        ],
+        "roles": [
+            "Conception web",
+            "Développement web",
+            "Design"
+        ],
+        "approach": {
+            "before": "Pour ce projet final, mon objectif était de créer une boutique en ligne complète et crédible, tout en gardant une navigation simple. Après avoir analysé des sites de commerce existants, j’ai fait ",
+            "highlight": "le choix d’une identité fraîche et colorée",
+            "after": " qui évoque l’énergie des jus. J’ai ensuite conçu les maquettes, développé les pages de produits, le panier et le parcours de commande, puis adapté le site à tous les écrans. Mon plus grand défi a été de garder l’achat fluide malgré le nombre de fonctionnalités ; en simplifiant la navigation et en testant chaque étape, j’ai obtenu un parcours clair. Ce projet m’a appris à mener un site web complet, de la conception au développement."
+        },
+        "tools": [
+            {
+                "name": "Wordpress",
+                "usage": "Création de sites & boutique en ligne",
+                "icon": "assets/images/wordpress_logo.svg"
+            }
+        ]
+    },
+    {
+        "id": "derniere-danse",
+        "color": "jaune",
+        "category": "Vidéo et montage",
+        "title": "Dernière",
+        "titleAccent": "danse",
+        "summary": "Vidéo narrative réalisée en équipe, où une jeune femme malade traverse les cinq étapes du deuil face à sa propre mort.",
+        "thumbnail": "assets/images/projet4-visuel3.png",
+        "description": "Dernière danse est une vidéo narrative que j’ai réalisée en équipe lors de ma quatrième session en technique multimédia. Elle suit une jeune femme malade qui, confrontée à sa propre mort, traverse les cinq étapes du deuil : le déni, la colère, le marchandage, la dépression et l’acceptation. Le récit avance au rythme de ces étapes, du refus de la maladie jusqu’à la paix retrouvée.",
+        "repository": null,
+        "link": "https://youtu.be/12qI768CY04",
+        "address": "https://youtu.be/12qI768CY04",
+        "images": [
+            { "src": "assets/images/projet4-visuel1.png", "alt": "Visuel 1 de Dernière danse" },
+            { "src": "assets/images/projet4-visuel2.png", "alt": "Visuel 2 de Dernière danse" },
+            { "src": "assets/images/projet4-visuel3.png", "alt": "Visuel 3 de Dernière danse" }
+        ],
+        "roles": [
+            "Prise de vue",
+            "Montage final"
+        ],
+        "approach": {
+            "before": "Pour ce projet, notre point de départ était de raconter une histoire forte et intime : celle d’une jeune femme malade qui fait face à sa propre mort. Avec mon équipe, nous avons fait ",
+            "highlight": "le choix de faire avancer le récit au rythme des cinq étapes du deuil",
+            "after": ", du déni jusqu’à l’acceptation. Au sein de l’équipe, je me suis occupée de la caméra pendant le tournage, puis du montage final dans DaVinci Resolve, où j’ai assemblé les plans pour construire la progression émotionnelle du récit. Mon plus grand défi a été le tournage sur place, où il fallait composer avec les contraintes réelles du lieu ; en adaptant mes cadrages et en vérifiant chaque prise, j’ai pu obtenir les plans dont nous avions besoin au montage. Ce projet m’a appris à travailler en équipe sur une production vidéo et à penser mes prises de vue en fonction du montage final."
+        },
+        "tools": [
+            {
+                "name": "DaVinci Resolve",
+                "usage": "Montage vidéo",
+                "icon": "assets/images/davinci_logo.svg"
+            }
+        ]
+    }
+]
